@@ -27,8 +27,25 @@
 .introText{
     position: absolute;                           /* just positions the text on the right of the cirecle */
     left: 50%;
-    bottom: 50%;
+    bottom: 65%;
     transform: translate(-50%,0);
-    padding:2em;
     width:50%;
+
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    
+    margin: 0;
+    
+    text-shadow: 5px 5px #916dc1, 7px 7px #4dc5e7;
+    font-size: 5vw;
+
+    
+}
+
+@media screen and (max-width: 1190px) {
+    .introText{
+        font-size: 60px;
+    }
 }
