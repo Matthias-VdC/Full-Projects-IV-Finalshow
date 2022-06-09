@@ -6,6 +6,7 @@ function Index(){
         <div className="homepage">
             <div className="homepageBackground">
                 <div className="upperBackground">
+                    <Logo />
                     <Intro />
                 </div>
                 <div className="lowerBackground"></div>

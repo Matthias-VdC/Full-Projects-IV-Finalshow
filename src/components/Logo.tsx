@@ -1,6 +1,8 @@
 function Logo(){
     return(
-        <p>Ik ben een logo</p>
+        <h1 id="logo">
+            Final Show
+        </h1>
     )
 }
 
