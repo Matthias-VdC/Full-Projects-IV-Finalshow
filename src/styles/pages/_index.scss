@@ -1,0 +1,32 @@
+.homepage{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.homepageBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    overflow: hidden;
+}
+
+.upperBackground{
+    height: 60vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, #ff0074 0%, #e000e0 60%, #7700cc 100%);
+
+    position: relative;
+}
+
+.lowerBackground{
+    height: 50vh;
+    width: 100vw;
+    background-image: repeating-linear-gradient(to left, transparent,transparent 20px, red 20px, red 22px, transparent 22px),
+    repeating-linear-gradient(#000,#000 20px, red 20px, red 22px, black 22px);
+    transform-origin: 50% 0%;
+    transform: perspective(200px) rotateX(75deg);
+}
