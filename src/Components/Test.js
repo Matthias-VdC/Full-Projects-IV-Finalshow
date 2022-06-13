@@ -146,7 +146,7 @@ function Scene() {
 
 function Camera() {}
 
-function App() {
+function Test() {
     return (
         <Canvas className="canvas" camera={{ position: [1, 2, 2] }}>
             <Suspense fallback={null}>
@@ -156,4 +156,4 @@ function App() {
     );
 }
 
-export default App;
+export default Test;
