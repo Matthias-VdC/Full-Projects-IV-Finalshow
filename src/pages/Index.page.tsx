@@ -1,8 +1,8 @@
-import { Logo } from "../components/Logo";
-import { Intro } from "../components/Intro";
+import { Logo } from "../Components/Logo";
+import { Intro } from "../Components/Intro";
 
-function Index(){
-    return(
+function Index() {
+    return (
         <div className="homepage">
             <div className="homepageBackground">
                 <div className="upperBackground">
@@ -11,9 +11,8 @@ function Index(){
                 </div>
                 <div className="lowerBackground"></div>
             </div>
-            
         </div>
     );
 }
 
-export {Index}
+export { Index };
