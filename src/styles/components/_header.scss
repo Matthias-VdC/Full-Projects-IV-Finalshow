@@ -1,0 +1,29 @@
+header {
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em 2em;
+  .logo-container {
+    height: 100%;
+    img {
+      height: 100%;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    a {
+      width: 100px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      padding: 0.5em 1em;
+      margin: 0em 3em;
+      border: 2px solid black;
+    }
+  }
+}
