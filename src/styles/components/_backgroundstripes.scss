@@ -1,0 +1,37 @@
+#stripes-container {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    div {
+        width: 50px;
+        height: 100px;
+    }
+    #pink {
+        background-color: $pink;
+    }
+    #yellow {
+        background-color: $yellow;
+    }
+    #orange {
+        background-color: $orange;
+    }
+    #red {
+        background-color: $red;
+    }
+    #blue {
+        background-color: $blue;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 200%;
+        background-color: $background;
+        transform: rotateZ(5deg);
+    }
+}
