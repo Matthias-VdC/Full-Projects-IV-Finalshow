@@ -1,11 +1,10 @@
 import BackgroundStripes from "../components/BackgroundStripes";
+import imgFrame from "../assets/tv.png";
 
 export default function Info() {
   return (
     <div id="info-container">
       <BackgroundStripes></BackgroundStripes>
-      <div className="side-bar" id="left-bar"></div>
-      <div className="side-bar" id="right-bar"></div>
       <h1>Info</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, laborum
@@ -22,22 +21,16 @@ export default function Info() {
         corporis perferendis placeat quaerat? Fugit incidunt perferendis
         assumenda earum praesentium consequuntur iusto magnam iste tempora.
       </p>
-      <img src="../images/campus.webp" alt="campus" />
-      <div className="h2-container">
-        <h2>subtitle</h2>
-        <img className="h2-image" src="../images/cassette-0.png" alt="" />
-      </div>
+      <img src={imgFrame} alt="campus" />
+      <h2>subtitle</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
         doloremque repellendus inventore, alias quas nisi nemo veniam quo
         debitis reprehenderit velit, fuga non! Ea minima blanditiis, cumque
         aliquam quod aspernatur.
       </p>
-      <img src="../images/campus.webp" alt="campus" />
-      <div className="h2-container">
-        <h2>subtitle</h2>
-        <img className="h2-image" src="../images/cassette-0.png" alt="" />
-      </div>
+      <img src={imgFrame} alt="campus" />
+      <h2 className="info-subtitle">subtitle</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem odio
         reprehenderit delectus? Assumenda incidunt aspernatur laboriosam,
