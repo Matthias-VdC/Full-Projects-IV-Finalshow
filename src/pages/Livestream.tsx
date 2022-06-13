@@ -1,13 +1,17 @@
 import LiveYoutubeChat from "../components/LiveYoutubeChat";
 import VideoPlayer from "../components/VideoPlayer";
+import "../layouts/streaming.scss"
 
 
 function Livestream() {
     
     console.log("Called");
 
-    return (<><VideoPlayer></VideoPlayer>
+    return (<>
+    <div className="streaming">
+    <VideoPlayer></VideoPlayer>
     <LiveYoutubeChat></LiveYoutubeChat>
+    </div>
     </>);
 }
 

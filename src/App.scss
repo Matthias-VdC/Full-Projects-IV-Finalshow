@@ -13,6 +13,24 @@
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: url("../public/assets/darkbg.png");
+        background-repeat: repeat;
+        width: 100vw;
+        color: white;
+    }
+}
+
+@media (prefers-color-scheme:light) {
+    body {
+        background-image: url("../public/assets/lightbg.png");
+        background-repeat: repeat;
+        width: 100vw;
+        color: black;
+    }
+}
+
 .App-header {
     background-color: #282c34;
     min-height: 100vh;

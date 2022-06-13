@@ -1,0 +1,14 @@
+.streaming {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 992px) {
+    .streaming {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 37.5vw;
+        height: 100vh;
+    }
+}

@@ -1,16 +1,13 @@
-import { LiveChat } from "youtube-chat"
+import "../layouts/liveyoutubechat.scss"
 
 
 function LiveYoutubeChat() {
 
-    const liveChat = new LiveChat({liveId: "https://youtu.be/5qap5aO4i9A"})
-
-    const ok = liveChat.start()
-    if (!ok) {
-      console.log("Failed to start, check emitted error")
-      }  
-
-    return (<h1>Hello</h1>)
+    return (
+    <div className="chat-container">
+    <iframe src="https://youtube.com/live_chat?v=5qap5aO4i9A&amp;embed_domain=10.3.208.84"></iframe>
+    </div>
+    )
 }
 
 export default LiveYoutubeChat;

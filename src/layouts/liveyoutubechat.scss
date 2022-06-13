@@ -1,15 +1,17 @@
-.video-container {
+.chat-container {
     overflow: hidden;
+    position: relative;
     width: 100%;
 }
 
-.video-container::after {
+.chat-container::after {
     padding-top: 56.25%;
     display: block;
     content: '';
 }
 
-.video-container iframe {
+.chat-container iframe {
+    border: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -18,7 +20,7 @@
 }
 
 @media only screen and (min-width: 992px) {
-    .video-container iframe {
+    .chat-container iframe {
         top: 17.5vh;
         left: 4.5vw;
         width: 70%;
