@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/static/Header";
+import Timetable from "./pages/Timetable.page";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Route path="hub" element={<p>hub</p>} />
           <Route path="info" element={<p>info</p>} />
           <Route path="live" element={<p>live</p>} />
-          <Route path="timetable" element={<p>timetable</p>} />
+          <Route path="timetable" element={<Timetable />} />
           <Route path="showroom" element={<p>showroom</p>} />
         </Route>
       </Routes>
