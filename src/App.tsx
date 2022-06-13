@@ -1,13 +1,15 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import "./App.scss";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Index } from "./pages/Index.page";
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={<Index/>} />
         <Route path="admin">
           <Route path="hub" element={<p>hub</p>} />
           <Route path="info" element={<p>info</p>} />
@@ -16,6 +18,7 @@ function App() {
           <Route path="showroom" element={<p>showroom</p>} />
         </Route>
       </Routes>
+      </BrowserRouter>
     </div>
   );
 }
