@@ -1,26 +1,76 @@
-import React from "react";
-import { useLoader } from "react-three-fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls } from "@react-three/drei";
+import gsap, { Power4 } from "gsap/all";
+import React, { useEffect, useState } from "react";
+import { useThree } from "react-three-fiber";
+import * as THREE from "three";
+import { City } from "./Models";
+import { Cinema } from "./Models/Cinema";
 
-const Plane = () => {
+const Box = () => {
     return (
-        <mesh position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
-            <planeBufferGeometry attach={"geometry"} args={[100, 100]} />
+        <mesh position={[0, 0, -400]}>
+            <boxBufferGeometry attach={"geometry"} args={[50, 50, 50]} />
             <meshLambertMaterial attach={"material"} color={"white"} />
         </mesh>
     );
 };
 
 export const Scene = () => {
-    // const gltf = useLoader(GLTFLoader, "scene.gltf");
+    const { camera } = useThree();
+    const [enableOrbit, setEnableOrbit] = useState(true);
+    const [currentTarget, setCurrentTarget] = useState<
+        [x: number, y: number, z: number]
+    >([0, 0, 0]);
+    const [minDistance, setMinDistance] = useState(700);
+    const animateToCinema = (event: any) => {
+        console.log(event);
+        event.stopPropagation();
+        setEnableOrbit(false);
+
+        if (currentTarget !== [0, -48, -550]) {
+            setCurrentTarget([0, -48, -550]);
+
+            setMinDistance(200);
+
+            gsap.to(camera.position, {
+                x: -50,
+                y: -10,
+                z: -450,
+                duration: 1.5,
+                ease: Power4.easeInOut,
+            });
+        } else {
+            setMinDistance(700);
+            setCurrentTarget([0, 0, 0]);
+            gsap.to(camera.position, {
+                x: 0,
+                y: 100,
+                z: 0,
+                duration: 1.5,
+                ease: Power4.easeInOut,
+            });
+        }
+        setEnableOrbit(true);
+    };
 
     return (
         <>
+            <OrbitControls
+                minDistance={minDistance}
+                enabled={enableOrbit}
+                target={currentTarget}
+            />
             <directionalLight intensity={0.4} />
             <hemisphereLight intensity={0.4} />
-            <Plane />
             <gridHelper args={[100, 100, "blue", "blue"]} />
-            {/* <primitive object={gltf.scene} /> */}
+            <City scale={0.4} position={[185, 0, 185]} />
+            <Cinema
+                scale={30}
+                position={[0, -48, -550]}
+                onClick={animateToCinema}
+            />
+            <Box />
+            {/* <CityTest /> */}
         </>
     );
 };

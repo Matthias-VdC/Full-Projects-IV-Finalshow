@@ -4,10 +4,14 @@ import { Scene } from ".";
 
 export const Map = () => {
     return (
-        <Canvas className="canvas" camera={{ position: [1, 2, 2] }}>
-            <Suspense fallback={null}>
-                <Scene />
-            </Suspense>
-        </Canvas>
+        <div style={{ position: "fixed", height: "100vh", width: "100vw" }}>
+            <Canvas
+                className="canvas"
+                camera={{ position: [0, 100, 0], far: 5000 }}>
+                <Suspense fallback={null}>
+                    <Scene />
+                </Suspense>
+            </Canvas>
+        </div>
     );
 };

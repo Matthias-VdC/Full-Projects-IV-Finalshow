@@ -1,7 +1,7 @@
 import Countdown from "react-countdown";
 
-function Intro(){
-    return(
+function Intro() {
+    return (
         <>
             <div className="intro">
                 <div className="introBackground">
@@ -11,7 +11,7 @@ function Intro(){
 
                         <input type="text" placeholder="Your name"/>
                         <button>Let's go!</button> */}
-                    <Countdown date={new Date(2022,5,24,18,0,0,0)}/>
+                        <Countdown date={new Date(2022, 5, 24, 18, 0, 0, 0)} />
                     </div>
                 </div>
             </div>
@@ -19,4 +19,4 @@ function Intro(){
     );
 }
 
-export {Intro}
+export { Intro };
