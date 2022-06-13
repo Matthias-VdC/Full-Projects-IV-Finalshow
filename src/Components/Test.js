@@ -69,9 +69,6 @@ function Scene() {
                                 this.progress()
                             );
                         },
-                        // onComplete() {
-                        //     controls.enabled = true;
-                        // },
                     }
                 ).to(
                     camera.position,
