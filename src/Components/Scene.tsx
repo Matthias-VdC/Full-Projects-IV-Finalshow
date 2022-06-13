@@ -27,15 +27,15 @@ export const Scene = () => {
         event.stopPropagation();
         setEnableOrbit(false);
 
-        if (currentTarget !== [0, -48, -550]) {
-            setCurrentTarget([0, -48, -550]);
+        if (currentTarget !== [20, -48, -550]) {
+            setCurrentTarget([20, -48, -550]);
 
-            setMinDistance(200);
+            setMinDistance(300);
 
             gsap.to(camera.position, {
-                x: -50,
-                y: -10,
-                z: -450,
+                x: -75,
+                y: 50,
+                z: -400,
                 duration: 1.5,
                 ease: Power4.easeInOut,
             });
@@ -57,16 +57,25 @@ export const Scene = () => {
         <>
             <OrbitControls
                 minDistance={minDistance}
+                maxDistance={1000}
                 enabled={enableOrbit}
                 target={currentTarget}
+                maxPolarAngle={Math.PI / 2}
+                minAzimuthAngle={-(Math.PI / 3)}
+                maxAzimuthAngle={Math.PI}
             />
             <directionalLight intensity={0.4} />
             <hemisphereLight intensity={0.4} />
             <gridHelper args={[100, 100, "blue", "blue"]} />
-            <City scale={0.4} position={[185, 0, 185]} />
+            <City
+                scale={0.4}
+                position={[265, 0, 0]}
+                rotation={[0, Math.PI / 4, 0]}
+            />
             <Cinema
                 scale={30}
-                position={[0, -48, -550]}
+                position={[-390, -48, -390]}
+                rotation={[0, Math.PI / 4, 0]}
                 onClick={animateToCinema}
             />
             <Box />

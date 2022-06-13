@@ -1,0 +1,36 @@
+header {
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em 2em;
+  .logo-container {
+    height: 100%;
+    img {
+      height: 100%;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    a {
+      width: 100px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      padding: 0.5em 1em;
+      margin: 0em 3em;
+      border: 1.5px solid black;
+      transition: box-shadow 0.2s ease-in-out;
+
+      &:hover {
+        box-shadow: #ffea00 1.5px 1.5px 0px 0px, #000000 3px 3px 0px 0px,
+          #ff0000 4.5px 4.5px 0px 0px, #000000 6px 6px 0px 0px,
+          #0073ff 7.5px 7.5px 0px 0px, #000000 9px 9px 0px 0px;
+      }
+    }
+  }
+}

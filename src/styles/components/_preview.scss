@@ -1,0 +1,19 @@
+.preview {
+    position: absolute;
+    width: 33%;
+    height: 80%;
+
+    top: 0;
+    right: 0;
+
+    border: 1px solid blue;
+    background-color: red;
+    z-index: 99;
+
+    &__button {
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        padding: 10px 20px;
+    }
+}

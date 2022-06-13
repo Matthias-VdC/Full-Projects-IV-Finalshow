@@ -1,12 +1,14 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import { Map } from "./Components";
+import Header from "./Components/static/Header";
 
 function App() {
     return (
         <div className="App">
+            <Header />
             <Routes>
                 <Route path="/" />
                 <Route path="admin">
