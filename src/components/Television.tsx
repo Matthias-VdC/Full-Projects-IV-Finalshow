@@ -7,16 +7,14 @@ import button from '../assets/img/tvdial.png';
 import Countdown from "react-countdown";
 
 function Television(){
-
-    const renderer = (props:any) => {
-        
-        // Render a countdown
-        return  <>
-                    <span>{props.formatted.days} days</span>
-                    <span>{props.formatted.hours}:{props.formatted.minutes}:{props.formatted.seconds}</span>
-                </>
-        
-      };
+    const renderer = (props:any) => { 
+        return(
+            <>
+                <span>{props.formatted.days} days</span>
+                <span>{props.formatted.hours}:{props.formatted.minutes}:{props.formatted.seconds}</span>
+            </>
+        )
+    };
       
     return(
     <div className="countDownPageContainer">
@@ -42,7 +40,7 @@ function Television(){
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     )
 }
 
