@@ -6,6 +6,8 @@ import { Index } from "./pages/Index.page";
 import ReactGA from "react-ga";
 const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/static/Header";
 
 function App() {
   useEffect(() => {
@@ -13,18 +15,17 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="admin">
-            <Route path="hub" element={<p>hub</p>} />
-            <Route path="info" element={<p>info</p>} />
-            <Route path="live" element={<p>live</p>} />
-            <Route path="timetable" element={<p>timetable</p>} />
-            <Route path="showroom" element={<p>showroom</p>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" />
+        <Route path="admin">
+          <Route path="hub" element={<p>hub</p>} />
+          <Route path="info" element={<p>info</p>} />
+          <Route path="live" element={<p>live</p>} />
+          <Route path="timetable" element={<p>timetable</p>} />
+          <Route path="showroom" element={<p>showroom</p>} />
+        </Route>
+      </Routes>
     </div>
   );
 }
