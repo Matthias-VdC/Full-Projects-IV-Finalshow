@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Index } from "./pages/Index.page";
+import Header from "./components/static/Header";
 import ReactGA from "react-ga";
 const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/static/Header";
 
 function App() {
   useEffect(() => {
@@ -17,7 +16,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={<Index />} />
         <Route path="admin">
           <Route path="hub" element={<p>hub</p>} />
           <Route path="info" element={<p>info</p>} />
