@@ -1,38 +1,38 @@
-@import './styles/main.scss';
-@media (prefers-color-scheme: dark) {
-    body {
-        background-image: url("../public/assets/darkbg.png");
-        background-repeat: repeat;
-        width: 100vw;
-        color: $background;
-        a,
-        h1,
-        h2,
-        h3,
-        p {
-            color: $background;
+        @import './styles/main.scss';
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-image: url("/src/assets/darkbg.png");
+                background-repeat: repeat;
+                width: 100vw;
+                color: $background;
+                a,
+                h1,
+                h2,
+                h3,
+                p {
+                    color: $background;
+                }
+                a {
+                    border: 1.5px solid $background;
+                }
+            }
         }
-        a {
-            border: 1.5px solid $background;
+        
+        @media (prefers-color-scheme:light) {
+            body {
+                background-image: url("/src/assets/lightbg.png");
+                background-repeat: repeat;
+                width: 100vw;
+                color: $dark;
+            }
+            a,
+            h1,
+            h2,
+            h3,
+            p {
+                color: $dark;
+            }
+            a {
+                border: 1.5px solid $dark;
+            }
         }
-    }
-}
-
-@media (prefers-color-scheme:light) {
-    body {
-        background-image: url("../public/assets/lightbg.png");
-        background-repeat: repeat;
-        width: 100vw;
-        color: $dark;
-    }
-    a,
-    h1,
-    h2,
-    h3,
-    p {
-        color: $dark;
-    }
-    a {
-        border: 1.5px solid $dark;
-    }
-}

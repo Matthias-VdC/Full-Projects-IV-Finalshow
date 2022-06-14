@@ -1,14 +1,15 @@
+import BackArrow from "../components/BackArrow";
 import LiveYoutubeChat from "../components/LiveYoutubeChat";
 import VideoPlayer from "../components/VideoPlayer";
-import { useNavigate } from 'react-router-dom';
+
 
 
 function Livestream() {
     
-    const navigate = useNavigate();
+
 
     return (<>
-     <button onClick={() => navigate(-1)}>back</button>
+    <BackArrow></BackArrow>
     <div className="streaming">
     <VideoPlayer></VideoPlayer>
     <LiveYoutubeChat></LiveYoutubeChat>
