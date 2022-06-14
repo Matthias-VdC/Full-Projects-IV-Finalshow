@@ -41,7 +41,6 @@ function Television(){
                 <div className="televisionFrame">
                 </div>
             </div>
-            div
         </div>
         </div>
     )
