@@ -3,10 +3,10 @@ import gsap, { Power3, Power4 } from "gsap/all";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ThreeEvent, useThree, Vector3 } from "react-three-fiber";
 import * as THREE from "three";
-import { City } from "./Models";
-import { Cinema } from "./Models/Cinema";
-import { RaceToyota } from "./Models/RaceToyota";
-import Toyota from "./Models/Toyota";
+import { City } from "./models";
+import { Cinema } from "./models/Cinema";
+import { RaceToyota } from "./models/RaceToyota";
+import Toyota from "./models/Toyota";
 
 const Box = () => {
     return (

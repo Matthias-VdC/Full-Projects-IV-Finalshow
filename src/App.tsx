@@ -2,8 +2,8 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
-import { Map } from "./Components";
-import Header from "./Components/static/Header";
+import { Map } from "./components";
+import Header from "./components/static/Header";
 
 function App() {
     return (

@@ -1,5 +1,5 @@
-import { Logo } from "../Components/Logo";
-import { Intro } from "../Components/Intro";
+import { Logo } from "../components/Logo";
+import { Intro } from "../components/Intro";
 
 function Index() {
     return (
