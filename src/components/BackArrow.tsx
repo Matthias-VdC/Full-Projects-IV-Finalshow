@@ -4,7 +4,7 @@ function BackArrow() {
 
     const navigate = useNavigate();
     return (
-        <div className='backarrow' onClick={() => navigate(-1)}>Testing</div>
+        <div className='backarrow' onClick={() => navigate(-1)}></div>
     )
 }
 

@@ -1,5 +1,16 @@
 .backarrow {
     cursor: pointer;
     position: absolute;
-    background-image: url("../../../public/assets/back-arrow-dark.svg");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    width: 15vw;
+    height: 10vh;
+    top: 12.5vh;
+    left: 5vw;
+}
+
+@media screen and (max-width: 1024px) {
+    .backarrow {
+        display: none;
+    }
 }
