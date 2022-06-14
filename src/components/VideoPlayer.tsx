@@ -1,5 +1,3 @@
-import "../styles/components/_videoplayer.scss"
-
 
 function VideoPlayer() {
 

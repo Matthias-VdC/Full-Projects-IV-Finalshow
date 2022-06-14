@@ -1,6 +1,3 @@
-import "../styles/components/_liveyoutubechat.scss"
-
-
 function LiveYoutubeChat() {
 
     return (

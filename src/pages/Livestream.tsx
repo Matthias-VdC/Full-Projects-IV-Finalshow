@@ -1,6 +1,5 @@
 import LiveYoutubeChat from "../components/LiveYoutubeChat";
 import VideoPlayer from "../components/VideoPlayer";
-import "../styles/pages/_livestream.scss"
 import { useNavigate } from 'react-router-dom';
 
 
