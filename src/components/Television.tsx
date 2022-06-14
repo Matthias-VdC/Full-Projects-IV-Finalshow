@@ -1,12 +1,17 @@
 import React from 'react';
-import {useScript} from '../hooks/useScript';
-import {Screen} from '../assets/scripts/television.js';
 import logo from '../assets/img/Final-Show-Logo.svg';
 import ehb from '../assets/img/EhB-logo.png';
+import video from '../assets/videos/countdown.mp4';
 import button from '../assets/img/tvdial.png';
 import Countdown from "react-countdown";
+import {useState} from 'react';
+import ReactPlayer from 'react-player';
 
 function Television(){
+
+    const [showVideo, setShowVideo] = useState(true);
+
+    // define renderer for countdown
     const renderer = (props:any) => { 
         return(
             <>
@@ -15,7 +20,12 @@ function Television(){
             </>
         )
     };
-      
+
+    const handleVideoEnd = ()=>{
+        setShowVideo(false);
+    }
+
+          
     return(
     <div className="countDownPageContainer">
         <div className="homepageLogoContainer">
@@ -29,10 +39,22 @@ function Television(){
         <div className="televisionContainer">
             <div id="television">
                 <div className="screen">
-                    <Countdown date={new Date(2022,5,24,19,0,0,0)}
+                    {showVideo
+                    ?<div className="playerWrapper">
+                        <ReactPlayer url={video}
+                        width='133%'
+                        height='100%'
+                        playing={true}
+                        onEnded={handleVideoEnd}
+                        muted={true}
+                        controls={false}
+                        className="reactPlayer"
+                        ></ReactPlayer>
+                    </div>
+                    :<Countdown date={new Date(2022,5,24,19,0,0,0)}
                     zeroPadTime={2} 
                     renderer={renderer}
-                    />
+                    />}                  
                 </div>
                 <div className="screenOverlay">
                 </div>
