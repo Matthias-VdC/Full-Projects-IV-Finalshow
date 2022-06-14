@@ -1,3 +1,4 @@
+@import './styles/main.scss';
 .App {
     text-align: center;
 }
@@ -18,7 +19,17 @@
         background-image: url("../public/assets/darkbg.png");
         background-repeat: repeat;
         width: 100vw;
-        color: white;
+        color: $background;
+        a,
+        h1,
+        h2,
+        h3,
+        p {
+            color: $background;
+        }
+        a {
+            border: 1.5px solid $background;
+        }
     }
 }
 
@@ -27,7 +38,17 @@
         background-image: url("../public/assets/lightbg.png");
         background-repeat: repeat;
         width: 100vw;
-        color: black;
+        color: $dark;
+    }
+    a,
+    h1,
+    h2,
+    h3,
+    p {
+        color: $dark;
+    }
+    a {
+        border: 1.5px solid $dark;
     }
 }
 

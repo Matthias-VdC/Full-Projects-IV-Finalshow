@@ -1,4 +1,4 @@
-import "../layouts/liveyoutubechat.scss"
+import "../styles/components/_liveyoutubechat.scss"
 
 
 function LiveYoutubeChat() {
