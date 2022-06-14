@@ -29,6 +29,22 @@ export default function Info() {
         debitis reprehenderit velit, fuga non! Ea minima blanditiis, cumque
         aliquam quod aspernatur.
       </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore impedit
+        culpa pariatur ut nulla veniam sed, unde eaque architecto tenetur
+        accusamus debitis voluptatibus atque corrupti commodi aliquid
+        reprehenderit voluptatum maiores? Lorem ipsum dolor, sit amet
+        consectetur adipisicing elit. Odit facere, at alias nihil ducimus natus
+        dolorem consequatur, deserunt esse qui eligendi earum dolore blanditiis.
+        Odit inventore facilis optio ducimus libero! Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Quod culpa, labore eos eveniet rem
+        necessitatibus. Animi velit laborum incidunt corrupti, magni at
+        architecto saepe dolorum perspiciatis quam odio ratione reprehenderit?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, unde
+        expedita sunt nihil alias facilis assumenda fuga, saepe aspernatur
+        nesciunt aut sint quaerat architecto, at necessitatibus impedit ex
+        voluptates odio.
+      </p>
       <img src={imgFrame} alt="campus" />
       <h2 className="info-subtitle">subtitle</h2>
       <p>
