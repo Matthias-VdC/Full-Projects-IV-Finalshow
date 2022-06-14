@@ -1,10 +1,12 @@
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PresentationControls } from "@react-three/drei";
 import gsap, { Power3, Power4 } from "gsap/all";
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ThreeEvent, useThree, Vector3 } from "react-three-fiber";
 import * as THREE from "three";
 import { City } from "./Models";
 import { Cinema } from "./Models/Cinema";
+import { RaceToyota } from "./Models/RaceToyota";
+import Toyota from "./Models/Toyota";
 
 const Box = () => {
     return (
@@ -15,7 +17,12 @@ const Box = () => {
     );
 };
 
-export const Scene = () => {
+type SceneProps = {
+    setPreview: Dispatch<SetStateAction<React.ReactNode>>;
+    setShowPreview: Dispatch<SetStateAction<boolean>>;
+};
+
+export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
     const { camera } = useThree();
     const [enableOrbit, setEnableOrbit] = useState(true);
     const [currentTarget, setCurrentTarget] = useState<Vector3>([0, 0, 0]);
@@ -53,6 +60,7 @@ export const Scene = () => {
                 z: 0,
                 duration: 1.5,
                 ease: Power4.easeInOut,
+                onComplete() {},
             });
         }
         setEnableOrbit(true);
@@ -105,9 +113,9 @@ export const Scene = () => {
                 },
             })
             .to(camera.position, {
-                x: 0,
+                x: 1,
                 y: 700,
-                z: -700,
+                z: 0,
                 duration: 2,
                 ease: Power3.easeOut,
                 onUpdate() {
@@ -118,31 +126,36 @@ export const Scene = () => {
     };
     return (
         <>
-            <OrbitControls
+            {/* <OrbitControls
                 minDistance={minDistance}
                 maxDistance={1000}
                 enabled={enableOrbit}
                 target={currentTarget}
+                minPolarAngle={Math.PI / 2}
                 maxPolarAngle={Math.PI / 2}
                 minAzimuthAngle={Math.PI / 4}
                 maxAzimuthAngle={-Math.PI / 4}
-            />
+            /> */}
             <directionalLight intensity={0.4} />
-            <hemisphereLight intensity={0.4} />
+            <hemisphereLight intensity={1} />
             <gridHelper
                 args={[100, 100, "blue", "blue"]}
                 onClick={(e) => console.log(e)}
             />
-            <group rotation={[0, Math.PI, 0]} onPointerMissed={animateBack}>
-                <City scale={0.4} position={[185, 0, 185]} />
-                <Cinema
-                    scale={30}
-                    position={[0, -48, -550]}
-                    onClick={animateToCinema}
-                />
-                <Box />
-            </group>
-            {/* <CityTest /> */}
+            <PresentationControls
+                global={true}
+                polar={[-Math.PI / 12, Math.PI / 12]}>
+                <group rotation={[0, Math.PI, 0]} onPointerMissed={animateBack}>
+                    {/* <City scale={0.4} position={[185, 0, 185]} /> */}
+                    <Cinema
+                        scale={30}
+                        // position={[0, -48, -550]}
+                        onClick={animateToCinema}
+                    />
+                    <RaceToyota scale={10} />
+                    <Box />
+                </group>
+            </PresentationControls>
         </>
     );
 };

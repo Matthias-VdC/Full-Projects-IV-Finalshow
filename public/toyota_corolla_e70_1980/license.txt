@@ -1,0 +1,11 @@
+Model Information:
+* title:	Toyota corolla e70 (1980)
+* source:	https://sketchfab.com/3d-models/toyota-corolla-e70-1980-c4d66d21968c41da89114e2300578bc5
+* author:	ditovirnantio (https://sketchfab.com/ditovirnantio)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Toyota corolla e70 (1980)" (https://sketchfab.com/3d-models/toyota-corolla-e70-1980-c4d66d21968c41da89114e2300578bc5) by ditovirnantio (https://sketchfab.com/ditovirnantio) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

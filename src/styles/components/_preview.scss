@@ -1,13 +1,11 @@
 .preview {
     position: absolute;
-    width: 33%;
-    height: 80%;
+    width: 20%;
+    height: 60%;
 
-    top: 0;
-    right: 0;
+    top: 10%;
+    right: 20%;
 
-    border: 1px solid blue;
-    background-color: red;
     z-index: 99;
 
     &__button {
