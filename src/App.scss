@@ -5,14 +5,14 @@
                 background-repeat: repeat;
                 width: 100vw;
                 color: $background;
-                a,
+                .sharebutton,
                 h1,
                 h2,
                 h3,
                 p {
                     color: $background;
                 }
-                a {
+                .sharebutton {
                     border: 1.5px solid $background;
                 }
             }
@@ -30,14 +30,14 @@
                 width: 100vw;
                 color: $dark;
             }
-            a,
+            .sharebutton,
             h1,
             h2,
             h3,
             p {
                 color: $dark;
             }
-            a {
+            .sharebutton {
                 border: 1.5px solid $dark;
             }
             @media screen and (min-width: 1024px) {
