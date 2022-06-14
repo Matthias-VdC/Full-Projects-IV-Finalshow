@@ -75,7 +75,7 @@ export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
         rotationMatrix.lookAt(
             camera.position,
             new THREE.Vector3(0, 0, 0),
-            new THREE.Vector3(0, 100, 0)
+            new THREE.Vector3(200, 200, 200)
         );
 
         const targetOrientation = new THREE.Quaternion().setFromRotationMatrix(
@@ -113,9 +113,9 @@ export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
                 },
             })
             .to(camera.position, {
-                x: 1,
-                y: 700,
-                z: 0,
+                x: 200,
+                y: 200,
+                z: 200,
                 duration: 2,
                 ease: Power3.easeOut,
                 onUpdate() {
@@ -126,36 +126,32 @@ export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
     };
     return (
         <>
-            {/* <OrbitControls
+            <OrbitControls
                 minDistance={minDistance}
                 maxDistance={1000}
                 enabled={enableOrbit}
                 target={currentTarget}
-                minPolarAngle={Math.PI / 2}
+                minPolarAngle={-Math.PI / 3}
                 maxPolarAngle={Math.PI / 2}
-                minAzimuthAngle={Math.PI / 4}
-                maxAzimuthAngle={-Math.PI / 4}
-            /> */}
+                minAzimuthAngle={-Math.PI / 3}
+                maxAzimuthAngle={Math.PI / 3}
+            />
             <directionalLight intensity={0.4} />
             <hemisphereLight intensity={1} />
             <gridHelper
                 args={[100, 100, "blue", "blue"]}
                 onClick={(e) => console.log(e)}
             />
-            <PresentationControls
-                global={true}
-                polar={[-Math.PI / 12, Math.PI / 12]}>
-                <group rotation={[0, Math.PI, 0]} onPointerMissed={animateBack}>
-                    {/* <City scale={0.4} position={[185, 0, 185]} /> */}
-                    <Cinema
-                        scale={30}
-                        // position={[0, -48, -550]}
-                        onClick={animateToCinema}
-                    />
-                    <RaceToyota scale={10} />
-                    <Box />
-                </group>
-            </PresentationControls>
+            <group onPointerMissed={animateBack}>
+                {/* <City scale={0.4} position={[185, 0, 185]} /> */}
+                <Cinema
+                    scale={30}
+                    // position={[0, -48, -550]}
+                    onClick={animateToCinema}
+                />
+                <RaceToyota scale={10} />
+                <Box />
+            </group>
         </>
     );
 };
