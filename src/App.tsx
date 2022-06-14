@@ -13,18 +13,20 @@ function App() {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
   return (
-    <div className="App">
+    <div className="App" id="app-container">
       <Header />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="admin">
-          <Route path="hub" element={<p>hub</p>} />
-          <Route path="info" element={<p>info</p>} />
-          <Route path="live" element={<p>live</p>} />
-          <Route path="timetable" element={<p>timetable</p>} />
-          <Route path="showroom" element={<p>showroom</p>} />
-        </Route>
-      </Routes>
+      <div id="page-container">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="admin">
+            <Route path="hub" element={<p>hub</p>} />
+            <Route path="info" element={<p>info</p>} />
+            <Route path="live" element={<p>live</p>} />
+            <Route path="timetable" element={<p>timetable</p>} />
+            <Route path="showroom" element={<p>showroom</p>} />
+          </Route>
+        </Routes>
+      </div>
     </div>
   );
 }
