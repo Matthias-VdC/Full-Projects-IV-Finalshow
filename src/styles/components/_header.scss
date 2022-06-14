@@ -1,28 +1,103 @@
 header {
-  height: 150px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0em 2em;
-  .logo-container {
-    height: 100%;
-    img {
-      height: 100%;
+  position: relative;
+  @media #{$media-tablet} {
+    height: 15%;
+    align-items: center;
+  }
+
+  div:first-child {
+    display: none;
+
+    .bm-menu {
+      background: $background;
+      padding: 2.5em 1.5em 0;
+      font-size: 1.15em;
+      height: 100vh;
+      overflow: hidden !important;
+    }
+
+    .bm-item-list {
+      padding: 0.8em;
+      display: flex;
+      flex-direction: column;
+
+      .bm-item {
+        margin-bottom: 4em;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 0.8em;
+        padding: 0.8em 1em;
+        border: 1.5px solid black;
+        transition: box-shadow 0.2s ease-in-out;
+
+        &:hover {
+          box-shadow: #ffea00 1.5px 1.5px 0px 0px, #000000 3px 3px 0px 0px,
+            #ff0000 4.5px 4.5px 0px 0px, #000000 6px 6px 0px 0px,
+            #0073ff 7.5px 7.5px 0px 0px, #000000 9px 9px 0px 0px;
+        }
+      }
+    }
+
+    .bm-overlay {
+      background: none !important;
+    }
+
+    @media #{$media-tablet} {
+      display: block;
     }
   }
 
-  nav {
+  height: 150px;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  box-sizing: border-box;
+
+  .logo-container {
+    box-sizing: border-box;
+    padding-left: 2em;
+    @media #{$media-tablet} {
+      grid-column: 2;
+      padding-left: 0;
+      justify-content: flex-end;
+      padding-right: 2em;
+    }
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+      @media #{$media-tablet} {
+        width: 40%;
+      }
+      width: 50%;
+    }
+  }
+
+  .desktop-nav {
+    @media #{$media-tablet} {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2em;
     a {
-      width: 100px;
+      margin-left: 3em;
+      width: 15%;
+      @media screen and (min-width: 1300px) {
+        width: 10%;
+        font-size: 1em;
+      }
       text-align: center;
       text-decoration: none;
       color: black;
       font-weight: 600;
-      padding: 0.5em 1em;
-      margin: 0em 3em;
+      font-size: 0.8em;
+      padding: 0.8em 1em;
       border: 1.5px solid black;
       transition: box-shadow 0.2s ease-in-out;
 
