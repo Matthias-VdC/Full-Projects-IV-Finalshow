@@ -1,5 +1,7 @@
 import BackgroundStripes from "../components/BackgroundStripes";
 import imgFrame from "../assets/tv.png";
+import nesFrame from "../assets/nes.webp";
+import campusImg from "../assets/campus.webp";
 
 export default function Info() {
   return (
@@ -7,10 +9,7 @@ export default function Info() {
       <BackgroundStripes></BackgroundStripes>
       <h1>Info</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, laborum
-        fugiat dolore dolores consequuntur accusantium sed cum ipsum ratione
-        delectus non culpa repellat odit porro natus esse voluptatem illum
-        assumenda!
+        
       </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam dolore
@@ -21,7 +20,7 @@ export default function Info() {
         corporis perferendis placeat quaerat? Fugit incidunt perferendis
         assumenda earum praesentium consequuntur iusto magnam iste tempora.
       </p>
-      <img src={imgFrame} alt="campus" />
+      <img id="info-img1" src={imgFrame} alt="campus" />
       <h2>subtitle</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
@@ -45,7 +44,10 @@ export default function Info() {
         nesciunt aut sint quaerat architecto, at necessitatibus impedit ex
         voluptates odio.
       </p>
-      <img src={imgFrame} alt="campus" />
+      <div id="info-img2-container">
+        <img id="nes-img" src={nesFrame} alt="" />
+        <img id="campus-img" src={campusImg} alt="campus" />
+      </div>
       <h2 className="info-subtitle">subtitle</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem odio

@@ -29,10 +29,13 @@
     }
     img {
         width: 80%;
-        height: auto;
         max-width: 800px;
         margin-top: 2em;
-        filter: sepia(100%) contrast(100%) saturate(200%) brightness(90%) opacity(80%) hue-rotate(-15deg);
+        height: auto;
+        filter: sepia(100%) contrast(100%) saturate(200%) brightness(90%) opacity(100%) hue-rotate(-15deg);
+        pointer-events: none;
+    }
+    #info-img1 {
         background-image: url("../../assets/campus.webp");
         background-size: 75%;
         background-repeat: no-repeat;
@@ -41,6 +44,28 @@
     }
     h2 + p {
         margin-top: 1em;
+    }
+    #info-img2-container {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+    #nes-img {
+        margin: 0;
+        z-index: 2;
+        width: 100%;
+        height: auto;
+    }
+    #campus-img {
+        margin: 0;
+        z-index: 3;
+        right: 30%;
+        top: 10%;
+        width: 26%;
+        height: 330px;
+        position: absolute;
+        object-fit: cover;
     }
 }
 @media (prefers-color-scheme: dark) {
