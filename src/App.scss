@@ -12,6 +12,15 @@
                 p {
                     color: $background;
                 }
+                .web-share-fade-in-up,
+                .web-share-fade-in-up>button {
+                    background-color: $dark !important;
+                    color: $background;
+                    font-weight: 700;
+                }
+                .web-share-fade-in-up header {
+                    color: $background;
+                }
                 .sharebutton {
                     border: 1.5px solid $background;
                 }
@@ -28,6 +37,13 @@
                 background-image: url("./assets/lightbg.png");
                 background-repeat: repeat;
                 width: 100vw;
+                color: $dark;
+            }
+            .web-share-fade-in-up,
+            .web-share-fade-in-up>button {
+                background-color: $background !important;
+            }
+            .web-share-fade-in-up header {
                 color: $dark;
             }
             .sharebutton,
