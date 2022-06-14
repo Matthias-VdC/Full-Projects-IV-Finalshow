@@ -1,7 +1,7 @@
         @import './styles/main.scss';
         @media (prefers-color-scheme: dark) {
             body {
-                background-image: url("/src/assets/darkbg.png");
+                background-image: url("./assets/darkbg.png");
                 background-repeat: repeat;
                 width: 100vw;
                 color: $background;
@@ -16,11 +16,16 @@
                     border: 1.5px solid $background;
                 }
             }
+            @media screen and (min-width: 1024px) {
+                .backarrow {
+                    background-image: url(./assets/back-arrow-light.svg);
+                }
+            }
         }
         
         @media (prefers-color-scheme:light) {
             body {
-                background-image: url("/src/assets/lightbg.png");
+                background-image: url("./assets/lightbg.png");
                 background-repeat: repeat;
                 width: 100vw;
                 color: $dark;
@@ -34,5 +39,10 @@
             }
             a {
                 border: 1.5px solid $dark;
+            }
+            @media screen and (min-width: 1024px) {
+                .backarrow {
+                    background-image: url(./assets/back-arrow-dark.svg);
+                }
             }
         }
