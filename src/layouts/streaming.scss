@@ -1,4 +1,4 @@
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1023px) {
     .streaming {
         display: flex;
         flex-direction: column;
@@ -7,7 +7,7 @@
     }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1024px) {
     .streaming {
         display: flex;
         flex-direction: row;
