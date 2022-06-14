@@ -23,6 +23,13 @@ function Television(){
 
     const handleVideoEnd = ()=>{
         setShowVideo(false);
+        queueNextVideo();
+    }
+
+    const queueNextVideo = () => {
+        setTimeout(()=>{
+            setShowVideo(true);
+        },5000)
     }
 
           
