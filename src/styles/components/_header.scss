@@ -1,6 +1,52 @@
 header {
+  position: relative;
   @media #{$media-tablet} {
     height: 15%;
+    align-items: center;
+  }
+
+  div:first-child {
+    display: none;
+
+    .bm-menu {
+      background: $background;
+      padding: 2.5em 1.5em 0;
+      font-size: 1.15em;
+      height: 100vh;
+      overflow: hidden !important;
+    }
+
+    .bm-item-list {
+      padding: 0.8em;
+      display: flex;
+      flex-direction: column;
+
+      .bm-item {
+        margin-bottom: 4em;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 0.8em;
+        padding: 0.8em 1em;
+        border: 1.5px solid black;
+        transition: box-shadow 0.2s ease-in-out;
+
+        &:hover {
+          box-shadow: #ffea00 1.5px 1.5px 0px 0px, #000000 3px 3px 0px 0px,
+            #ff0000 4.5px 4.5px 0px 0px, #000000 6px 6px 0px 0px,
+            #0073ff 7.5px 7.5px 0px 0px, #000000 9px 9px 0px 0px;
+        }
+      }
+    }
+
+    .bm-overlay {
+      background: none !important;
+    }
+
+    @media #{$media-tablet} {
+      display: block;
+    }
   }
 
   height: 150px;
