@@ -17,7 +17,19 @@ export default function VHS(props: IProps) {
   let bgImg: string = vhsYellow;
   let css: string = `
   .vhs-container {
-    transform: rotate(${Math.floor(Math.random() * (2 - -2) + -2)}deg)
+    transform: rotate(${Math.floor(Math.random() * (2 - -2) + -2)}deg);
+  }
+  .title-container h1 {
+    transform: rotate(${Math.floor(Math.random() * (2 - -2) + -2)}deg);
+    transform: translate(${Math.floor(
+      Math.random() * (10 - -10) + -10
+    )}px, ${Math.floor(Math.random() * (10 - -10) + -10)}px);
+  }
+  .title-container h2 {
+    transform: rotate(${Math.floor(Math.random() * (2 - -2) + -2)}deg);
+    transform: translate(${Math.floor(
+      Math.random() * (10 - -10) + -10
+    )}px, ${Math.floor(Math.random() * (10 - -10) + -10)}px);
   }
   `;
 
