@@ -53,13 +53,27 @@ export default function Header() {
             <Link onClick={closeSideBar} to="admin/info">
               INFO
             </Link>
-            <Link onClick={closeSideBar} to="admin/live">
-              LIVE SHOW
-            </Link>
             <Link onClick={closeSideBar} to="admin/timetable">
               TIMETABLE
             </Link>
-            <Link onClick={closeSideBar} to="admin/showroom">
+            <Link
+              onClick={closeSideBar}
+              to="admin/live"
+              style={{
+                pointerEvents: "none",
+                backgroundColor: "rgba(12, 12, 12, 0.5)",
+              }}
+            >
+              LIVE SHOW
+            </Link>
+            <Link
+              onClick={closeSideBar}
+              to="admin/showroom"
+              style={{
+                pointerEvents: "none",
+                backgroundColor: "rgba(12, 12, 12, 0.5)",
+              }}
+            >
               SHOWROOM{" "}
             </Link>
           </Menu>
