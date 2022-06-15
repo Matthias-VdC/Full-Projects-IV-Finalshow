@@ -1,15 +1,96 @@
 #stripes-container {
     position: fixed;
     z-index: 1;
-    left: -50px;
+    left: 0;
     top: 50%;
-    transform: translateY(-50%) skew(-11deg);
+    transform: translateY(-50%);
     overflow: hidden;
-    width: 100px;
-    div {
+    
+    .stripe {
+        border: 2px solid black;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        color: black;
+
         width: 100%;
         height: 100px;
-        opacity: 60%;
+        opacity: 90%;
+
+        &:nth-child(1){
+            border-top: 2px solid black;
+            width: 450px;
+            @media only screen and (max-width: 1100px) {
+                width: 80vw;
+            }
+            
+        }
+
+        &:nth-child(2){
+            height: 20px;
+            width: 250px;
+            @media only screen and (max-width: 1100px) {
+                width: 10vw;
+            }
+            @media only screen and (max-width: 600px) {
+                width: 20vw;
+             }
+        }
+
+        &:nth-child(3){
+            height: 80px;
+            width: 400px;
+            @media only screen and (max-width: 1100px) {
+                width: 30vw;
+            }
+            @media only screen and (max-width: 600px) {
+                width: 45vw;
+             }
+        }
+        &:nth-child(4){
+            width: 500px;
+            @media only screen and (max-width: 1100px) {
+                width: 40vw;
+            }
+            @media only screen and (max-width: 600px) {
+                width: 55vw;
+             }
+        }
+        &:nth-child(5){
+            border-bottom: 2px solid black;
+            width: 300px;
+            height: 50px;
+            @media only screen and (max-width:1100px){
+                width: 30vw;
+            }
+        }
+        p{
+            margin: 0 0 0 20px;
+            font-size: 1.8em;
+            font-weight: 500;
+
+            &:nth-child(2){
+                font-size: 1.4em;
+                font-weight: 400;
+            }
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1.2em !important;
+            }
+        }
+
+        &:first-child{
+            // width: 200px;
+            p:nth-child(1){
+                font-size: 1.8em;
+            }
+            p:nth-child(2){
+                font-size: 1.5em;
+            }
+        }
     }
     #pink {
         background-color: $pink;
@@ -28,14 +109,27 @@
     }
 }
 
-@media only screen and (min-width: 1100px) {
-    #stripes-container {
-        width: 200px;
-    }
-}
-
 @media only screen and (max-width: 1100px) {
+    #info-container{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100vw !important;
+        justify-content: center;
+
+        max-width: unset !important;
+
+        h1,p{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
     #stripes-container {
-        width: 100px;
+        position: relative;
+        transform: none;
+        margin-top: 30px;
+        align-self: start;
     }
 }
