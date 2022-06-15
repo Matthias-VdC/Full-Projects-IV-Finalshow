@@ -1,11 +1,17 @@
-@import './abstract/_variables.scss';
-@import './abstract/_reset.scss';
-@import './abstract/_global.scss';
+@import "./abstract/_variables.scss";
+@import "./abstract/_reset.scss";
+@import "./abstract/_global.scss";
 
 @import './components/_intro.scss';
 @import './components/_logo.scss';
 @import './components/_television.scss';
 @import './components/_backgroundstripes.scss';
+@import "./components/_header.scss";
 
 @import './pages/_index.scss';
 @import './pages/_info.scss';
+
+.App {
+  background-color: $background;
+  height: 100vh;
+}

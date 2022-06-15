@@ -1,0 +1,39 @@
+.vhs-container {
+  position: relative;
+  height: 20%;
+
+  .timing-container {
+    position: absolute;
+    top: 42%;
+    left: 20%;
+    z-index: 2;
+    p {
+      font-family: "Permanent Marker", cursive !important;
+    }
+  }
+
+  .title-container {
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    z-index: 2;
+    font-family: "Permanent Marker", cursive;
+
+    h1 {
+      font-size: 4vw;
+    }
+
+    h2 {
+      font-size: 1.5vw;
+    }
+  }
+
+  .vhs-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+  }
+}

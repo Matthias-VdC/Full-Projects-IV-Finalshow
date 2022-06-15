@@ -1,23 +1,35 @@
-import React from "react";
-import "./App.scss";
 import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
 import Info from "./pages/Info.page";
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.scss";
+import { Index } from "./pages/Index.page";
+import Header from "./components/static/Header";
+import Timetable from "./pages/Timetable.page";
+import ReactGA from "react-ga";
+const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 
 function App() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
-    <div className="App">
-      <BrowserRouter>
+    <div className="App" id="app-container">
+      <Header />
+      <div id="page-container">
         <Routes>
-          <Route path="/" />
+          <Route path="/" element={<Index />} />
           <Route path="admin">
             <Route path="hub" element={<p>hub</p>} />
-            <Route path="info" element={<Info />} />
+            <Route path="info" element={<p>info</p>} />
             <Route path="live" element={<p>live</p>} />
             <Route path="timetable" element={<p>timetable</p>} />
             <Route path="showroom" element={<p>showroom</p>} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </div>
     </div>
   );
 }
