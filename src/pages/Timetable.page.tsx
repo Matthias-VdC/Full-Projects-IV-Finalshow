@@ -1,7 +1,7 @@
 import React from "react";
 import VHS from "../components/VHS";
 
-export default function Timetable() {
+function Timetable() {
   return (
     <VHS
       color="orange"
@@ -12,3 +12,5 @@ export default function Timetable() {
     />
   );
 }
+
+export default {Timetable}
