@@ -1,7 +1,12 @@
 .timetable-container {
-  margin: 5em 20%;
+  margin: 3em 20%;
 
   @media #{$media-tablet} {
     margin: 1em 10%;
+  }
+
+  h1:first-child {
+    display: inline-block;
+    margin-bottom: 1.5em;
   }
 }

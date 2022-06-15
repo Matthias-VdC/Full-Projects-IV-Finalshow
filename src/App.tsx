@@ -4,12 +4,11 @@ import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
 import { Index } from "./pages/Index.page";
-import Header from "./components/static/Header";
 import Timetable from "./pages/Timetable.page";
+import Header from "./components/static/Header";
 import ReactGA from "react-ga";
 const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
-
 
 function App() {
   useEffect(() => {
@@ -23,7 +22,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="admin">
             <Route path="hub" element={<p>hub</p>} />
-            <Route path="info" element={<Info/>} />
+            <Route path="info" element={<Info />} />
             <Route path="live" element={<p>live</p>} />
             <Route path="timetable" element={<Timetable />} />
             <Route path="showroom" element={<p>showroom</p>} />

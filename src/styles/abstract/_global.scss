@@ -2,11 +2,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
-
-h1,h2,p,a {
+h1,
+h2,
+p,
+a {
   font-family: "Raleway", sans-serif;
 }
 
 body {
   max-width: 100vw;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bolder;
+
+  box-shadow: #ffea00 1.5px 1.5px 0px 0px, #000000 3px 3px 0px 0px,
+    #ff0000 4.5px 4.5px 0px 0px, #000000 6px 6px 0px 0px,
+    #0073ff 7.5px 7.5px 0px 0px, #000000 9px 9px 0px 0px;
+
+  padding: 0.5em 1em;
+  border: 1.5px solid rgb(255, 255, 255);
 }
