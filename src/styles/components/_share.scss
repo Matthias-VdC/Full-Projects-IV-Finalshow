@@ -1,9 +1,15 @@
 .web-share-fade-in-up {
-    position: absolute;
-    top: 35vh;
+    margin: 0 auto;
+    border-radius: 0 !important;
 }
 
 .web-share-fade-in-up header {
-    color: red;
     text-align: center;
+}
+
+@media screen and (min-width:1024px) {
+    .web-share-fade-in-up {
+        position: absolute;
+        top: 35vh;
+    }
 }

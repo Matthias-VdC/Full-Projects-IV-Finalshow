@@ -15,10 +15,13 @@
     height: 70%;
 }
 
-@media only screen and(orientation:landscape) {
-    .video-container {
-        overflow: hidden;
-        width: 60%;
+@media only screen and (max-width: 1023px) {
+    @media only screen and(orientation: landscape) {
+        .video-container iframe {
+            margin: 22.5vh 0 0 5vw;
+            width: 55%;
+            height: 60%;
+        }
     }
 }
 
