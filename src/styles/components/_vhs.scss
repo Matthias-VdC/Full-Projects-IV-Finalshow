@@ -20,7 +20,10 @@
     p {
       color: #6a0f17;
       font-family: "topsecretstamp", serif !important;
-      font-size: 3vw;
+      font-size: 1.5vw;
+      @media #{$media-tablet} {
+        font-size: 3vw;
+      }
     }
   }
 
@@ -34,7 +37,10 @@
     color: rgb(3, 0, 46);
     mix-blend-mode: hard-light;
     h1 {
-      font-size: 4vw;
+      font-size: 2.5vw;
+      @media #{$media-tablet} {
+        font-size: 4vw;
+      }
     }
   }
 
