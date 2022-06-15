@@ -6,61 +6,52 @@ import campusImg from "../assets/campus.webp";
 export default function Info() {
   return (
     <div id="info-container">
+      <h1>Multimedia & Creatieve Technologie</h1>
       <BackgroundStripes></BackgroundStripes>
-      <h1>Info</h1>
       <p>
-        
+        Gepassioneerd door die steeds veranderende geconnecteerde wereld?
+        Ben jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar
+        wat onze laatstejaars verwezenlijkt hebben dit jaar? Dan ben je hier op het juiste adres!
       </p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam dolore
-        asperiores, perspiciatis velit maiores excepturi voluptatem officia
-        ipsum quis rem? Totam ullam commodi dolore repellendus quod nam tempore
-        possimus temporibus. Lorem ipsum dolor sit, amet consectetur adipisicing
-        elit. Est fuga sapiente exercitationem doloremque debitis obcaecati
-        corporis perferendis placeat quaerat? Fugit incidunt perferendis
-        assumenda earum praesentium consequuntur iusto magnam iste tempora.
+        Een live show, een tentoonstelling, en zelfs een infodag: dit staat er jou te wachten op vrijdag 24
+        en zaterdag 25 juni!
       </p>
       <img id="info-img1" src={imgFrame} alt="campus" />
-      <h2>subtitle</h2>
+      <h2>LIVESTREAM</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-        doloremque repellendus inventore, alias quas nisi nemo veniam quo
-        debitis reprehenderit velit, fuga non! Ea minima blanditiis, cumque
-        aliquam quod aspernatur.
+        Op vrijdag 24 juni worden de beste werken van onze laatstejaars studenten gepresenteerd
+        tijdens onze jaarlijkse Final Show: een show boordevol talent, interviews, en nog veel meer!
+        Tijdens deze livestream worden ook de winnaars aangekondigd voor elke categorie, dit wil je dus zeker niet missen!
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore impedit
-        culpa pariatur ut nulla veniam sed, unde eaque architecto tenetur
-        accusamus debitis voluptatibus atque corrupti commodi aliquid
-        reprehenderit voluptatum maiores? Lorem ipsum dolor, sit amet
-        consectetur adipisicing elit. Odit facere, at alias nihil ducimus natus
-        dolorem consequatur, deserunt esse qui eligendi earum dolore blanditiis.
-        Odit inventore facilis optio ducimus libero! Lorem, ipsum dolor sit amet
-        consectetur adipisicing elit. Quod culpa, labore eos eveniet rem
-        necessitatibus. Animi velit laborum incidunt corrupti, magni at
-        architecto saepe dolorum perspiciatis quam odio ratione reprehenderit?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, unde
-        expedita sunt nihil alias facilis assumenda fuga, saepe aspernatur
-        nesciunt aut sint quaerat architecto, at necessitatibus impedit ex
-        voluptates odio.
-      </p>
+      <div className="practicalInfo">
+        <p>
+          WANNEER?
+        </p>
+        <p> 24 juni om 19u.</p>
+      </div>
       <div id="info-img2-container">
         <img id="nes-img" src={nesFrame} alt="" />
         <img id="campus-img" src={campusImg} alt="campus" />
       </div>
-      <h2 className="info-subtitle">subtitle</h2>
+      <h2 className="info-subtitle">Infodag</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem odio
-        reprehenderit delectus? Assumenda incidunt aspernatur laboriosam,
-        asperiores, iure, nihil eos voluptate ullam qui corporis repellendus
-        ipsam! Inventore nisi ullam autem!
+        Zin om langs te komen op onze campus? Het kan! Op zaterdag 25 juni gooien wij onze deuren
+        open vanaf 10u, en jij bent uitgenodigd! Kom eens proeven van het leven als een student Multimedia &
+        Creatieve Technologie... en wie weet begin jij in september aan onze opleiding!
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        praesentium qui veritatis, incidunt eaque perspiciatis, dolorem sit aut
-        quasi vel voluptates consectetur officia similique nobis voluptas natus
-        ut laborum eius?
-      </p>
+      <div className="practicalInfo">
+        <p>WANNEER?</p> 
+        <p>
+          Zaterdag 25 juni van 10u tot 15u.
+        </p>
+      </div>
+      <div className="practicalInfo">
+        <p>WAAR?</p>
+        <p>
+            Campus Kaai, Nijverheidskaai 170, 1070 Anderlecht.
+        </p>
+      </div>
     </div>
   );
 }
