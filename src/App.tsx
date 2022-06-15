@@ -23,7 +23,7 @@ function App() {
             <Route path="hub" element={<p>hub</p>} />
             <Route path="info" element={<p>info</p>} />
             <Route path="live" element={<p>live</p>} />
-            <Route path="timetable" element={<p>timetable</p>} />
+            <Route path="timetable" element={<Timetable />} />
             <Route path="showroom" element={<p>showroom</p>} />
           </Route>
         </Routes>
