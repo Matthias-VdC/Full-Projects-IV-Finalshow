@@ -49,6 +49,14 @@ export default function Timetable() {
         startTime="19:28"
         rotate
       />
+      <VHS
+        color="pink"
+        variation={1}
+        title="YOUNG POTENTIAL"
+        startTime="19:34"
+      />
+      <VHS color="white" variation={1} rotate />
+      <VHS color="pink" variation={1} title="outro" startTime="19:37" rotate />
     </div>
   );
 }
