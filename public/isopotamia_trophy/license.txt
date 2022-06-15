@@ -1,0 +1,11 @@
+Model Information:
+* title:	Isopotamia Trophy
+* source:	https://sketchfab.com/3d-models/isopotamia-trophy-1d1d5712061e46caabca96b149ce9637
+* author:	BrendanDouglas (https://sketchfab.com/BrendanDouglas)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Isopotamia Trophy" (https://sketchfab.com/3d-models/isopotamia-trophy-1d1d5712061e46caabca96b149ce9637) by BrendanDouglas (https://sketchfab.com/BrendanDouglas) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

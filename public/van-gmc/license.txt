@@ -1,0 +1,11 @@
+Model Information:
+* title:	Van-GMC
+* source:	https://sketchfab.com/3d-models/van-gmc-864802cab7b64df5b1f2d16cc0413c8e
+* author:	eman8el.3di (https://sketchfab.com/eman8el.3di)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Van-GMC" (https://sketchfab.com/3d-models/van-gmc-864802cab7b64df5b1f2d16cc0413c8e) by eman8el.3di (https://sketchfab.com/eman8el.3di) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	City at night
+* source:	https://sketchfab.com/3d-models/city-at-night-f6e7496179eb41df9145cddde026c53b
+* author:	dom_aqui (https://sketchfab.com/LordDom)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "City at night" (https://sketchfab.com/3d-models/city-at-night-f6e7496179eb41df9145cddde026c53b) by dom_aqui (https://sketchfab.com/LordDom) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
