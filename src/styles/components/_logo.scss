@@ -1,0 +1,17 @@
+#logo{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 6vw;
+
+
+    text-align: center;
+
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-shadow: 4px 4px #ECD114, 8px 8px #D45F24, 12px 12px #DC1E36,16px 16px #127193;
+    z-index: 2;
+}
