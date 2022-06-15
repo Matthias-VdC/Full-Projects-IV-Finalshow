@@ -3,10 +3,10 @@ import { RWebShare } from "react-web-share";
 function Share() {
 
     return(
-        <div>
+        <div className="shareDiv">
         <RWebShare
           data={{
-            text: "Deel nu de Final Show!",
+            text: "Kijk mee naar de Final Show van de Erasmus hogeschool Brussel!",
             url: "https://finalshow.be/live",
             title: "Deel nu de Final Show!"
           }}

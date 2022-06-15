@@ -15,6 +15,13 @@
     height: 70%;
 }
 
+@media only screen and(orientation:landscape) {
+    .video-container {
+        overflow: hidden;
+        width: 60%;
+    }
+}
+
 @media only screen and (min-width: 1024px) {
     .video-container iframe {
         position: absolute;

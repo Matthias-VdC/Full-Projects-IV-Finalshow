@@ -11,16 +11,19 @@ function Livestream() {
 
 
     return (<>
+    <div className="livebody">
     <BackArrow></BackArrow>
     <div className="streaming">
     <VideoPlayer></VideoPlayer>
-    <LiveYoutubeChat></LiveYoutubeChat>
-    </div>
     <div className="streamingBottom">
         <h1>EhB Final show 2022</h1>
         <div className="actionsYoutube">
             <Share></Share>
         </div>
+    </div>
+    <LiveYoutubeChat></LiveYoutubeChat>
+    
+    </div>
     </div>
 
     </>);

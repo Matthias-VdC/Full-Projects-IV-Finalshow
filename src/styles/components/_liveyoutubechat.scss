@@ -1,7 +1,7 @@
 .chat-container {
     overflow: hidden;
     position: relative;
-    padding-bottom: 10VH;
+    padding-bottom: 10vh;
     width: 100%;
     height: 70%;
 }
@@ -15,10 +15,16 @@
 .chat-container iframe {
     border: none;
     position: absolute;
-    top: 0vh;
-    left: 0;
     width: 100%;
     height: 100%;
+}
+
+@media screen and (orientation:landscape) {
+    .chat-container {
+        border: none;
+        width: 35%;
+        height: 100%;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
