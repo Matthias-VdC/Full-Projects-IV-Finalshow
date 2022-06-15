@@ -1,13 +1,15 @@
+import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
+import Info from "./pages/Info.page";
 import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
-import { Route, Routes } from "react-router-dom";
 import { Index } from "./pages/Index.page";
 import Header from "./components/static/Header";
 import Timetable from "./pages/Timetable.page";
 import ReactGA from "react-ga";
 const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
+
 
 function App() {
   useEffect(() => {
