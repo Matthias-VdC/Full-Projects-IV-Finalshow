@@ -31,7 +31,7 @@ export default function Info() {
           dit wil je dus zeker niet missen!
         </p>
         <div className="practicalInfo">
-          <p>WANNEER?</p>
+          <p className="bold">WANNEER?</p>
           <p> 24 juni om 19u.</p>
         </div>
 
@@ -43,11 +43,11 @@ export default function Info() {
           Technologie... en wie weet begin jij in september aan onze opleiding!
         </p>
         <div className="practicalInfo">
-          <p>WANNEER?</p>
+          <p className="bold">WANNEER?</p>
           <p>Zaterdag 25 juni van 10u tot 15u.</p>
         </div>
         <div className="practicalInfo">
-          <p>WAAR?</p>
+          <p className="bold">WAAR?</p>
           <p>Campus Kaai, Nijverheidskaai 170, 1070 Anderlecht.</p>
         </div>
       </div>

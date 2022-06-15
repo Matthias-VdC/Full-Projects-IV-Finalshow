@@ -50,10 +50,10 @@ export default function Header() {
             onOpen={handleIsOpen}
             onClose={handleIsOpen}
           >
-            <Link onClick={closeSideBar} to="admin/info">
+            <Link onClick={closeSideBar} to="info">
               INFO
             </Link>
-            <Link onClick={closeSideBar} to="admin/timetable">
+            <Link onClick={closeSideBar} to="timetable">
               TIMETABLE
             </Link>
             <Link
@@ -81,9 +81,9 @@ export default function Header() {
             <img src={logo} alt="logo" />
           </div>
           <nav className="desktop-nav">
-            <Link to="admin/info">INFO</Link>
+            <Link to="info">INFO</Link>
+            <Link to="timetable">TIMETABLE</Link>
             <Link to="admin/live">LIVE SHOW</Link>
-            <Link to="admin/timetable">TIMETABLE</Link>
             <Link to="admin/showroom">SHOWROOM </Link>
           </nav>
         </header>
