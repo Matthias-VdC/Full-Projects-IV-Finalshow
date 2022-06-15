@@ -1,30 +1,47 @@
+@font-face {
+  font-family: "topsecretstamp";
+  src: url("../../assets/fonts/Top Secret Stamp.ttf");
+}
+
 .vhs-container {
   position: relative;
-  height: 20%;
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.3);
 
   .timing-container {
+    transform: translate(-50%, 0);
     position: absolute;
-    top: 42%;
-    left: 20%;
+    top: 41%;
+    left: 22%;
     z-index: 2;
+    mix-blend-mode: hard-light;
     p {
-      font-family: "Permanent Marker", cursive !important;
+      color: #6a0f17;
+      font-family: "topsecretstamp", serif !important;
+      font-size: 1.5vw;
+      @media #{$media-tablet} {
+        font-size: 3vw;
+      }
     }
   }
 
   .title-container {
+    transform: translate(-50%, 0);
     position: absolute;
     top: 25%;
-    left: 35%;
+    left: 50%;
     z-index: 2;
     font-family: "Permanent Marker", cursive;
-
+    color: rgb(3, 0, 46);
+    mix-blend-mode: hard-light;
     h1 {
-      font-size: 4vw;
-    }
-
-    h2 {
-      font-size: 1.5vw;
+      font-size: 2.5vw;
+      @media #{$media-tablet} {
+        font-size: 3vw;
+      }
     }
   }
 
@@ -35,5 +52,6 @@
     z-index: 1;
     width: 100%;
     height: auto;
+    border-radius: 5px;
   }
 }

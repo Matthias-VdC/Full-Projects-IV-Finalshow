@@ -1,0 +1,7 @@
+.timetable-container {
+  margin: 5em 20%;
+
+  @media #{$media-tablet} {
+    margin: 1em 10%;
+  }
+}

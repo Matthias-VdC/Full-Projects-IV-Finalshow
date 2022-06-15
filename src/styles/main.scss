@@ -2,7 +2,8 @@
 @import "./abstract/_reset.scss";
 @import "./abstract/_global.scss";
 
-@import './pages/_index.scss';
+@import "./pages/_index.scss";
+@import "./pages/_timetable.scss";
 @import './pages/_info.scss';
 
 @import './components/_intro.scss';
@@ -10,3 +11,6 @@
 @import './components/_television.scss';
 @import './components/_backgroundstripes.scss';
 @import "./components/_header.scss";
+@import "./components/_header.scss";
+@import "./components/_vhs.scss";
+
