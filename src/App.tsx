@@ -1,8 +1,8 @@
-import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
-import Info from "./pages/Info.page";
 import React, { useEffect } from "react";
-import logo from "./logo.svg";
+import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
 import "./App.scss";
+import Livestream from "./pages/Livestream";
+import Info from "./pages/Info.page";
 import { Index } from "./pages/Index.page";
 import Timetable from "./pages/Timetable.page";
 import Header from "./components/static/Header";
@@ -23,7 +23,7 @@ function App() {
           <Route path="admin">
             <Route path="hub" element={<p>hub</p>} />
             <Route path="info" element={<Info />} />
-            <Route path="live" element={<p>live</p>} />
+            <Route path="live" element={<Livestream />} />
             <Route path="timetable" element={<Timetable />} />
             <Route path="showroom" element={<p>showroom</p>} />
           </Route>
