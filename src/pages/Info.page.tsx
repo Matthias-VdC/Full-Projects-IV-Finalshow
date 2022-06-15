@@ -17,8 +17,10 @@ export default function Info() {
         Een live show, een tentoonstelling, en zelfs een infodag: dit staat er jou te wachten op vrijdag 24
         en zaterdag 25 juni!
       </p>
-      <img id="info-img1" src={imgFrame} alt="campus" />
-      <h2>LIVESTREAM</h2>
+      <div id="info-img1-container">
+        <img id="info-img1" src={imgFrame} alt="campus" />
+      </div>
+      <h2 id="livestreamTitle">Livestream</h2>
       <p>
         Op vrijdag 24 juni worden de beste werken van onze laatstejaars studenten gepresenteerd
         tijdens onze jaarlijkse Final Show: een show boordevol talent, interviews, en nog veel meer!
@@ -30,10 +32,7 @@ export default function Info() {
         </p>
         <p> 24 juni om 19u.</p>
       </div>
-      <div id="info-img2-container">
-        <img id="nes-img" src={nesFrame} alt="" />
-        <img id="campus-img" src={campusImg} alt="campus" />
-      </div>
+      
       <h2 className="info-subtitle">Infodag</h2>
       <p>
         Zin om langs te komen op onze campus? Het kan! Op zaterdag 25 juni gooien wij onze deuren

@@ -32,6 +32,10 @@
             @media only screen and (max-width: 1100px) {
                 width: 80vw;
             }
+
+            p:nth-child(2){
+                font-weight: 700;
+            }
             
         }
 
@@ -77,11 +81,11 @@
             opacity: 0;
             margin: 0 0 0 20px;
             font-size: 1.8em;
-            font-weight: 500;
+            font-weight: 700;
 
             &:nth-child(2){
                 font-size: 1.4em;
-                font-weight: 400;
+                font-weight: 500;
             }
 
             @media only screen and (max-width: 600px) {

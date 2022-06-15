@@ -6,6 +6,7 @@
     align-items: center;
     box-sizing: border-box;
     padding-top: 1em;
+    padding-bottom: 2em;
     width: 100vw;
     max-width: 100vw;
     max-width: 800px;
@@ -13,6 +14,7 @@
         z-index: 2;
     }
     h1 {
+        align-self: flex-start;
         font-size: 2em;
         font-weight: bolder;
         
@@ -22,9 +24,17 @@
     }
     h2 {
         text-align: left;
-        font-size: 1.7em;
+        font-size: 1.6em;
         margin-top: 1.2em;
         font-weight: bolder;
+        align-self: flex-start;
+        box-shadow: #ffea00 1.5px 1.5px 0px 0px, #000000 3px 3px 0px 0px,
+          #ff0000 4.5px 4.5px 0px 0px, #000000 6px 6px 0px 0px,
+          #0073ff 7.5px 7.5px 0px 0px, #000000 9px 9px 0px 0px;
+
+        padding: 0.2em 0.3em 0;
+        &#livestreamTitle{
+        }
     }
     p {
         font-size: 1.4em;
@@ -39,24 +49,32 @@
         width: 80%;
         margin-top: 2em;
         height: auto;
-        filter: sepia(100%) contrast(100%) saturate(200%) brightness(90%) opacity(100%) hue-rotate(-15deg);
+        // filter: sepia(100%) contrast(100%) saturate(200%) brightness(90%) opacity(100%) hue-rotate(-15deg);
         pointer-events: none;
     }
     #info-img1 {
-        background-image: url("../../assets/campus.webp");
+        background-image: 
+        radial-gradient(ellipse, #0000, #0007),
+        linear-gradient(0deg, #9725, #9725),
+        url(https://i.ibb.co/vJt5HSh/noisy-texture-300x300-o10-d10-c-a82851-t1.png),
+        url("../../assets/campus.webp");
         background-size: 75%;
         background-repeat: no-repeat;
         background-position-x: 30%;
         background-position-y: 30%;
+        overflow: hidden;
     }
     h2 + p {
         margin-top: 1em;
     }
-    #info-img2-container {
+    
+    #info-img1-container,#info-img2-container {
         display: flex;
         position: relative;
         justify-content: center;
         align-items: center;
+
+        position: relative;
     }
     #nes-img {
         margin: 0;
@@ -85,7 +103,7 @@
     .practicalInfo{
         width: 50%;
         text-align: center;
-
+        margin-bottom: 2em;
         &>p{
             margin: 0.5em 0;
             width: 100%;
@@ -105,7 +123,7 @@
         color: white;
     }
     #info-container {
-        h1 {
+        h1,h2 {
             padding: 0.5em 1em;
             border: 1.5px solid rgb(255, 255, 255);
         }
@@ -121,7 +139,7 @@
         color: black;
     }
     #info-container {
-        h1 {
+        h1,h2 {
             padding: 0.5em 1em;
             border: 1.5px solid rgb(0, 0, 0);
         }
@@ -132,7 +150,8 @@
 @media only screen and (max-width: 600px) {
     #info-container {
         h1 {
-            font-size: 1.7em;
+            font-size: 1.4em;
+            margin: 0 1em;
         }
         h2 {
             font-size: 1.4em;
