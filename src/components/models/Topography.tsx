@@ -31,7 +31,7 @@ export const Topography = ({ ...props }: JSX.IntrinsicElements["group"]) => {
         position={[300, 0, 355]}
         scale={0.003}
       />
-      <Roads></Roads>
+      <Roads />
       <group scale={[1, 0.5, 1]} position={[200, 0.25, 50]}>
         <mesh position={[0, -0.5, 0]}>
           <boxBufferGeometry attach={"geometry"} args={[100, 1, 100]} />
@@ -39,7 +39,6 @@ export const Topography = ({ ...props }: JSX.IntrinsicElements["group"]) => {
         </mesh>
       </group>
       <BuildingDiner scale={3000} position={[203.5, 0, 85]} />
-      {/* <Parcel position={[350, -50, 50]} /> * 3 */}
       <group scale={[1, 0.5, 1]} position={[350, 0, 50]}>
         <mesh position={[0, -0.5, 0]}>
           <boxBufferGeometry attach={"geometry"} args={[100, 1, 100]} />

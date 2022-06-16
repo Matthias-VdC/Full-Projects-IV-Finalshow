@@ -10,6 +10,7 @@ import {
   Ground,
   InfoBlock,
   LiveStreamBlock,
+  Parcel,
   RaceToyota,
   ShowRoomBlock,
   TimeTableBlock,
@@ -24,25 +25,25 @@ import Commodore from "./models/Commodore";
 import { StreetLight } from "./models/Objects";
 
 const Box = () => {
-    return (
-        <mesh position={[0, 0, 0]}>
-            <boxBufferGeometry attach={"geometry"} args={[5, 5, 5]} />
-            <meshLambertMaterial attach={"material"} color={"white"} />
-        </mesh>
-    );
+  return (
+    <mesh position={[0, 0, 0]}>
+      <boxBufferGeometry attach={"geometry"} args={[5, 5, 5]} />
+      <meshLambertMaterial attach={"material"} color={"white"} />
+    </mesh>
+  );
 };
 
 type SceneProps = {
-    setPreview: Dispatch<SetStateAction<React.ReactNode>>;
-    setShowPreview: Dispatch<SetStateAction<boolean>>;
+  setPreview: Dispatch<SetStateAction<React.ReactNode>>;
+  setShowPreview: Dispatch<SetStateAction<boolean>>;
 };
 
 export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
-    const { camera } = useThree();
-    const [enableOrbit, setEnableOrbit] = useState(true);
-    const [currentTarget, setCurrentTarget] = useState<Vector3>([0, 0, 0]);
-    const [minDistance, setMinDistance] = useState(700);
-    const [hasAnimated, setHasAnimated] = useState(false);
+  const { camera } = useThree();
+  const [enableOrbit, setEnableOrbit] = useState(true);
+  const [currentTarget, setCurrentTarget] = useState<Vector3>([0, 0, 0]);
+  const [minDistance, setMinDistance] = useState(700);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   return (
     <>
@@ -62,10 +63,12 @@ export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
                 args={[100, 100, "blue", "blue"]}
                 onClick={(e) => console.log(e)}
             /> */}
+
+      <Parcel position={[100, -52, -15]} scale={[4.5, 1, 8.5]} />
       <Hotel
         scale={3}
         rotation={[0, -Math.PI / 2, 0]}
-        position={[-100, 20, 100]}
+        position={[0, 20, 200]}
       />
       <Camaro
         scale={1000}
@@ -115,10 +118,10 @@ export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
                     <boxBufferGeometry args={[10, 10, 10]} />
                     <meshLambertMaterial color="red" />
                 </mesh> */}
-            {/* // <Isopotamia scale={20} /> */}
-            {/* <StreetLight scale={20} /> */}
-            <Topography rotation={[0, Math.PI, 0]} position={[300, 0, 400]} />
-            {/* </group> */}
-        </>
-    );
+      {/* // <Isopotamia scale={20} /> */}
+      {/* <StreetLight scale={20} /> */}
+      <Topography rotation={[0, Math.PI, 0]} position={[300, 0, 400]} />
+      {/* </group> */}
+    </>
+  );
 };
