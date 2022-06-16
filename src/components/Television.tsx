@@ -43,7 +43,8 @@ function Television(){
         <div className="logoContainer" id="ehbLogoContainer">
           <img className="ehbLogo" src={ehb} alt="" />
         </div>
-        <div className="televisionContainer">
+      </div>
+      <div className="televisionContainer">
             <div id="television">
                 <div className="screen">
                     {showVideo
@@ -69,11 +70,11 @@ function Television(){
                 </div>
             </div>
 
-        </div>
       </div>
       {/* <Link to="info" className="more-btn">
         Find out more
       </Link> */}
     </div>
   );
+}
 export { Television };

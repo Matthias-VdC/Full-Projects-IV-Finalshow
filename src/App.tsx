@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
 
-
 import Livestream from "./pages/Livestream";
 import Info from "./pages/Info.page";
 import { Index } from "./pages/Index.page";
@@ -16,7 +15,6 @@ import logo from "./logo.svg";
 
 import ReactGA from "react-ga";
 
-import Header from "./components/static/Header";
 import "./App.scss";
 
 const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
