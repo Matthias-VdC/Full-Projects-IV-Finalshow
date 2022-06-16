@@ -12,12 +12,12 @@ import Header from "./components/static/Header";
 
 import "./App.scss";
 
-const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
+// const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
+// ReactGA.initialize(TRACKING_ID);
 
 function App() {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    // ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
   return (
     <div className="App" id="app-container">
