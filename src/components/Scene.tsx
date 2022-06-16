@@ -24,29 +24,29 @@ import Commodore from "./models/Commodore";
 import { StreetLight } from "./models/Objects";
 
 const Box = () => {
-  return (
-    <mesh position={[0, 0, 0]}>
-      <boxBufferGeometry attach={"geometry"} args={[5, 5, 5]} />
-      <meshLambertMaterial attach={"material"} color={"white"} />
-    </mesh>
-  );
+    return (
+        <mesh position={[0, 0, 0]}>
+            <boxBufferGeometry attach={"geometry"} args={[5, 5, 5]} />
+            <meshLambertMaterial attach={"material"} color={"white"} />
+        </mesh>
+    );
 };
 
 type SceneProps = {
-  setPreview: Dispatch<SetStateAction<React.ReactNode>>;
-  setShowPreview: Dispatch<SetStateAction<boolean>>;
+    setPreview: Dispatch<SetStateAction<React.ReactNode>>;
+    setShowPreview: Dispatch<SetStateAction<boolean>>;
 };
 
 export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
-  const { camera } = useThree();
-  const [enableOrbit, setEnableOrbit] = useState(true);
-  const [currentTarget, setCurrentTarget] = useState<Vector3>([0, 0, 0]);
-  const [minDistance, setMinDistance] = useState(700);
-  const [hasAnimated, setHasAnimated] = useState(false);
+    const { camera } = useThree();
+    const [enableOrbit, setEnableOrbit] = useState(true);
+    const [currentTarget, setCurrentTarget] = useState<Vector3>([0, 0, 0]);
+    const [minDistance, setMinDistance] = useState(700);
+    const [hasAnimated, setHasAnimated] = useState(false);
 
     return (
         <>
-            <OrbitControls
+            {/* <OrbitControls
                 // minDistance={minDistance}
                 enabled={enableOrbit}
                 enableZoom={true}
@@ -55,7 +55,7 @@ export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
                 maxPolarAngle={Math.PI / 2}
                 minAzimuthAngle={-Math.PI / 3}
                 maxAzimuthAngle={Math.PI / 3}
-            />
+            /> */}
             <spotLight intensity={0.4} color="white" position={[20, 20, 0]} />
             <ambientLight intensity={0.4} />
             {/* <gridHelper
@@ -121,7 +121,7 @@ export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
                 </mesh> */}
             {/* // <Isopotamia scale={20} /> */}
             {/* <StreetLight scale={20} /> */}
-            <Topography rotation={[0, Math.PI, 0]} position={[200, 0, 300]} />
+            <Topography rotation={[0, Math.PI, 0]} position={[300, 0, 400]} />
             {/* </group> */}
         </>
     );
