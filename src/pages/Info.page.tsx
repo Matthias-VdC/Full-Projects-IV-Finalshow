@@ -38,7 +38,7 @@ export default function Info() {
           <p> 24 juni om 19u.</p>
         </div>
 
-        <Link to="/live" className="disabled-btn">
+        <Link to="/live" className="multicolor-btn">
           LIVE SHOW
         </Link>
 
