@@ -42,7 +42,7 @@ export default function Info() {
           LIVE SHOW
         </Link>
 
-        <h2 className="info-subtitle">Infodag</h2>
+        <h2 id="infoDagSection" className="info-subtitle">Infodag</h2>
         <p>
           Zin om langs te komen op onze campus? Het kan! Op zaterdag 25 juni
           gooien wij onze deuren open vanaf 10u, en jij bent uitgenodigd! Kom
