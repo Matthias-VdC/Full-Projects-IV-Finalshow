@@ -8,8 +8,10 @@ title: Toyota corolla e70 (1980)
 
 import * as THREE from "three";
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, useHelper } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+import { TargetedSpotLight } from "../Lights/TargetedSpotLight";
+import { SpotLight, SpotLightHelper } from "three";
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -67,10 +69,24 @@ export function Toyota({ ...props }: JSX.IntrinsicElements["group"]) {
     const { nodes, materials } = useGLTF(
         "/toyota_corolla_e70_1980/scene.gltf"
     ) as GLTFResult;
+
+    const lightRef = useRef<SpotLight>(null);
+    useHelper(lightRef, SpotLightHelper, "cyan");
+
     return (
-        <group ref={group} {...props} dispose={null}>
+        <group ref={group} {...props} dispose={null} castShadow receiveShadow>
             <group rotation={[-Math.PI / 2, 0, 0]}>
                 <group rotation={[Math.PI / 2, 0, 0]}>
+                    <mesh position={[60, 70, -200]}>
+                        <boxBufferGeometry args={[10, 10, 10]} />
+                        <meshLambertMaterial color={"pink"} />
+                    </mesh>
+                    <pointLight position={[60, 70, -180]} />
+                    <spotLight
+                        ref={lightRef}
+                        position={[60, 70, -180]}
+                        castShadow
+                    />
                     <group
                         position={[37.83, 38.14, -107.97]}
                         rotation={[0, -Math.PI / 2, 0]}

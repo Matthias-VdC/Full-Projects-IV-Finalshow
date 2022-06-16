@@ -6,7 +6,7 @@ export const Ground = ({ ...props }: JSX.IntrinsicElements["group"]) => {
         <group ref={ref} {...props}>
             <mesh position={[200, -10, 425]}>
                 <boxBufferGeometry attach={"geometry"} args={[400, 20, 850]} />
-                <meshBasicMaterial attach={"material"} color="black" />
+                <meshLambertMaterial attach={"material"} color="gray" />
             </mesh>
         </group>
     );
