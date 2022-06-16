@@ -58,7 +58,7 @@ export default function Header() {
             </Link>
             <Link
               onClick={closeSideBar}
-              to="admin/live"
+              to="live"
               style={{
                 pointerEvents: "none",
                 backgroundColor: "rgba(12, 12, 12, 0.5)",
@@ -84,7 +84,7 @@ export default function Header() {
             <Link to="info">INFO</Link>
             <Link to="timetable">TIMETABLE</Link>
             <Link
-              to="admin/live"
+              to="live"
               style={{
                 pointerEvents: "none",
                 backgroundColor: "rgba(12, 12, 12, 0.5)",

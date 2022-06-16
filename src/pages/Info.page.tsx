@@ -37,7 +37,7 @@ export default function Info() {
         </div>
 
         <Link
-          to="admin/live"
+          to="live"
           className="disabled-btn">
           LIVE SHOW
         </Link>

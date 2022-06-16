@@ -31,9 +31,9 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="info" element={<Info />} />
           <Route path="timetable" element={<Timetable />} />
+          <Route path="live" element={<Livestream />} />
           <Route path="admin">
             <Route path="hub" element={<p>hub</p>} />
-            <Route path="live" element={<Livestream />} />
             <Route path="showroom" element={<p>showroom</p>} />
           </Route>
           <Route path="*" element={<Notfound />}></Route>
