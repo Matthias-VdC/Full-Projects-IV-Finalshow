@@ -22,7 +22,7 @@ export default function Header() {
   if (location.pathname != "/") {
     return (
       <>
-        <header>
+        <header id="mainHeader">
           <Menu
             customBurgerIcon={
               <svg
