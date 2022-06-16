@@ -15,12 +15,10 @@ type GLTFResult = GLTF & {
   nodes: {
     Cube001_0: THREE.Mesh;
     Cube001_1: THREE.Mesh;
-    PET_texture_floor_0: THREE.Mesh;
   };
   materials: {
     Material: THREE.MeshStandardMaterial;
     ["Material.001"]: THREE.MeshStandardMaterial;
-    PET_texture_floor: THREE.MeshStandardMaterial;
   };
 };
 
@@ -49,12 +47,6 @@ export default function Commodore({
             <mesh
               geometry={nodes.Cube001_1.geometry}
               material={materials["Material.001"]}
-            />
-          </group>
-          <group position={[2.38, -0.91, 0.01]} scale={15.06}>
-            <mesh
-              geometry={nodes.PET_texture_floor_0.geometry}
-              material={materials.PET_texture_floor}
             />
           </group>
         </group>

@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import * as THREE from "three";
-import RoadStraight from "./RoadStraight";
-import RoadCross from "./RoadCross";
-import RoadT from "./RoadT";
-import RoadLeft from "./RoadLeft";
+import RoadStraight from "./roads/RoadStraight";
+import RoadCross from "./roads/RoadCross";
+import RoadT from "./roads/RoadT";
+import RoadLeft from "./roads/RoadLeft";
 
 export const Roads = ({ ...props }: JSX.IntrinsicElements["group"]) => {
   const ref = useRef<THREE.Group>(null);

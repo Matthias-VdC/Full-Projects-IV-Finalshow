@@ -3,6 +3,7 @@ import { Parcel } from ".";
 import Commodore from "./Commodore";
 import { Ground } from "./Ground";
 import { Roads } from "./Roads";
+import { Park } from "./Park";
 
 export const Topography = ({ ...props }: JSX.IntrinsicElements["group"]) => {
   const ref = useRef<THREE.Group>(null);
@@ -19,7 +20,9 @@ export const Topography = ({ ...props }: JSX.IntrinsicElements["group"]) => {
       <Parcel position={[50, 0, 350]} /> {/** 7 */}
       <Parcel position={[350, 0, 425]} scale={[1, 2, 2.5]} /> {/** 9 */}
       <Parcel position={[50, 0, 500]} /> {/** 10 */}
-      <Parcel position={[200, 0, 500]} scale={[1, 0.5, 4]} />
+      {/* PARK */}
+      {/* <Parcel position={[200, 100, 500]} scale={[1, 0.5, 4]} /> */}
+      <Park></Park>
       <Parcel position={[350, 0, 500]} /> {/** 10 */}
       {/** 11 */}
       <Parcel position={[125, 0, 800]} scale={[2.5, 2, 1]} /> {/** 14 */}
