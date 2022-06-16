@@ -59,7 +59,7 @@ export default function Info() {
           <p>Campus Kaai, Nijverheidskaai 170, 1070 Anderlecht.</p>
         </div>
 
-      <h2 className="info-subtitle">Expo</h2>
+      <h2 id="expoSection" className="info-subtitle">Expo</h2>
       <p>
         Welkom bij de Final Show expositie! Hier vind je verschillende projecten van afstuderende
         studenten in alle vier categorieën - elke categorie heeft zijn eigen ruimte in de zaal en
