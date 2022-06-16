@@ -4,13 +4,13 @@
     h2,
     h3,
     p,
-    header .desktop-nav a {
+    #mainHeader .desktop-nav a {
         color: $background !important;
     }
     .bm-icon {
         fill: $background;
     }
-    header .desktop-nav a {
+    #mainHeader .desktop-nav a {
         border-color: $background !important;
     }
     .web-share-fade-in-up,
@@ -19,7 +19,7 @@
         color: $background !important;
         font-weight: 700;
     }
-    .web-share-fade-in-up header {
+    .web-share-fade-in-up #mainHeader {
         color: $background !important;
     }
     .shareDiv {
@@ -44,18 +44,11 @@
 }
 
 @media (prefers-color-scheme: light) {
-    .livebody {
-        background-image: url("../../assets/lightbg.png");
-        background-repeat: repeat;
-        width: 100vw;
-        height: 100vh;
-        color: $dark;
-    }
     .web-share-fade-in-up,
     .web-share-fade-in-up>button {
         background-color: $background !important;
     }
-    .web-share-fade-in-up header {
+    .web-share-fade-in-up #mainHeader {
         color: $dark !important;
     }
     .sharebutton,
