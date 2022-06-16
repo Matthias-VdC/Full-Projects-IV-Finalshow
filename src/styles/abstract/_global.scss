@@ -33,3 +33,25 @@ body {
 .bold {
   font-weight: 800;
 }
+
+.multicolor-btn{
+  text-decoration: none;
+  color: $dark;
+  font-weight: 800;
+  padding: 1em 2em;
+  background-color: $background;
+  box-shadow: #ffea00 1.5px 1.5px 0px 0px, #000000 3px 3px 0px 0px,
+    #ff0000 4.5px 4.5px 0px 0px, #000000 6px 6px 0px 0px,
+    #0073ff 7.5px 7.5px 0px 0px, #000000 9px 9px 0px 0px;
+}
+
+.disabled-btn{
+  text-decoration: none;
+  color: rgba(255,255,255,0.5);
+  border: white 1px solid;
+  font-weight: 800;
+  padding: 1em 2em;
+  background-color: $background;
+  pointer-events: none;
+  background-color: rgba(12, 12, 12, 0.5);
+}
