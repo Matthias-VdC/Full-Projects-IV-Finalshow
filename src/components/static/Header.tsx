@@ -83,8 +83,24 @@ export default function Header() {
           <nav className="desktop-nav">
             <Link to="info">INFO</Link>
             <Link to="timetable">TIMETABLE</Link>
-            <Link to="admin/live">LIVE SHOW</Link>
-            <Link to="admin/showroom">SHOWROOM </Link>
+            <Link
+              to="admin/live"
+              style={{
+                pointerEvents: "none",
+                backgroundColor: "rgba(12, 12, 12, 0.5)",
+              }}
+            >
+              LIVE SHOW
+            </Link>
+            <Link
+              to="admin/showroom"
+              style={{
+                pointerEvents: "none",
+                backgroundColor: "rgba(12, 12, 12, 0.5)",
+              }}
+            >
+              SHOWROOM{" "}
+            </Link>
           </nav>
         </header>
       </>
