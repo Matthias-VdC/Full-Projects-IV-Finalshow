@@ -7,6 +7,7 @@ import button from '../assets/img/tvdial.png';
 import Countdown from "react-countdown";
 import {useState} from 'react';
 import ReactPlayer from 'react-player';
+import {Link} from "react-router-dom";
 
 function Television(){
 
@@ -71,9 +72,9 @@ function Television(){
             </div>
 
       </div>
-      {/* <Link to="info" className="more-btn">
+      <Link to="info" className="more-btn">
         Find out more
-      </Link> */}
+      </Link>
     </div>
   );
 }

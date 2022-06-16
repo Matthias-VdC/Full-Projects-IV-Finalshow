@@ -19,11 +19,24 @@
   overflow: hidden;
 
   position: relative;
+
   .more-btn {
     position: absolute;
-    left: 50%;
     top: 90%;
-    transform: translate(-50%, -50%);
+
+    left: 5vw;
+    transform: translate(-20%,-50%);
+
+    @media #{$media-desktop}{
+      left: 5vw;
+      transform: translate(-20%, -50%);
+    }
+
+    @media screen and (max-width: 1400px){
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     text-decoration: none;
     color: $dark;
     font-weight: 800;
@@ -195,6 +208,7 @@
 .tvdial {
   width: 50px;
 }
+
 
 @keyframes glitch {
   0% {
