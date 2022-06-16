@@ -1,6 +1,7 @@
 .video-container {
     overflow: hidden;
     width: 100%;
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .video-container::after {
@@ -28,11 +29,6 @@
 
 @media only screen and (min-width: 1024px) {
     .video-container iframe {
-        position: absolute;
         margin-top: 0;
-        top: 17.5vh;
-        left: 4.5vw;
-        width: 70%;
-        height: 70%;
     }
 }
