@@ -20,28 +20,29 @@ import {
 import { Hotel } from "./models/Buildings/Hotel";
 import { Isopotamia } from "./models/Buildings/Isopotamia";
 import { Delorean } from "./models/Cars/Delorean";
+import Commodore from "./models/Commodore";
 import { StreetLight } from "./models/Objects";
 
 const Box = () => {
-    return (
-        <mesh position={[0, 0, -400]}>
-            <boxBufferGeometry attach={"geometry"} args={[50, 50, 50]} />
-            <meshLambertMaterial attach={"material"} color={"white"} />
-        </mesh>
-    );
+  return (
+    <mesh position={[0, 0, 0]}>
+      <boxBufferGeometry attach={"geometry"} args={[5, 5, 5]} />
+      <meshLambertMaterial attach={"material"} color={"white"} />
+    </mesh>
+  );
 };
 
 type SceneProps = {
-    setPreview: Dispatch<SetStateAction<React.ReactNode>>;
-    setShowPreview: Dispatch<SetStateAction<boolean>>;
+  setPreview: Dispatch<SetStateAction<React.ReactNode>>;
+  setShowPreview: Dispatch<SetStateAction<boolean>>;
 };
 
 export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
-    const { camera } = useThree();
-    const [enableOrbit, setEnableOrbit] = useState(true);
-    const [currentTarget, setCurrentTarget] = useState<Vector3>([0, 0, 0]);
-    const [minDistance, setMinDistance] = useState(700);
-    const [hasAnimated, setHasAnimated] = useState(false);
+  const { camera } = useThree();
+  const [enableOrbit, setEnableOrbit] = useState(true);
+  const [currentTarget, setCurrentTarget] = useState<Vector3>([0, 0, 0]);
+  const [minDistance, setMinDistance] = useState(700);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
     return (
         <>
