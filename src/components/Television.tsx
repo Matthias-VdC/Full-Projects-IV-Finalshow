@@ -43,9 +43,9 @@ function Television() {
           <div className="televisionFrame"></div>
         </div>
       </div>
-      <Link to="info" className="more-btn">
+      {/* <Link to="info" className="more-btn">
         Find out more
-      </Link>
+      </Link> */}
     </div>
   );
 }
