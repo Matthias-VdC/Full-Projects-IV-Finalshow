@@ -13,12 +13,15 @@
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
     "react": "^18.1.0",
+    "react-burger-menu": "^3.0.8",
     "react-countdown": "^2.3.2",
     "react-dom": "^18.1.0",
     "react-ga": "^3.3.0",
     "react-player": "^2.10.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-swipeable": "^7.0.0",
+    "react-web-share": "^1.1.6",
     "sass": "^1.52.2",
     "three": "^0.141.0",
     "typescript": "^4.7.3",
@@ -48,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-burger-menu": "^2.8.3"
   }
 }

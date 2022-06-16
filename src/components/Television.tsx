@@ -1,3 +1,4 @@
+
 import React from 'react';
 import logo from '../assets/img/Final-Show-Logo.svg';
 import ehb from '../assets/img/EhB-logo.png';
@@ -35,13 +36,12 @@ function Television(){
           
     return(
     <div className="countDownPageContainer">
-        <div className="homepageLogoContainer">
-                <div className="logoContainer">
-                    <img src={logo} alt="Final Show Logo" />
-                </div>
-                <div className="logoContainer" id="ehbLogoContainer">
-                    <img className='ehbLogo' src={ehb} alt="" />
-                </div>
+      <div className="homepageLogoContainer">
+        <div className="logoContainer">
+          <img src={logo} alt="Final Show Logo" />
+        </div>
+        <div className="logoContainer" id="ehbLogoContainer">
+          <img className="ehbLogo" src={ehb} alt="" />
         </div>
         <div className="televisionContainer">
             <div id="television">
@@ -68,9 +68,12 @@ function Television(){
                 <div className="televisionFrame">
                 </div>
             </div>
-        </div>
-    </div>
-    )
-}
 
-export {Television}
+        </div>
+      </div>
+      {/* <Link to="info" className="more-btn">
+        Find out more
+      </Link> */}
+    </div>
+  );
+export { Television };

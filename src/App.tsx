@@ -1,31 +1,53 @@
 import React, { useEffect } from "react";
-import logo from "./logo.svg";
-import "./App.scss";
-import { Route, Routes } from "react-router-dom";
+
+import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
+
+
+import Livestream from "./pages/Livestream";
+import Info from "./pages/Info.page";
 import { Index } from "./pages/Index.page";
-import ReactGA from "react-ga";
-import { BrowserRouter } from "react-router-dom";
+import Timetable from "./pages/Timetable.page";
+import Notfound from "./pages/Notfound.page";
+
 import Header from "./components/static/Header";
+
+import logo from "./logo.svg";
+
+
+import ReactGA from "react-ga";
+
+import Header from "./components/static/Header";
+import "./App.scss";
+
 const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
+
+
+
+// const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
+// ReactGA.initialize(TRACKING_ID);
+
 function App() {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    // ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
   return (
-    <div className="App">
+    <div className="App" id="app-container">
       <Header />
-      <Routes>
-        <Route path="/" element={<Index></Index>}/>
-        <Route path="admin">
-          <Route path="hub" element={<p>hub</p>} />
-          <Route path="info" element={<p>info</p>} />
-          <Route path="live" element={<p>live</p>} />
-          <Route path="timetable" element={<p>timetable</p>} />
-          <Route path="showroom" element={<p>showroom</p>} />
-        </Route>
-      </Routes>
+      <div id="page-container">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="info" element={<Info />} />
+          <Route path="timetable" element={<Timetable />} />
+          <Route path="admin">
+            <Route path="hub" element={<p>hub</p>} />
+            <Route path="live" element={<Livestream />} />
+            <Route path="showroom" element={<p>showroom</p>} />
+          </Route>
+          <Route path="*" element={<Notfound />}></Route>
+        </Routes>
+      </div>
     </div>
   );
 }
