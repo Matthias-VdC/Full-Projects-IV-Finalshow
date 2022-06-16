@@ -56,14 +56,7 @@ export default function Header() {
             <Link onClick={closeSideBar} to="timetable">
               TIMETABLE
             </Link>
-            <Link
-              onClick={closeSideBar}
-              to="live"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
-            >
+            <Link onClick={closeSideBar} to="live">
               LIVE SHOW
             </Link>
             <Link
@@ -83,15 +76,7 @@ export default function Header() {
           <nav className="desktop-nav">
             <Link to="info">INFO</Link>
             <Link to="timetable">TIMETABLE</Link>
-            <Link
-              to="live"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
-            >
-              LIVE SHOW
-            </Link>
+            <Link to="live">LIVE SHOW</Link>
             <Link
               to="admin/showroom"
               style={{
@@ -109,4 +94,3 @@ export default function Header() {
     return <></>;
   }
 }
-
