@@ -6,10 +6,12 @@
         height: 91.4vh;
     }
     .streamingBottom {
+        width: 70%;
+        margin-left: 10%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 2.5vh 5vw 2.5vh 3vw;
+        padding: 2.5vh 5vw 2.5vh 5vw;
     }
     .sharebutton {
         opacity: 0%;
