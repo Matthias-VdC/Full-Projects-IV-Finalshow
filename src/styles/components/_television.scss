@@ -19,11 +19,24 @@
   overflow: hidden;
 
   position: relative;
+
   .more-btn {
     position: absolute;
-    left: 50%;
     top: 90%;
-    transform: translate(-50%, -50%);
+
+    left: 5vw;
+    transform: translate(-20%,-50%);
+
+    @media #{$media-desktop}{
+      left: 5vw;
+      transform: translate(-20%, -50%);
+    }
+
+    @media screen and (max-width: 1400px){
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     text-decoration: none;
     color: $dark;
     font-weight: 800;
@@ -147,24 +160,26 @@
     @media #{$media-tablet} {
       font-size: 13vw;
     }
-    &>.playerWrapper{
-        position: relative;
-        padding-top: 75%;
+  
+  }
 
-        width: 100%;
-        height: 100%;
+  &>.playerWrapper{
+      position: relative;
+      padding-top: 75%;
 
-        &>.reactPlayer{
-            position: absolute;
-            top: 0;
-            left:-17%;
-            width: 100%;
-            height: 100%;
-        }
-    }
-    
+      width: 105%;
+      transform: translateX(0.5%);
+      height: 100%;
+
+      &>.reactPlayer{
+          position: absolute;
+          top: 0;
+          left:-17%;
+          width: 110%;
+          height: 100%;
+      }
+  }
 }
-
 
 .screenOverlay{
     background: url('https://68.media.tumblr.com/595a5fa01fe53ca0e4ca8f37bacc849d/tumblr_nve67mJtue1tanofjo1_500.gif');
@@ -193,6 +208,7 @@
 .tvdial {
   width: 50px;
 }
+
 
 @keyframes glitch {
   0% {

@@ -7,6 +7,7 @@ import button from '../assets/img/tvdial.png';
 import Countdown from "react-countdown";
 import {useState} from 'react';
 import ReactPlayer from 'react-player';
+import {Link} from "react-router-dom";
 
 function Television(){
 
@@ -43,7 +44,8 @@ function Television(){
         <div className="logoContainer" id="ehbLogoContainer">
           <img className="ehbLogo" src={ehb} alt="" />
         </div>
-        <div className="televisionContainer">
+      </div>
+      <div className="televisionContainer">
             <div id="television">
                 <div className="screen">
                     {showVideo
@@ -69,11 +71,11 @@ function Television(){
                 </div>
             </div>
 
-        </div>
       </div>
-      {/* <Link to="info" className="more-btn">
+      <Link to="info" className="more-btn">
         Find out more
-      </Link> */}
+      </Link>
     </div>
   );
+}
 export { Television };
