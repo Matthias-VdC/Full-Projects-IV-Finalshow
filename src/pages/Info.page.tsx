@@ -23,7 +23,7 @@ export default function Info() {
         <div id="info-img1-container">
           <img id="info-img1" src={imgFrame} alt="campus" />
         </div>
-        <h2 id="livestreamTitle">Livestream</h2>
+        <h2 className="info-subtitle" id="livestreamTitle">Livestream</h2>
         <p>
           Op vrijdag 24 juni worden de beste werken van onze laatstejaars
           studenten gepresenteerd tijdens onze jaarlijkse Final Show: een show
