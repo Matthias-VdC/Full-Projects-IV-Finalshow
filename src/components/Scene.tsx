@@ -4,6 +4,11 @@ import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ThreeEvent, useThree, Vector3 } from "react-three-fiber";
 import * as THREE from "three";
 import { MeshLambertMaterial } from "three";
+import Room from "./models/Room";
+import Room2 from "./models/Room2";
+import Room80 from "./models/Room80";
+import Room802 from "./models/Room802";
+import V4export from "./models/V4export";
 
 const Box = () => {
   return (
@@ -32,12 +37,17 @@ export const Scene = ({ setPreview, setShowPreview }: SceneProps) => {
         // minDistance={minDistance}
         enabled={enableOrbit}
         enableZoom={true}
-        target={[0, 0, 0]}
-        // minPolarAngle={-Math.PI / 3}
-        // maxPolarAngle={Math.PI / 2}
-        // minAzimuthAngle={-Math.PI / 3}
-        // maxAzimuthAngle={Math.PI / 3}
+        enablePan={true}
+        target={[550, 300, 0]}
+        minDistance={100}
+        maxDistance={10000}
+        minPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 1.7}
+        minAzimuthAngle={-Math.PI / 7}
+        maxAzimuthAngle={Math.PI / 10}
       />
+      {/* <Room80 position={[500, -500, 4000]} scale={100} /> */}
+      <Room802 position={[200, 0, -200]} />
       <spotLight intensity={0.4} color="white" position={[20, 20, 0]} />
       <ambientLight intensity={0.4} />
     </>
