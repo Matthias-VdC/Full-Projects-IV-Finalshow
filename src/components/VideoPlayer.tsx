@@ -19,6 +19,8 @@ function VideoPlayer() {
                     height="534"
                     playing={true}
                     onReady={isLoaded}
+                    pip={true}
+                    stopOnUnmount={false}
                     muted={false}
                     controls={true}
                     className="reactPlayer"
