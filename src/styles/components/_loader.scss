@@ -1,0 +1,21 @@
+.loader {
+    background-image: url('../../assets/darkbg.png');
+    position: absolute;
+    z-index: 10;
+    top: -10vh;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.loadingAnimation {
+    background-image: url('../../assets/img/ehb.jpg');
+    height: 30vh;
+    width: 30vw;
+    position: absolute;
+    top: 50vh;
+    left: 35vw;
+    background-color: red;
+}
