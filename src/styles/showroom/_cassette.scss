@@ -7,6 +7,14 @@
     position: relative;
 }
 
+.white{
+    color: white !important;
+}
+
+.black{
+    color: black !important;
+}
+
 
 .cassetteOpenAnimation {
     transform: rotate3d(-.02, -1, 0, 60deg);
@@ -34,7 +42,7 @@
 .cassetteName {
     font-size: 12pt;
     font-weight: 400;
-    color: white !important;
+    color: white;
     writing-mode: vertical-lr;
     background-color: transparent;
     height: 48vh;
