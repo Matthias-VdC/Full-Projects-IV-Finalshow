@@ -18,7 +18,16 @@
     margin-left: 0;
   }
 
+  margin-bottom: 50px;
+
+  .divider{
+    margin-top: 3.6em !important;
+    margin-bottom: 1.8em;
+  }
+
   #info-container {
+    // background:linear-gradient(to right, rgba(12,12,12,0) 0%,rgba(12,12,12,0.2) 1%,rgba(12,12,12,0.2) 99%,rgba(12,12,12,0) 100% ),
+    // linear-gradient(to bottom, rgba(12,12,12,0) 0px,rgba(12,12,12,0.2) 5px,rgba(12,12,12,0.2) calc(100% - 5px),rgba(12,12,12,0) 100% );
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -27,7 +36,8 @@
     box-sizing: border-box;
     padding-top: 1em;
     padding-bottom: 2em;
-    max-width: 800px;
+    max-width: 850px;
+
     * {
       z-index: 2;
     }
@@ -35,9 +45,9 @@
       z-index: 3;
       text-transform: uppercase;
       letter-spacing: 2px;
-      align-self: flex-start;
-      // width: 100%;
+      align-self: center;
       text-align: left;
+      background-color: #373735;
 
       @media screen and (max-width:1250px){
         max-width: 80%;
@@ -47,11 +57,12 @@
       text-transform: uppercase;
       letter-spacing: 2px;
 
+      background-color: #373735;
       text-align: left;
       font-size: 1.6em;
       margin-top: 1.8em;
       font-weight: bolder;
-      align-self: flex-start;
+      align-self: center;
       box-shadow: #ffea00 1.5px 1.5px 0px 0px, #000000 3px 3px 0px 0px,
         #ff0000 4.5px 4.5px 0px 0px, #000000 6px 6px 0px 0px,
         #0073ff 7.5px 7.5px 0px 0px, #000000 9px 9px 0px 0px;
@@ -59,10 +70,12 @@
       padding: 0.2em 0.3em;
 
       margin-left: 0vw;
-      @media #{$media-desktop} {
+      @media only screen and (max-width:1100px){
         margin-left: 4vw;
       }
     }
+
+  
 
     p {
       font-size: 1.4em;
@@ -171,6 +184,7 @@
   #info-container {
     h1,
     h2 {
+      background-color: $background !important;
       padding: 0.5em 1em;
       border: 1.5px solid rgb(0, 0, 0);
     }
