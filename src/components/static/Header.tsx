@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
-import { useSwipeable } from "react-swipeable";
 import logo from "../../assets/img/Final-Show-Logo.svg";
 import hamburgerIcon from "../../assets/img/menu-icon.svg";
 
