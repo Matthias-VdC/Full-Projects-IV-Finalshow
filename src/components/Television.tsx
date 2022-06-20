@@ -70,11 +70,14 @@ function Television() {
                 ></ReactPlayer>
               </div>
             ) : (
+              <>
               <Countdown
-                date={new Date(2022, 5, 24, 19, 0, 0, 0)}
-                zeroPadTime={2}
-                renderer={renderer}
+              date={new Date(2022, 5, 24, 19, 0, 0, 0)}
+              zeroPadTime={2}
+              renderer={renderer}
               />
+              <h1 id="countdownTitle">Multimedia & Creatieve Technologie</h1>
+              </>
             )}
           </div>
           <div className="screenOverlay"></div>

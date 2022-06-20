@@ -7,6 +7,10 @@
     #mainHeader .desktop-nav a {
         color: $background !important;
     }
+
+    #mainHeader .desktop-nav a{
+        background-color: $dark;
+    }
     .bm-icon {
         fill: $background;
     }
@@ -44,6 +48,11 @@
 }
 
 @media (prefers-color-scheme: light) {
+
+    #mainHeader .desktop-nav a{
+        background-color: $background;
+    }
+
     .web-share-fade-in-up,
     .web-share-fade-in-up>button {
         background-color: $background !important;
