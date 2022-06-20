@@ -8,11 +8,9 @@ import { useState } from "react";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
 import ReactGA from "react-ga";
-import Loader from "./Loader";
 
 function Television() {
   const [showVideo, setShowVideo] = useState(true);
-  const [loader, setLoader] = useState(true);
 
   // define renderer for countdown
   const renderer = (props: any) => {
@@ -31,9 +29,6 @@ function Television() {
     setShowVideo(false);
     queueNextVideo();
   };
-    const isLoaded =  () => {
-        setLoader(false);
-    }
 
   const queueNextVideo = () => {
     setTimeout(() => {
@@ -43,7 +38,6 @@ function Television() {
 
   return (
     <div className="countDownPageContainer">
-       {loader ? (<Loader />) : null}
       <div className="homepageLogoContainer">
         <div className="logoContainer">
           <img src={logo} alt="Final Show Logo" />
@@ -63,21 +57,17 @@ function Television() {
                   height="100%"
                   playing={true}
                   onEnded={handleVideoEnd}
-                  onReady={isLoaded}
                   muted={true}
                   controls={false}
                   className="reactPlayer"
                 ></ReactPlayer>
               </div>
             ) : (
-              <>
               <Countdown
-              date={new Date(2022, 5, 24, 19, 0, 0, 0)}
-              zeroPadTime={2}
-              renderer={renderer}
+                date={new Date(2022, 5, 24, 19, 0, 0, 0)}
+                zeroPadTime={2}
+                renderer={renderer}
               />
-              <h1 id="countdownTitle">Multimedia & Creatieve Technologie</h1>
-              </>
             )}
           </div>
           <div className="screenOverlay"></div>
