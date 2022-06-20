@@ -1,2 +1,2 @@
 export { Scene } from "./Scene";
-export { Map } from "./Map";
+export { Map } from "../pages/Map.page";
