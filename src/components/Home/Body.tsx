@@ -6,9 +6,9 @@ import Cassette from "./Cassette";
 import Search from "../../assets/showroom/search.png";
 
 function Body() {
-  const [finalWorks, setFinalWorks] = useState([]);
-  const [selectedWorks, setSelectedWorks] = useState([]);
-  const [cluster, setCluster] = useState([]);
+  const [finalWorks, setFinalWorks] = useState<any>([]);
+  const [selectedWorks, setSelectedWorks] = useState<any>([]);
+  const [cluster, setCluster] = useState<any>([]);
   const [input, setInput] = useState(String);
   const [displayFilter, setDisplayFilter] = useState(String);
 
@@ -191,7 +191,7 @@ function Body() {
           </select>
         </div>
       </div>
-      <div className="bodyContainer">
+      <div className="bodyContainer" key={finalWorks?.id}>
         <div id="filterButton">
           <button className="btn filterButtonPhone" onClick={showForm}>
             Filter
@@ -227,8 +227,8 @@ function Body() {
         </div>
 
         <div className="cassettesContainer">
-          {selectedWorks.map((x) => {
-            return <Cassette data={x} key={x["id"]}></Cassette>;
+          {selectedWorks.map((x:any) => {
+            return <Cassette data={x} keyCassette={x["id"]}></Cassette>;
           })}
         </div>
       </div>

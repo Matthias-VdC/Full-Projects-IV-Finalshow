@@ -100,19 +100,20 @@ export default function Cassette(props: any) {
           }
           onClick={changeShowSide}
         >
-          <div className="cassetteNameDiv">
+          <div className="cassetteNameDiv" key={props.keyCassette+1}>
             <h1 className="cassetteName" style={{ color: styling }}>
               {props.data.title}
             </h1>
           </div>
           <img src={cassette} alt="cassette" className="imgCassette" />
-          <div className="clusterColors">
+          <div className="clusterColors" key={props.keyCassette}>
             <div className={cluster}></div>
             <div className={cluster}></div>
           </div>
         </div>
         {showSide ? (
           <DetailSide
+            keyCassette={props.keyCassette}
             data={props.data}
             cassette={{ cassetteNumber }}
           ></DetailSide>

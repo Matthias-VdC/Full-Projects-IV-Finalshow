@@ -57,7 +57,7 @@ export default function DetailSide(props: any) {
   }, []);
 
   return (
-    <div className="detailContainer">
+    <div className="detailContainer" key={props.keyCassette}>
       <img src={cover} alt="" className="cover" />
 
       <div className="onCoverElement">
