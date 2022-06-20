@@ -6,7 +6,8 @@ When the iframe is loaded, the state of the loader is set to false. */
 
 function VideoPlayer() {
     const [loader, setLoader] = useState(true);
-    function isLoaded() {
+
+    const isLoaded =  () => {
         setLoader(false);
     }
     return  (
