@@ -1,0 +1,86 @@
+@import "Colors";
+@import "_scrollbar.scss";
+
+// #filterButton {
+//   // margin: 10% 0% 20% 0%;
+// }
+
+.cassettesContainer {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  /* background-image: url('../Assets/raster-background-light.png'); */
+  // background-image: url("../../assets/showroom/Background-Raster.svg");
+  margin-top: 4vh;
+}
+
+#searchForm {
+  display: none;
+}
+
+#searchFormMobile {
+  display: block;
+  width: 100%;
+  margin-top: 2vh;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: $beige;
+  width: 80%;
+  padding: 5px;
+}
+
+input:active {
+  border: none;
+  outline: none;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+}
+
+select {
+  width: 80%;
+  padding: 5px;
+  margin-top: 20px;
+  background-color: $beige;
+}
+
+#searchIcon {
+  width: 22px;
+}
+
+@media (min-width: 780px) {
+  .filterButtonPhone {
+    display: none;
+  }
+  .cassettesContainer {
+    margin-left: 20%;
+    padding-right: 3%;
+    width: 77%;
+  }
+
+  #searchFormMobile {
+    display: none;
+  }
+
+  #searchForm {
+    display: block;
+    width: 91%;
+    margin-left: 5.8vw;
+    margin-top: 2vh;
+  }
+
+  input {
+    width: 40%;
+  }
+
+  select {
+    margin-left: 100px;
+    width: 20%;
+  }
+}

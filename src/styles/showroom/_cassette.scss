@@ -1,0 +1,104 @@
+@import 'colors';
+
+.cassette {
+    margin: 10px 30px;
+    height: 70vh;
+    background-color: transparent;
+    position: relative;
+}
+
+
+.cassetteOpenAnimation {
+    transform: rotate3d(-.02, -1, 0, 60deg);
+
+}
+
+.cassetteCloseAnimation{
+    transform: rotate3d(0);
+
+}
+
+.cassette img {
+    height: 68vh;
+}
+
+.cassetteNameDiv {
+    background-color: transparent;
+    position: absolute;
+    top: 13%;
+    left: 3%;
+    display: table;
+    text-align: center;
+}
+
+.cassetteName {
+    font-size: 12pt;
+    font-weight: 400;
+    color: white;
+    writing-mode: vertical-lr;
+    background-color: transparent;
+    height: 48vh;
+    width: 20vw;
+    margin: auto;
+    padding: auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.clusterColors {
+    background-color: transparent;
+    width: 100%;
+    height: 8%;
+    position: absolute;
+    bottom: 10%;
+}
+
+.clusterColors div {
+    width: 100%;
+    height: 35%;
+    margin-bottom: 7px;
+}
+
+.Web {
+    background-color: $red;
+}
+
+.Motion {
+    background-color: $orange;
+}
+
+.Smart {
+    background-color: $blue;
+}
+
+.Reality {
+    background-color: $yellow;
+}
+
+
+@media (min-width: 780px) {
+    .cassette {
+        height: 60vh;
+        margin-left: 45px;
+        margin-right: 0px;
+    }
+
+    .cassette img {
+        height: 58vh;
+    }
+
+
+    .cassetteName {
+        height: 40vh;
+    }
+
+    .fullCassetteWeb:hover {
+        transform: scale(0.95);
+    }
+
+    .fullCassette {
+        display: flex;
+    }
+
+
+}
