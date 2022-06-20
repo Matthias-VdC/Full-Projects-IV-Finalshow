@@ -1,4 +1,4 @@
-import Loader from "./Loader";
+import Loader from "../components/Loader";
 import {useState} from 'react';
 
 /* This is a React component that is using the useState hook to set the state of the loader to true.
