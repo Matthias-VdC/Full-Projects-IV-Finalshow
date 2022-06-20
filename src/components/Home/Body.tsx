@@ -192,7 +192,7 @@ function Body() {
         </div>
       </div>
       <div className="bodyContainer" key={finalWorks?.id}>
-        <div id="filterButton">
+        <div id="filterMobBtn">
           <button className="btn filterButtonPhone" onClick={showForm}>
             Filter
           </button>
