@@ -5,6 +5,7 @@
   "homepage": "https://finalshow.be/",
   "dependencies": {
     "@react-three/fiber": "^8.0.22",
+    "@techandsoftware/teletext": "^0.13.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,6 +13,7 @@
     "@types/node": "^16.11.39",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
+    "jsdom": "^19.0.0",
     "react": "^18.1.0",
     "react-burger-menu": "^3.0.8",
     "react-countdown": "^2.3.2",
@@ -53,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/jsdom": "^16.2.14",
     "@types/react-burger-menu": "^2.8.3"
   }
 }

@@ -10,3 +10,21 @@
     margin-bottom: 1.5em;
   }
 }
+
+#teletext-container {
+  position: relative;
+  margin: auto;
+
+  img {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  #teletext {
+    position: absolute;
+    left: 26%;
+    top: 20px;
+  }
+}
