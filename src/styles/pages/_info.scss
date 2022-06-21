@@ -159,13 +159,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-image: url("../../assets/darkbg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    color: white;
-  }
   #info-container {
     h2 {
       padding: 0.5em 1em;
@@ -175,13 +168,6 @@
 }
 
 @media (prefers-color-scheme: light) {
-  body {
-    background-image: url("../../assets/lightbg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    color: black;
-  }
   #info-container {
     h1,
     h2 {
