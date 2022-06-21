@@ -4,9 +4,7 @@ import "../../styles/showroom/Colors.scss";
 import "../../styles/components/_backgroundstripes.scss";
 
 export default function BackgroundStripesShowcase() {
-  const location = useLocation();
-  console.log(location.pathname);
-
+  const location = useLocation(); 
   return (
     <>
       <div id="stripes-container">

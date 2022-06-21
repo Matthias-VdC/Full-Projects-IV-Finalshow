@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  margin-top: 4vh;
 }
 
 #searchForm {
@@ -54,7 +53,7 @@ select {
 
 @media (prefers-color-scheme: light){
   #searchIcon {
-    display: 22px;
+    width: 22px;
   }
   
   #searchIconWhite{
