@@ -1,16 +1,14 @@
 @import "Colors";
 @import "_scrollbar.scss";
 
-// #filterMobBtn {
-//   margin: 10% 0% 20% 33%;
-// }
+#filterMobBtn {
+  margin: 10% 0% 20% 33%;
+}
 
 .cassettesContainer {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  /* background-image: url('../Assets/raster-background-light.png'); */
-  // background-image: url("../../assets/showroom/Background-Raster.svg");
   margin-top: 4vh;
 }
 
@@ -55,7 +53,7 @@ select {
 }
 
 @media (min-width: 780px) {
-  .filterButtonPhone {
+  #filterMobBtn {
     display: none;
   }
   .cassettesContainer {
