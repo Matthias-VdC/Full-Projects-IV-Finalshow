@@ -1,5 +1,7 @@
 #mainHeader {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     padding-top: 2em;
     @media #{$media-tablet} {
         height: 15%;
@@ -49,7 +51,20 @@
             display: block;
         }
     }
+    @media (prefers-color-scheme: light) {
+        background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)),url("../../assets/lightbg.png");
+    }
+    @media (prefers-color-scheme: dark) {
+        background-image: linear-gradient(rgba(12,12,12,0.2),rgba(12,12,12,0.2)),url("../../assets/darkbg.png");
+
+    }
+
+    background-size: cover;
+    background-attachment: fixed;
+
+    opacity: 0.95;
     height: 150px;
+
     display: grid;
     grid-template-columns: 20% 80%;
     box-sizing: border-box;

@@ -12,11 +12,13 @@ export default function Info() {
   return (
     <div id="infoSection">
       <div id="info-container">
+        <div id="infoTop" className="anchor"></div>
         <h1 className="title">Multimedia & Creatieve Technologie</h1>
         <BackgroundStripes></BackgroundStripes>
         <p>
           Gepassioneerd door die steeds veranderende geconnecteerde wereld? Ben
           jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar wat onze studenten Multimedia & Creatieve Technologie verwezenlijkt hebben dit jaar? Dan ben je hier
+
           op het juiste adres!
         </p>
         <p>
@@ -26,7 +28,7 @@ export default function Info() {
         <div id="info-img1-container">
           <img id="info-img1" src={imgFrame} alt="campus" />
         </div>
-        <div id="livestreamTitle"></div>
+        <div id="livestreamTitle" className="anchor"></div>
         <h2 className="info-subtitle">
           Livestream
         </h2>
@@ -45,14 +47,16 @@ export default function Info() {
           LIVE SHOW
         </Link>
 
-        <img src={divider} alt="" className="divider" />
-        <div id="infoDagSection"></div>
+
+        <img src={divider} alt="" className="divider"/>
+        <div id="infoDagSection" className="anchor"></div>
+
         <h2 className="info-subtitle">
           Infodag
         </h2>
         <p>
           Zin om langs te komen op onze campus? Het kan! Op zaterdag 25 juni
-          gooien wij onze deuren open vanaf 10u, en jij bent uitgenodigd! Kom
+          gooien wij onze deuren open tot 15u, en jij bent uitgenodigd! Kom
           eens proeven van het leven als een student Multimedia & Creatieve
           Technologie... en wie weet begin jij in september aan onze opleiding!
         </p>
@@ -67,20 +71,21 @@ export default function Info() {
         </div>
 
         <img src={divider} alt="" className="divider" />
-        <div id="expoSection"></div>
+
+        <div id="expoSection" className="anchor"></div>
         <h2 className="info-subtitle">
           Expo
         </h2>
         <p>
           Welkom bij de Final Show expositie! Hier vind je verschillende
-          projecten van afstuderende studenten in alle vier categorieën - elke
-          categorie heeft zijn eigen ruimte in de zaal en wordt gekenmerkt door
-          een kleur. Volg de wegwijzers richting de parking van campus Kaai.
+          projecten van afstuderende studenten in alle vier categorieën: Web & App, Smart Technology,
+          Motion en Extended Reality.
+          Volg de wegwijzers richting de parking van campus Kaai.
         </p>
         <p>
           Geraak je niet op de campus, maar wil je toch de eindwerken bekijken?
           Dan hebben we goed nieuws, want alle eindwerken zijn ook online te
-          bekijken op onze showcase!
+          bekijken in onze showroom!
         </p>
         <div className="practicalInfo">
           <p className="bold">WANNEER?</p>
@@ -90,7 +95,7 @@ export default function Info() {
         <div className="practicalInfo">
           <p className="bold">WAAR?</p>
           <p>
-            Campus Kaai in de sporthal, Nijverheidskaai 170, 1070 Anderlecht.
+            Campus Kaai naast het Medialab, Nijverheidskaai 170, 1070 Anderlecht.
           </p>
         </div>
         <Link to="admin/showcase" className="disabled-btn">
