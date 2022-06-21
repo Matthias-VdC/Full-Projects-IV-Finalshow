@@ -10,10 +10,14 @@ function VideoPlayer() {
     const isLoaded =  () => {
         setLoader(false);
     }
+
     return  (
         <>
     <div className="video-container">
-        {/*loader ? (<Loader />) : null*/}
+        
+       
+        {loader ? (<div className='loader'><Loader /> </div>) : null}
+       
                 <iframe width="950" height="534" loading='lazy' onLoad={isLoaded} src="https://www.youtube.com/embed/ZwIB1XPI64w" title="Behind the scenes" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                 </iframe>
             </div>
