@@ -52,10 +52,11 @@
         }
     }
     @media (prefers-color-scheme: light) {
-        background-image: url("../../assets/lightbg.png");
+        background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)),url("../../assets/lightbg.png");
     }
     @media (prefers-color-scheme: dark) {
-        background-image: url("../../assets/darkbg.png");
+        background-image: linear-gradient(rgba(12,12,12,0.2),rgba(12,12,12,0.2)),url("../../assets/darkbg.png");
+
     }
 
     background-size: cover;
