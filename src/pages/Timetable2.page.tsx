@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import imgFrame from "../assets/tv.png";
 import TimetableItem from "../components/TimetableItem";
 import Tetris from "react-tetris";
+import BackArrow from "../components/BackArrow";
+import { useNavigate } from "react-router-dom";
 
 type inter = {
   HeldPiece: any;
@@ -37,7 +39,7 @@ export default function Timetable2() {
   const easterEgg: boolean = useKeyPress("8");
   const time = new Date();
   useEffect(() => {}, []);
-
+  const navigate = useNavigate();
   const timetableData = [
     {
       time: "19:00",
@@ -96,6 +98,13 @@ export default function Timetable2() {
     <div id="teletext-container">
       {!easterEgg ? (
         <div id="teletext">
+          <p
+            className="teletext red-text"
+            id="back-arrow"
+            onClick={() => navigate(-1)}
+          >
+            ← go back
+          </p>
           <div className="teletext-subtitle">
             <p className="teletext">
               EhB → Anderlecht, BXL → Fri 24 Jun &nbsp;

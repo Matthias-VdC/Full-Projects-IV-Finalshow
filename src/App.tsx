@@ -1,6 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  BrowserRouter,
+  Link,
+  useLocation,
+} from "react-router-dom";
 
 import Livestream from "./pages/Livestream";
 import Info from "./pages/Info.page";
@@ -20,13 +26,40 @@ import "./App.scss";
 const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 function App() {
+  const location = useLocation();
+  const { height, width } = useWindowDimensions();
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
   return (
     <div className="App" id="app-container">
-      <Header />
+      {location.pathname == "/timetable" && width < 1075 ? <></> : <Header />}
       <div id="page-container">
         <Routes>
           <Route path="/" element={<Index />} />
