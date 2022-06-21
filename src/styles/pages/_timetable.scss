@@ -117,12 +117,13 @@ $teletext-pink: #ff00ff;
     }
 
     .timetable-container {
-      margin: 1em 0 10em 0;
+      margin: 1em 0 2em 0;
       display: grid;
       grid-template-columns: auto 6fr;
       column-gap: 2%;
       row-gap: 10px;
       width: 100%;
+      padding-top: 1em;
       .timetable-time {
         grid-column: 1;
         font-weight: 800;
@@ -135,7 +136,24 @@ $teletext-pink: #ff00ff;
 
       .timetable-description {
         grid-column: 2;
-        padding-bottom: 0.8em;
+        padding-bottom: 1.5em;
+      }
+    }
+    .timetable-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 11em;
+      background-color: white;
+      padding: 1em;
+      svg {
+        width: 10%;
+      }
+      p {
+        color: #000 !important;
+        font-weight: 800;
+        text-shadow: 2px 2px 0px $teletext-red;
       }
     }
 
@@ -152,5 +170,52 @@ $teletext-pink: #ff00ff;
       background-color: #ffffff;
       border: none;
     }
+  }
+}
+
+.tetris-container {
+  width: 55%;
+  height: 100%;
+  position: absolute;
+  left: 11%;
+  top: 25%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  text-align: center;
+  .game-board {
+    margin: auto;
+  }
+  .game-block {
+    margin: 0;
+    padding: 0;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid #ddd;
+  }
+  .piece-i {
+    background-color: $teletext-red;
+  }
+  .piece-j {
+    background-color: $teletext-yellow;
+  }
+  .piece-l {
+    background-color: $teletext-cyan;
+  }
+  .piece-o {
+    background-color: $teletext-blue;
+  }
+  .piece-s {
+    background-color: $teletext-pink;
+  }
+  .piece-t {
+    background-color: white;
+  }
+  .piece-z {
+    background-color: #00ff00;
+  }
+  .piece-preview {
+    background-color: #eee;
   }
 }
