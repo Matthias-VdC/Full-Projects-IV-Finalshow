@@ -45,6 +45,7 @@ export const CustomSpotLight = React.forwardRef(
                 <primitive
                     ref={ref}
                     object={light}
+                    castShadow
                     position={props.lightPosition}
                 />
                 <primitive

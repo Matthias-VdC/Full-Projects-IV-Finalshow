@@ -1,4 +1,10 @@
-import { OrbitControls, PresentationControls } from "@react-three/drei";
+import {
+  Billboard,
+  Html,
+  OrbitControls,
+  PresentationControls,
+  useDepthBuffer,
+} from "@react-three/drei";
 import gsap, { Power3, Power4 } from "gsap/all";
 import React, {
   Dispatch,
@@ -23,37 +29,49 @@ const Box = () => {
 };
 
 export const Scene = () => {
-  const { camera, controls } = useThree();
-  const [enableOrbit, setEnableOrbit] = useState(true);
-  const [minDistance, setMinDistance] = useState(700);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  console.log(controls);
+  const { camera } = useThree();
+  const depthBuffer = useDepthBuffer({ size: 256, frames: 1 });
 
   return (
     <>
       {/* <OrbitControls
-        // minDistance={minDistance}
-        enabled={enableOrbit}
-        enableZoom={true}
-        target={[0, 0, 0]}
-        makeDefault
-        // minPolarAngle={-Math.PI / 3}
-        // maxPolarAngle={Math.PI / 2}
-        // minAzimuthAngle={-Math.PI / 3}
-        // maxAzimuthAngle={Math.PI / 3}
+                // minDistance={minDistance}
+                enabled={enableOrbit}
+                enableZoom={true}
+                target={[0, 0, 0]}
+                // minPolarAngle={-Math.PI / 3}
+                // maxPolarAngle={Math.PI / 2}
+                // minAzimuthAngle={-Math.PI / 3}
+                // maxAzimuthAngle={Math.PI / 3}
+            /> */}
+      <PresentationControls
+        polar={[0, 0]}
+        global={true}
+        azimuth={[MathUtils.degToRad(-75), MathUtils.degToRad(75)]}
+      >
+        <Room802
+          castShadow
+          receiveShadow
+          onClick={(e) => {
+            const position = new Vector3();
+            e.object.getWorldPosition(position);
+            console.log(e.object, position);
+          }}
+          rotation={[0, MathUtils.degToRad(54), 0]}
+          position={[0, -40, 0]}
+        />
+        <Lights />
+        <Billboard follow={true} position={[152, 40, 10]}>
+          <Html>
+            <h1>I am following</h1>
+          </Html>
+        </Billboard>
+      </PresentationControls>
+      {/* <MovingSpot
+        depthBuffer={depthBuffer}
+        position={[900, 400, 900]}
+        color={"white"}
       /> */}
-      <Room802
-        castShadow
-        receiveShadow
-        onClick={(e) => {
-          const position = new Vector3();
-          e.object.getWorldPosition(position);
-        }}
-        rotation={[0, MathUtils.degToRad(54), 0]}
-      />
-      {/* <ambientLight intensity={0.5} /> */}
-      <Lights />
     </>
   );
 };

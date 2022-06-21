@@ -1,4 +1,9 @@
 import { Loader } from "@react-three/drei";
+import {
+    EffectComposer,
+    Selection,
+    SelectiveBloom,
+} from "@react-three/postprocessing";
 import React, { Suspense, useState } from "react";
 import { Route } from "react-router-dom";
 import { Canvas } from "react-three-fiber";
@@ -11,7 +16,7 @@ export const Map = () => {
             <Canvas
                 className="map__canvas"
                 shadows
-                camera={{ position: [600, 300, 600], far: 5000 }}>
+                camera={{ position: [900, 400, 900], far: 5000, fov: 45 }}>
                 <Suspense fallback={null}>
                     <Scene />
                 </Suspense>
