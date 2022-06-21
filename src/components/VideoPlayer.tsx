@@ -8,6 +8,7 @@ function VideoPlayer() {
         setLoader(false);
     }
 
+
     /* Returning the video player. */
     return (
         <>

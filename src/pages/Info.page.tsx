@@ -2,6 +2,7 @@ import BackgroundStripes from "../components/BackgroundStripes";
 import imgFrame from "../assets/tv.png";
 import nesFrame from "../assets/nes.webp";
 import campusImg from "../assets/campus.webp";
+import divider from "../assets/img/divider.svg";
 import { Link } from "react-router-dom";
 
 export default function Info() {
@@ -23,7 +24,8 @@ export default function Info() {
         <div id="info-img1-container">
           <img id="info-img1" src={imgFrame} alt="campus" />
         </div>
-        <h2 className="info-subtitle" id="livestreamTitle">
+        <div id="livestreamTitle"></div>
+        <h2 className="info-subtitle">
           Livestream
         </h2>
         <p>
@@ -42,7 +44,9 @@ export default function Info() {
           LIVE SHOW
         </Link>
 
-        <h2 id="infoDagSection" className="info-subtitle">
+        <img src={divider} alt="" className="divider"/>
+        <div id="infoDagSection"></div>
+        <h2 className="info-subtitle">
           Infodag
         </h2>
         <p>
@@ -61,7 +65,10 @@ export default function Info() {
           <p>Campus Kaai, Nijverheidskaai 170, 1070 Anderlecht.</p>
         </div>
 
-        <h2 id="expoSection" className="info-subtitle">
+        <img src={divider} alt="" className="divider" />
+        <div id="expoSection"></div>
+
+        <h2 className="info-subtitle">
           Expo
         </h2>
         <p>

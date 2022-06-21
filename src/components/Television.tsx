@@ -31,7 +31,8 @@ function Television() {
     setShowVideo(false);
     queueNextVideo();
   };
-    const isLoaded =  () => {
+
+  const isLoaded =  () => {
         setLoader(false);
     }
 
@@ -42,58 +43,63 @@ function Television() {
   };
 
   return (
-    <div className="countDownPageContainer">
-       {loader ? (<Loader />) : null}
-      <div className="homepageLogoContainer">
-        <div className="logoContainer">
-          <img src={logo} alt="Final Show Logo" />
-        </div>
-        <div className="logoContainer" id="ehbLogoContainer">
-          <img className="ehbLogo" src={ehb} alt="" />
-        </div>
-      </div>
-      <div className="televisionContainer">
-        <div id="television">
-          <div className="screen">
-            {showVideo ? (
-              <div className="playerWrapper">
-                <ReactPlayer
-                  url={video}
-                  width="133%"
-                  height="100%"
-                  playing={true}
-                  onEnded={handleVideoEnd}
-                  onReady={isLoaded}
-                  muted={true}
-                  controls={false}
-                  className="reactPlayer"
-                ></ReactPlayer>
-              </div>
-            ) : (
-              <Countdown
-                date={new Date(2022, 5, 24, 19, 0, 0, 0)}
-                zeroPadTime={2}
-                renderer={renderer}
-              />
-            )}
+    <><div className="homeloadercontainer">
+      {loader ? (<div className='blackloader'><Loader /> </div>) : null}
+    </div><div className="countDownPageContainer">
+        <div className="homepageLogoContainer">
+          <div className="logoContainer">
+            <img src={logo} alt="Final Show Logo" />
           </div>
-          <div className="screenOverlay"></div>
-          <div className="televisionFrame"></div>
+          <div className="logoContainer" id="ehbLogoContainer">
+            <img className="ehbLogo" src={ehb} alt="" />
+          </div>
         </div>
-      </div>
-      <Link
-        to="info"
-        className="more-btn"
-        onClick={() => {
-          ReactGA.event({
-            category: "User",
-            action: "Clicked find out more",
-          });
-        }}
-      >
-        Find out more
-      </Link>
-    </div>
+        <div className="televisionContainer">
+          {loader ? (<div className='blackLoader'><Loader /> </div>) : null}
+
+          <div id="television">
+            <div className="screen">
+
+              {showVideo ? (
+                <div className="playerWrapper">
+                  <ReactPlayer
+                    url={video}
+                    width="133%"
+                    height="100%"
+                    playing={true}
+                    onEnded={handleVideoEnd}
+                    onPlay={isLoaded}
+                    muted={true}
+                    controls={false}
+                    className="reactPlayer"
+                  ></ReactPlayer>
+                </div>
+              ) : (
+                <Countdown
+                  date={new Date(2022, 5, 24, 19, 0, 0, 0)}
+                  zeroPadTime={2}
+                  renderer={renderer} />
+              )}
+            </div>
+            <div className="screenOverlay"></div>
+            <div className="televisionFrame"></div>
+          </div>
+        </div>
+        <Link
+          to="info"
+          className="more-btn"
+          onClick={() => {
+            ReactGA.event({
+              category: "User",
+              action: "Clicked find out more",
+            });
+          } }
+        >
+          Find out more
+        </Link>
+
+      </div></>
+    
   );
 }
 export { Television };

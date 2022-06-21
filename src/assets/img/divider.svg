@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473.06 42.12998">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #cc98a5;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke: #1d1d1b;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .cls-2 {
+        fill: #177294;
+      }
+
+      .cls-3 {
+        fill: #d45e24;
+      }
+
+      .cls-4 {
+        fill: #ecd018;
+      }
+
+      .cls-5 {
+        fill: #e30613;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <g id="Calque_1" data-name="Calque 1">
+      <g>
+        <rect class="cls-5" x="10.7" y="23.27" width="455.21" height="11.29001"/>
+        <rect class="cls-3" x=".25" y="12.10001" width="472.56" height="11.29001"/>
+        <rect class="cls-4" x="3.26" y="7.87" width="458.08998" height="4.26001"/>
+        <rect class="cls-1" x="17.29" y=".25" width="452.50999" height="7.62"/>
+        <rect class="cls-2" x="17.29" y="34.25998" width="439.23002" height="7.62"/>
+      </g>
+    </g>
+  </g>
+</svg>
