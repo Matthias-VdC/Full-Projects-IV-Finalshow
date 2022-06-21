@@ -8,11 +8,13 @@ import { SpotLightHelper } from "three";
 
 type Props = {};
 
-function MovingSpot({ vec = new THREE.Vector3(), ...props }) {
+export function MovingSpot({ vec = new THREE.Vector3(), ...props }) {
     const light = useRef<THREE.SpotLight>(null);
     const viewport = useThree((state) => state.viewport);
     useHelper(light, SpotLightHelper, "Green");
     useFrame((state) => {
+        light.current!.position.lerp(state.camera.position.clone(), 0.1);
+
         light.current?.target.position.lerp(
             vec.set(
                 (state.mouse.x * viewport.width) / 2,
@@ -29,9 +31,9 @@ function MovingSpot({ vec = new THREE.Vector3(), ...props }) {
             ref={light}
             penumbra={1}
             distance={2000}
-            angle={0.35}
+            angle={0.25}
             attenuation={5}
-            intensity={2}
+            intensity={0.4}
             {...props}
         />
     );
@@ -43,26 +45,20 @@ export const Lights = (props: Props) => {
     const arcade = useRef(null);
 
     useHelper(spot, THREE.SpotLightHelper, "cyan");
-    useHelper(point, THREE.PointLightHelper, 50, "red");
-    useHelper(tvRect, RectAreaLightHelper, "pink");
     useHelper(arcade, RectAreaLightHelper, "blue");
+
     const depthBuffer = useDepthBuffer({ size: 256, frames: 1 });
 
     return (
-        <group>
-            <MovingSpot
-                depthBuffer={depthBuffer}
-                position={[600, 300, 600]}
-                color={"purple"}
-            />
-            {/* <CustomSpotLight
-                lightPosition={[300, 1000, 300]}
-                targetPosition={[0, 40, 0]}
-                distance={1500}
-                angle={THREE.MathUtils.degToRad(15)}
-                penumbra={1}
+        <group position={[0, -40, 0]}>
+            <CustomSpotLight
+                lightPosition={[152, 80, 10]}
+                targetPosition={[152, 30, -174]}
+                intensity={1}
+                distance={400}
+                angle={THREE.MathUtils.degToRad(40)}
                 ref={spot}
-            /> */}
+            />
             <pointLight
                 ref={point}
                 intensity={0.1}
@@ -80,7 +76,7 @@ export const Lights = (props: Props) => {
                 width={72}
                 height={50}
                 ref={tvRect}
-                intensity={10}
+                intensity={0.4}
                 position={[152, 92, 3]}
             />
         </group>

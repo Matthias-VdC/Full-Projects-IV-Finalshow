@@ -6,5 +6,8 @@
     &__canvas {
         background-color: black;
         z-index: 0;
+        @media only screen and (max-width: 1023px) {
+            touch-action: none;
+        }
     }
 }

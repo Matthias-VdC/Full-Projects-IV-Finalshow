@@ -1,10 +1,14 @@
-import { OrbitControls, PresentationControls } from "@react-three/drei";
+import {
+    OrbitControls,
+    PresentationControls,
+    useDepthBuffer,
+} from "@react-three/drei";
 import gsap, { Power3, Power4 } from "gsap/all";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ThreeEvent, useThree } from "react-three-fiber";
 import * as THREE from "three";
 import { MathUtils, MeshLambertMaterial, Vector3 } from "three";
-import { Lights } from "./models/Lights";
+import { Lights, MovingSpot } from "./models/Lights";
 import { Room802 } from "./models/Room802";
 
 const Box = () => {
@@ -18,13 +22,11 @@ const Box = () => {
 
 export const Scene = () => {
     const { camera } = useThree();
-    const [enableOrbit, setEnableOrbit] = useState(true);
-    const [minDistance, setMinDistance] = useState(700);
-    const [hasAnimated, setHasAnimated] = useState(false);
+    const depthBuffer = useDepthBuffer({ size: 256, frames: 1 });
 
     return (
         <>
-            <OrbitControls
+            {/* <OrbitControls
                 // minDistance={minDistance}
                 enabled={enableOrbit}
                 enableZoom={true}
@@ -33,18 +35,29 @@ export const Scene = () => {
                 // maxPolarAngle={Math.PI / 2}
                 // minAzimuthAngle={-Math.PI / 3}
                 // maxAzimuthAngle={Math.PI / 3}
+            /> */}
+            <PresentationControls
+                polar={[0, 0]}
+                global={true}
+                azimuth={[MathUtils.degToRad(-90), MathUtils.degToRad(90)]}>
+                <Room802
+                    castShadow
+                    receiveShadow
+                    onClick={(e) => {
+                        const position = new Vector3();
+                        e.object.getWorldPosition(position);
+                        console.log(e.object, position);
+                    }}
+                    rotation={[0, MathUtils.degToRad(54), 0]}
+                    position={[0, -40, 0]}
+                />
+                <Lights />
+            </PresentationControls>
+            <MovingSpot
+                depthBuffer={depthBuffer}
+                position={[900, 400, 900]}
+                color={"white"}
             />
-            <Room802
-                castShadow
-                receiveShadow
-                onClick={(e) => {
-                    const position = new Vector3();
-                    e.object.getWorldPosition(position);
-                    console.log(e.object, position);
-                }}
-                rotation={[0, MathUtils.degToRad(54), 0]}
-            />
-            <Lights />
         </>
     );
 };
