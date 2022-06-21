@@ -69,15 +69,15 @@ function App() {
           <Route path="info" element={<Info />} />
           <Route path="timetable" element={<Timetable2 />} />
           <Route path="live" element={<Livestream />} />
+          <Route path="showroom">
+            <Route index element={<Home />} />
+            <Route path="results" element={<Results />} />
+            <Route path="detail" element={<DetailMob />} />
+            <Route path="genomineerden" element={<Genomineerd />} />
+            <Route path="winnaars" element={<Winnaar />} />
+          </Route>
           <Route path="admin">
             <Route path="hub" element={<p>hub</p>} />
-            <Route path="showroom">
-              <Route index element={<Home />} />
-              <Route path="results" element={<Results />} />
-              <Route path="detail" element={<DetailMob />} />
-              <Route path="genomineerden" element={<Genomineerd />} />
-              <Route path="winnaars" element={<Winnaar />} />
-            </Route>
           </Route>
           <Route path="*" element={<Notfound />}></Route>
         </Routes>

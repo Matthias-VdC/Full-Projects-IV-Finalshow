@@ -66,13 +66,11 @@ export default function Cassette(props: any) {
 
   return (
     <div className="cassetteComplete">
-      <Link to="/admin/showroom/detail" state={props.data}>
+      <Link to="/showroom/detail" state={props.data}>
         <div className="fullCassetteMob">
           <div className="cassette">
             <div className="cassetteNameDiv">
-              <h1 className={classStyle}>
-                {props.data.title}
-              </h1>
+              <h1 className={classStyle}>{props.data.title}</h1>
             </div>
             <img src={cassette} alt="cassette" className="imgCassette" />
             <div className="clusterColors">
@@ -92,10 +90,8 @@ export default function Cassette(props: any) {
           }
           onClick={changeShowSide}
         >
-          <div className="cassetteNameDiv" key={props.keyCassette+1}>
-            <h1 className={classStyle}>
-              {props.data.title}
-            </h1>
+          <div className="cassetteNameDiv" key={props.keyCassette + 1}>
+            <h1 className={classStyle}>{props.data.title}</h1>
           </div>
           <img src={cassette} alt="cassette" className="imgCassette" />
           <div className="clusterColors" key={props.keyCassette}>
