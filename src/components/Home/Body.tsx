@@ -123,6 +123,7 @@ function Body() {
               placeholder="Zoek op titel, student, tag..."
             />
             <img src={Search} alt="search icon" id="searchIcon" />
+            <img src={SearchWhite} alt="search icon" id="searchIconWhite" />
 
             <select onChange={handleChangeSelect} className="clusterSelection">
               <option value="Alles" className="clusterOption">
