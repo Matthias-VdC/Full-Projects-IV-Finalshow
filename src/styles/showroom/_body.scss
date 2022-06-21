@@ -55,10 +55,30 @@ select {
   }
 }
 
-
-#searchIcon {
-  width: 22px;
+@media (prefers-color-scheme: light){
+  #searchIcon {
+    display: 22px;
+  }
+  
+  #searchIconWhite{
+    display: none;
+  }
 }
+
+@media (prefers-color-scheme: dark){
+  #searchIcon {
+    display: none;
+  }
+  
+  #searchIconWhite{
+    width: 22px;
+  }
+}
+
+
+// #searchIcon {
+//   width: 22px;
+// }
 
 @media (min-width: 780px) {
   #filterMobBtn {
@@ -67,7 +87,7 @@ select {
   .cassettesContainer {
     margin-left: 20%;
     padding-right: 3%;
-    width: 77%;
+    width: 60%;
     height: 70vh;
   }
 
@@ -102,7 +122,9 @@ select {
     }
   }
 
-  
+  #SearchFormWrapper{
+    margin-left: 33.7%;
+  }
 
   input {
     width: 40%;
