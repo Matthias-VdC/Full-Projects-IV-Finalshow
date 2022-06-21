@@ -1,5 +1,8 @@
 import BackgroundStripes from "../components/BackgroundStripes";
 import imgFrame from "../assets/tv.png";
+import capgemini from "../assets/img/sponsors/capgemini.png"
+import ausy from "../assets/img/sponsors/ausy.png"
+import studiowasabi from "../assets/img/sponsors/studiowasabi.svg"
 import nesFrame from "../assets/nes.webp";
 import campusImg from "../assets/campus.webp";
 import divider from "../assets/img/divider.svg";
@@ -14,8 +17,8 @@ export default function Info() {
         <BackgroundStripes></BackgroundStripes>
         <p>
           Gepassioneerd door die steeds veranderende geconnecteerde wereld? Ben
-          jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar
-          wat onze laatstejaars Multimedia & Creatieve Technologie studenten verwezenlijkt hebben dit jaar? Dan ben je hier
+          jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar wat onze studenten Multimedia & Creatieve Technologie verwezenlijkt hebben dit jaar? Dan ben je hier
+
           op het juiste adres!
         </p>
         <p>
@@ -30,8 +33,7 @@ export default function Info() {
           Livestream
         </h2>
         <p>
-          Op vrijdag 24 juni worden de beste werken van onze laatstejaars
-          studenten gepresenteerd tijdens onze jaarlijkse Final Show: een show
+          Op vrijdag 24 juni worden de beste werken van onze studenten gepresenteerd tijdens onze jaarlijkse Final Show: een show
           boordevol talent, interviews, en nog veel meer! Tijdens deze
           livestream worden ook de winnaars aangekondigd voor elke categorie,
           dit wil je dus zeker niet missen!
@@ -45,8 +47,10 @@ export default function Info() {
           LIVE SHOW
         </Link>
 
+
         <img src={divider} alt="" className="divider"/>
         <div id="infoDagSection" className="anchor"></div>
+
         <h2 className="info-subtitle">
           Infodag
         </h2>
@@ -67,8 +71,8 @@ export default function Info() {
         </div>
 
         <img src={divider} alt="" className="divider" />
-        <div id="expoSection" className="anchor"></div>
 
+        <div id="expoSection" className="anchor"></div>
         <h2 className="info-subtitle">
           Expo
         </h2>
@@ -97,6 +101,17 @@ export default function Info() {
         <Link to="admin/showcase" className="disabled-btn">
           SHOWCASE
         </Link>
+        <img src={divider} alt="" className="divider" />
+        <h2 className="info-subtitle">
+            Met dank aan onze sponsors
+          </h2>
+      
+          <div className="sponsorlogocontainer">
+            <a href="https://www.capgemini.com/be-en/" target="_blank" rel="noreferrer"><img src={capgemini} alt="Capgemini"/></a>
+            <a href="https://www.ausy.be/en/" target="_blank" rel="noreferrer"><img src={ausy} alt="Ausy" /></a>
+            <a href="https://www.studiowasabi.be/" target="_blank" rel="noreferrer"><img src={studiowasabi} alt="Studio Wasabi"/></a>
+          </div>
+  
       </div>
     </div>
   );
