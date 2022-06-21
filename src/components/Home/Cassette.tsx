@@ -45,25 +45,16 @@ export default function Cassette(props: any) {
       setClassStyle("cassetteName white");
     }
 
-    if (props.data.cluster === "web" || props.data.cluster === "webApp") {
+    if (props.data.cluster === "webApp") {
       setCluster("Web");
-    } else if (
-      props.data.cluster === "interactiveMotion" ||
-      props.data.cluster === "motion"
-    ) {
+    } else if (props.data.cluster === "motion") {
       setCluster("Motion");
-    } else if (
-      props.data.cluster === "digitalMaking" ||
-      props.data.cluster === "smartTechnologies"
-    ) {
+    } else if (props.data.cluster === "smartTechnologies") {
       setCluster("Smart");
-    } else if (
-      props.data.cluster === "alternativeReality" ||
-      props.data.cluster === "extendedReality"
-    ) {
+    } else if (props.data.cluster === "extendedReality") {
       setCluster("Reality");
     }
-  }, []);
+  }, [props.data.cluster]);
 
   const changeShowSide = () => {
     if (showSide === false) {

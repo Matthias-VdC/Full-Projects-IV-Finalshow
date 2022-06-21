@@ -60,7 +60,7 @@ export default function DetailSide(props: any) {
       setCluster("Extended Reality");
       setClusterClass("clusterName Reality");
     }
-  }, []);
+  }, [props.cassette.cassetteNumber, props.data.cluster]);
 
   return (
     <div className="detailContainer" key={props.keyCassette}>

@@ -24,114 +24,30 @@ function Body() {
   }, []);
 
   const handleChangeSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    // if(selectedWorks.length === finalWorks.length){
-    //     if(event.target.value === "Alles"){
-    //         setCluster(finalWorks)
-    //         setSelectedWorks(finalWorks)
-    //     } else {
-    //         var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
-    //         setCluster(filteredResults)
-    //         setSelectedWorks(filteredResults)
-    //     }
-    // } else {
-
-    //     if(event.target.value === "Alles"){
-    //         setCluster(finalWorks)
-    //         var filteredResults = finalWorks.filter((x:any) => x.title.toLowerCase().includes(input))
-    //         setSelectedWorks(filteredResults)
-    //     } else {
-    //         var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
-    //         setCluster(filteredResults)
-    //         var filteredResults = filteredResults.filter((x:any) => x.title.toLowerCase().includes(input))
-    //         setSelectedWorks(filteredResults)
-    //     }
-    // }
-
-    if (selectedWorks.length === finalWorks.length) {
-      if (event.target.value === "Alles") {
-        setCluster(finalWorks);
-        setSelectedWorks(finalWorks);
-      } else if (event.target.value === "webApp") {
-        var filteredResults = finalWorks.filter(
-          (x: any) => x.cluster === event.target.value || x.cluster === "web"
-        );
-        setCluster(filteredResults);
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "smartTechnologies") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value || x.cluster === "digitalMaking"
-        );
-        setCluster(filteredResults);
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "motion") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value ||
-            x.cluster === "interactiveMotion"
-        );
-        setCluster(filteredResults);
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "extendedReality") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value ||
-            x.cluster === "alternativeReality"
-        );
-        setCluster(filteredResults);
-        setSelectedWorks(filteredResults);
-      }
+    if(selectedWorks.length === finalWorks.length){
+        if(event.target.value === "Alles"){
+            setCluster(finalWorks)
+            setSelectedWorks(finalWorks)
+        } else {
+            var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
+            setCluster(filteredResults)
+            setSelectedWorks(filteredResults)
+        }
     } else {
-      if (event.target.value === "Alles") {
-        setCluster(finalWorks);
-        var filteredResults = finalWorks.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "webApp") {
-        var filteredResults = finalWorks.filter(
-          (x: any) => x.cluster === event.target.value || x.cluster === "web"
-        );
-        setCluster(filteredResults);
-        var filteredResults = filteredResults.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "smartTechnologies") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value || x.cluster === "digitalMaking"
-        );
-        setCluster(filteredResults);
-        var filteredResults = filteredResults.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "motion") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value ||
-            x.cluster === "interactionMotion"
-        );
-        setCluster(filteredResults);
-        var filteredResults = filteredResults.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "extendedReality") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value ||
-            x.cluster === "alternativeReality"
-        );
-        setCluster(filteredResults);
-        var filteredResults = filteredResults.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      }
+
+        if(event.target.value === "Alles"){
+            setCluster(finalWorks)
+            var filteredResults = finalWorks.filter((x:any) => x.title.toLowerCase().includes(input))
+            setSelectedWorks(filteredResults)
+        } else {
+            var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
+            setCluster(filteredResults)
+            var filteredResults = filteredResults.filter((x:any) => x.title.toLowerCase().includes(input))
+            setSelectedWorks(filteredResults)
+        }
     }
-  };
+
+  }
 
   const getInput = (inputForm: any) => {
     setInput(inputForm);
