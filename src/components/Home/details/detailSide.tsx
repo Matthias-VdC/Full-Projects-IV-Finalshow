@@ -32,7 +32,7 @@ export default function DetailSide(props: any) {
       setBackgroundClass("beschrijving blackT")
     } else if (props.cassette.cassetteNumber === 4) {
       setCover(cover_4);
-      setBackgroundClass("beschrijving blue")
+      setBackgroundClass("beschrijving blueT")
     } else if (props.cassette.cassetteNumber === 5) {
       setCover(cover_5);
       setBackgroundClass("beschrijving blackT")
