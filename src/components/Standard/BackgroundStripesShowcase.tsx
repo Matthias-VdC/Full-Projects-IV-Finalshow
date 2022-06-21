@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../../styles/showroom/Colors.scss";
 import "../../styles/components/_backgroundstripes.scss"
 
@@ -11,18 +11,19 @@ export default function BackgroundStripesShowcase() {
     <>
       
         <div id="stripes-container">
-          <a href="#info-container" id="pink" className="stripe stripe-hover">
+          <Link to="/admin/showroom/results" id="pink" className="stripe stripe-hover">
             <p>Resultaat</p>
-          </a>
+          </Link>
           <a id="yellow" className="stripe"></a>
           <a
-            href="#livestreamTitle"
+            href="http://finalshowcasebackend.be/"
             id="orange"
             className="stripe stripe-hover"
+            target="_blank"
           >
             <p>Indienen</p>
           </a>
-          <a href="#infoDagSection" id="red" className="stripe stripe-hover">
+          <a href="http://finalshowcasebackend.be/" id="red" className="stripe stripe-hover" target="_blank">
             <p>Stemming</p>
           </a>
           <a href="#expoSection" id="blue" className="stripe stripe-hover"></a>
