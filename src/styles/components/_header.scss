@@ -4,8 +4,14 @@
     z-index: 1000;
     padding-top: 2em;
     @media #{$media-tablet} {
+        position: relative;
         height: 15%;
         align-items: center;
+    }
+    @media screen and (max-width:1024px) {
+        @media screen and (orientation: landscape) {
+            position: relative !important;
+        }
     }
     div:first-child {
         display: none;
@@ -52,19 +58,15 @@
         }
     }
     @media (prefers-color-scheme: light) {
-        background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)),url("../../assets/lightbg.png");
+        background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../../assets/lightbg.png");
     }
     @media (prefers-color-scheme: dark) {
-        background-image: linear-gradient(rgba(12,12,12,0.2),rgba(12,12,12,0.2)),url("../../assets/darkbg.png");
-
+        background-image: linear-gradient(rgba(12, 12, 12, 0.2), rgba(12, 12, 12, 0.2)), url("../../assets/darkbg.png");
     }
-
     background-size: cover;
     background-attachment: fixed;
-
     opacity: 0.95;
     height: 150px;
-
     display: grid;
     grid-template-columns: 20% 80%;
     box-sizing: border-box;
@@ -73,9 +75,7 @@
         padding-left: 2em;
         @media #{$media-tablet} {
             grid-column: 2;
-            padding-left: 0;
             justify-content: flex-end;
-            padding-right: 2em;
         }
         width: 100%;
         transition: all 0.5s ease-in-out;
