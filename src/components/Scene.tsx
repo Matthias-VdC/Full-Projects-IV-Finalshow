@@ -1,4 +1,6 @@
 import {
+    Billboard,
+    Html,
     OrbitControls,
     PresentationControls,
     useDepthBuffer,
@@ -39,7 +41,7 @@ export const Scene = () => {
             <PresentationControls
                 polar={[0, 0]}
                 global={true}
-                azimuth={[MathUtils.degToRad(-90), MathUtils.degToRad(90)]}>
+                azimuth={[MathUtils.degToRad(-75), MathUtils.degToRad(75)]}>
                 <Room802
                     castShadow
                     receiveShadow
@@ -52,6 +54,11 @@ export const Scene = () => {
                     position={[0, -40, 0]}
                 />
                 <Lights />
+                <Billboard follow={true} position={[152, 40, 10]}>
+                    <Html>
+                        <h1>I am following</h1>
+                    </Html>
+                </Billboard>
             </PresentationControls>
             <MovingSpot
                 depthBuffer={depthBuffer}

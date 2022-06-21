@@ -33,7 +33,7 @@ export function MovingSpot({ vec = new THREE.Vector3(), ...props }) {
             distance={2000}
             angle={0.25}
             attenuation={5}
-            intensity={0.4}
+            intensity={0.8}
             {...props}
         />
     );
@@ -46,8 +46,6 @@ export const Lights = (props: Props) => {
 
     useHelper(spot, THREE.SpotLightHelper, "cyan");
     useHelper(arcade, RectAreaLightHelper, "blue");
-
-    const depthBuffer = useDepthBuffer({ size: 256, frames: 1 });
 
     return (
         <group position={[0, -40, 0]}>

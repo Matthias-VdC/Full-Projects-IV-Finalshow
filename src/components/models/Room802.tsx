@@ -1371,22 +1371,26 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
                             material={materials["Material.012"]}
                         />
                     </group>
-
-                    <Select enabled>
-                        <group
-                            position={[-263.26, 542.49, -419.73]}
-                            rotation={[-Math.PI / 2, 0, 0]}
-                            scale={[86.1, 8.96, 10.85]}>
-                            <mesh
-                                geometry={nodes.Cube040_Frame_0.geometry}
-                                material={materials.Frame}
-                            />
-                            <mesh
-                                geometry={nodes.Cube040_Light_0.geometry}
-                                material={materials.Light}
-                            />
-                        </group>
-                    </Select>
+                    <Selection>
+                        <EffectComposer>
+                            <SelectiveBloom luminenceThreshold={0} />
+                        </EffectComposer>
+                        <Select enabled>
+                            <group
+                                position={[-263.26, 542.49, -419.73]}
+                                rotation={[-Math.PI / 2, 0, 0]}
+                                scale={[86.1, 8.96, 10.85]}>
+                                <mesh
+                                    geometry={nodes.Cube040_Frame_0.geometry}
+                                    material={materials.Frame}
+                                />
+                                <mesh
+                                    geometry={nodes.Cube040_Light_0.geometry}
+                                    material={materials.Light}
+                                />
+                            </group>
+                        </Select>
+                    </Selection>
                     <group
                         position={[-110.79, 197.3, -385.53]}
                         rotation={[-Math.PI / 2, 0, 0]}
