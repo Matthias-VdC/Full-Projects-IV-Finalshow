@@ -5,15 +5,17 @@ import "../../styles/components/_backgroundstripes.scss"
 
 export default function BackgroundStripesShowcase() {
   const location = useLocation();
-  console.log("Backgroudn Stripes");
+  console.log(location.pathname);
+  
   
   return (
     <>
       
         <div id="stripes-container">
-          <Link to="/admin/showroom/results" id="pink" className="stripe stripe-hover">
-            <p>Resultaat</p>
-          </Link>
+            {location.pathname.includes("/admin/showroom/results") ? 
+              <Link to="/admin/showroom/" id="pink" className="stripe stripe-hover"><p>Showroom</p></Link>:
+              <Link to="/admin/showroom/results" id="pink" className="stripe stripe-hover"><p>Resultaat</p></Link>
+            }
           <a id="yellow" className="stripe"></a>
           <a
             href="http://finalshowcasebackend.be/"

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Winnaar from "./Winnaar";
 import Genomineerd from "./Genomineerd";
+import BackgroundStripesShowcase from "../Standard/BackgroundStripesShowcase";
 
 function Results() {
   const [selection, setSelection] = useState(String);
@@ -33,6 +34,7 @@ function Results() {
 
   return (
     <main id="winGenomContainer">
+      <BackgroundStripesShowcase/>
       <div id="selectionGenomOrWins">
         <p className={styleGenom} onClick={setToGenom}>
           Genomineerden
