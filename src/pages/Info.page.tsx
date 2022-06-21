@@ -9,6 +9,7 @@ export default function Info() {
   return (
     <div id="infoSection">
       <div id="info-container">
+        <div id="infoTop" className="anchor"></div>
         <h1 className="title">Multimedia & Creatieve Technologie</h1>
         <BackgroundStripes></BackgroundStripes>
         <p>

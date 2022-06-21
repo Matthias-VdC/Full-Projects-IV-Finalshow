@@ -1,7 +1,7 @@
 export default function BackgroundStripes() {
   return (
     <div id="stripes-container">
-      <a href="#info-container" id="pink" className="stripe stripe-hover">
+      <a href="#infoTop" id="pink" className="stripe stripe-hover">
         <p>Multimedia &</p>
         <p>Creatieve Technologie</p>
       </a>
