@@ -13,7 +13,7 @@ function VideoPlayer() {
     return (
         <>
             <div className="video-container">
-                {loader ? (<Loader />) : null}
+                {loader ? (<div className="loader"><Loader /></div>) : null}
                 <ReactPlayer
                     url={"https://www.youtube.com/embed/ZwIB1XPI64w"}
                     width="950"
