@@ -23,19 +23,19 @@ export default function DetailSide(props: any) {
   useEffect(() => {
     if (props.cassette.cassetteNumber === 1) {
       setCover(cover_1);
-      setBackgroundClass("beschrijving black")
+      setBackgroundClass("beschrijving blackT")
     } else if (props.cassette.cassetteNumber === 2) {
       setCover(cover_2);
-      setBackgroundClass("beschrijving black")
+      setBackgroundClass("beschrijving blackT")
     } else if (props.cassette.cassetteNumber === 3) {
       setCover(cover_3);
-      setBackgroundClass("beschrijving black")
+      setBackgroundClass("beschrijving blackT")
     } else if (props.cassette.cassetteNumber === 4) {
       setCover(cover_4);
       setBackgroundClass("beschrijving blue")
     } else if (props.cassette.cassetteNumber === 5) {
       setCover(cover_5);
-      setBackgroundClass("beschrijving black")
+      setBackgroundClass("beschrijving blackT")
     }
 
     if (props.data.cluster === "web" || props.data.cluster === "webApp") {
@@ -86,7 +86,7 @@ export default function DetailSide(props: any) {
         <Slider data={props.data} />
 
         <h3 className="beschrijvingPlaceholder">PROJECTBESCHRIJVING</h3>
-        <p className="beschrijving">{props.data.description}</p>
+        <p className={backgroundClass}>{props.data.description}</p>
 
         <div id="personalInfo">
           <div id="contactInfoContainer">
