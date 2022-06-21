@@ -7,7 +7,6 @@ import hamburgerIcon from "../../assets/img/menu-icon.svg";
 
 export default function Header() {
   const location = useLocation();
-  console.log(location);
 
   const [isOpen, setOpen] = useState(false);
 
@@ -109,4 +108,3 @@ export default function Header() {
     return <></>;
   }
 }
-

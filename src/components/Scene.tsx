@@ -1,21 +1,13 @@
 import {
   Billboard,
   Html,
-  OrbitControls,
   PresentationControls,
   useDepthBuffer,
 } from "@react-three/drei";
-import gsap, { Power3, Power4 } from "gsap/all";
-import React, {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { ThreeEvent, useFrame, useThree } from "react-three-fiber";
+import React, { useState } from "react";
+import { useFrame, useThree } from "react-three-fiber";
 import * as THREE from "three";
-import { MathUtils, MeshLambertMaterial, Vector3 } from "three";
+import { MathUtils, Vector3 } from "three";
 import { Lights } from "./models/Lights";
 import { Room802 } from "./models/Room802";
 
@@ -47,7 +39,8 @@ export const Scene = () => {
       <PresentationControls
         polar={[0, 0]}
         global={true}
-        azimuth={[MathUtils.degToRad(-75), MathUtils.degToRad(75)]}
+        // azimuth={[MathUtils.degToRad(-75), MathUtils.degToRad(75)]}
+        azimuth={[MathUtils.degToRad(0), MathUtils.degToRad(0)]}
       >
         <Room802
           castShadow
@@ -55,7 +48,6 @@ export const Scene = () => {
           onClick={(e) => {
             const position = new Vector3();
             e.object.getWorldPosition(position);
-            console.log(e.object, position);
           }}
           rotation={[0, MathUtils.degToRad(54), 0]}
           position={[0, -40, 0]}

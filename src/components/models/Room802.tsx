@@ -13,7 +13,7 @@ import { GLTF } from "three-stdlib";
 import { Select } from "@react-three/postprocessing";
 import pacman from "../../assets/3d/pacman.jpg";
 import { useFrame, useLoader, useThree } from "react-three-fiber";
-import { Mesh, Object3D, Quaternion, Vector2, Vector3 } from "three";
+import { Group, Mesh } from "three";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -225,14 +225,14 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   const pacmanTexture = useLoader(THREE.TextureLoader, pacman);
   const mesh = useRef(null);
   const [arcadeClick, setArcadeClick] = useState(false);
+  const [tvClick, setTvClick] = useState(false);
   const arcadeRef = useRef<Mesh>(null);
+  const tvRef = useRef<Group>(null);
   const myControls = controls as OrbitControlsProps;
 
+  // Quaternions help: https://stackoverflow.com/questions/30292831/three-js-lookat-how-to-pan-smoothly-between-old-and-new-target-positions , https://threejs.org/docs/#api/en/math/Quaternion
+
   // DEFAULT CAMERA QUATERNION
-  // _w: 0.9105743365364628
-  // _x: -0.15622985705189127
-  // _y: 0.37717223974228586
-  // _z: 0.0647125256385033
   let defaultCameraQ = new THREE.Quaternion(
     -0.15622985705189127,
     0.37717223974228586,
@@ -241,10 +241,6 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   );
 
   // ARCADE QUATERNION
-  // _w: 0.675727815688641
-  // _x: -0.008811862297680186
-  // _y: 0.7370358824895382
-  // _z: 0.009611353201922336
   let arcadeCameraQ = new THREE.Quaternion(
     -0.008833329207960657,
     0.7385987045990694,
@@ -252,14 +248,31 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
     0.6740179741281317
   );
 
+  // TV QUATERNION
+  let tvCameraQ = new THREE.Quaternion(
+    0.0007381961007019115,
+    0.9991129455967009,
+    0.037121909724500655,
+    -0.01986808561504325
+  );
+
   useFrame((state) => {
     if (arcadeClick) {
       state.camera.quaternion.slerp(arcadeCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(50, 250, 300), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.02);
+    } else if (tvClick) {
+      // let newV = new THREE.Vector3(0, 0, 0);
+      // tvRef.current!.getWorldPosition(newV);
+
+      // state.camera.lookAt(newV);
+      // console.log(state.camera.quaternion);
+      state.camera.quaternion.slerp(tvCameraQ, 0.02);
+      state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.02);
     } else {
       state.camera.quaternion.slerp(defaultCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.02);
     }
+
     state.camera.updateProjectionMatrix();
 
     return null;
@@ -271,10 +284,10 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
         <mesh
           ref={arcadeRef}
           onPointerOver={(e) => {
-            document.querySelector("body")!.style.cursor = "pointer !important";
+            document.body.style.cursor = "pointer !important";
           }}
           onPointerOut={(e) => {
-            document.querySelector("body")!.style.cursor = "inherit !important";
+            document.body.style.cursor = "inherit !important";
           }}
           onClick={(e) => {
             setArcadeClick(!arcadeClick);
@@ -327,7 +340,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
             />
           </group>
           <group
-            position={[-269.42, 127.23, -226.11]}
+            position={[-269.42 - 1.5, 127.23, -226.11 - 1.5]}
             rotation={[-Math.PI / 2, 0, 0]}
             scale={[87.71, 171.24, 10.83]}
           >
@@ -427,6 +440,16 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
             />
           </group>
           <group
+            ref={tvRef}
+            onPointerOver={(e) => {
+              document.body.style.cursor = "pointer !important";
+            }}
+            onPointerOut={(e) => {
+              document.body.style.cursor = "inherit !important";
+            }}
+            onClick={(e) => {
+              setTvClick(!tvClick);
+            }}
             position={[146.56, 60.71, 73.44]}
             rotation={[-Math.PI / 2, 0, Math.PI / 2]}
             scale={32.67}
