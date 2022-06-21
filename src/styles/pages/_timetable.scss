@@ -1,12 +1,280 @@
-.timetable-container {
-  margin: 3em 20%;
+// .timetable-container {
+//   margin: 3em 20%;
 
-  @media #{$media-tablet} {
-    margin: 1em 10%;
+//   @media #{$media-tablet} {
+//     margin: 1em 10%;
+//   }
+
+//   h1:first-child {
+//     display: inline-block;
+//     margin-bottom: 1.5em;
+//   }
+// }
+
+@font-face {
+  font-family: Mode7;
+  src: url("../../fonts/MODE7GX3.TTF"), url("../../fonts/MODE7GX3.EOT"); /* .EOT is for IE */
+}
+
+$teletext-red: #ff0000;
+$teletext-yellow: #ffff00;
+$teletext-cyan: #00ffff;
+$teletext-blue: #0000ff;
+$teletext-pink: #ff00ff;
+
+.red-text {
+  color: $teletext-red !important;
+}
+.yellow-text {
+  color: $teletext-yellow !important;
+}
+.cyan-text {
+  color: $teletext-cyan !important;
+}
+.blue-text {
+  color: $teletext-blue !important;
+}
+.pink-text {
+  color: $teletext-pink !important;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.teletext {
+  font-family: Mode7, monospace !important;
+  text-align: left;
+  display: inline;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+.double-height {
+  display: flex;
+  flex-direction: column;
+  text-shadow: 4px 4px 0px $teletext-pink;
+}
+
+#teletext-container {
+  height: calc(100vh - 150px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: 1075px) {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+  }
+  .tv-overlay-container {
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 1075px) {
+      display: none;
+    }
   }
 
-  h1:first-child {
-    display: inline-block;
-    margin-bottom: 1.5em;
+  .black-bg {
+    width: 66%;
+    height: 100%;
+    position: absolute;
+    left: 8%;
+    top: 6%;
+    @media screen and (max-width: 1450px) {
+      top: 6%;
+      height: 55vw;
+    }
+    @media screen and (max-width: 1075px) {
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+    }
+    background-color: black;
+    z-index: -1;
+  }
+
+  #teletext {
+    width: 55%;
+    height: 100%;
+    position: absolute;
+    left: 11vw;
+    top: 10vw;
+    @media screen and (max-width: 1450px) {
+      top: 11vw;
+      left: 9vw;
+      height: 45vw;
+    }
+    @media screen and (max-width: 1075px) {
+      height: 100%;
+      width: 80vw;
+      margin: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 20px;
+    }
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+
+    #back-arrow {
+      font-size: 1em;
+      margin-bottom: 1em;
+      display: none;
+      background-color: #fff;
+      font-weight: 800;
+      padding: 0.5em 1em;
+      @media screen and (max-width: 1075px) {
+        display: block;
+      }
+    }
+
+    p {
+      font-size: 1.3vw;
+      @media screen and (max-width: 1075px) {
+        font-size: 1em;
+      }
+    }
+
+    .teletext-subtitle {
+      align-self: flex-end;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-size: 1.5vw;
+      @media screen and (max-width: 1075px) {
+        font-size: 0.8em;
+      }
+    }
+
+    .teletext-title {
+      margin-top: 1em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      svg {
+        width: 18%;
+      }
+      div {
+        margin-right: auto;
+        padding-left: 0.5em;
+        padding-top: 0.2em;
+        font-size: 5vw;
+        @media screen and (max-width: 1075px) {
+          font-size: 2em;
+        }
+      }
+      border-bottom: 5px dashed red;
+    }
+
+    .timetable-container {
+      margin: 1em 0 2em 0;
+      display: grid;
+      grid-template-columns: auto 6fr;
+      column-gap: 2%;
+      row-gap: 10px;
+      width: 100%;
+      padding-top: 1em;
+      .timetable-time {
+        grid-column: 1;
+        font-weight: 800;
+      }
+
+      .timetable-title {
+        grid-column: 2;
+        font-weight: 700;
+      }
+
+      .timetable-description {
+        grid-column: 2;
+        padding-bottom: 1.5em;
+      }
+    }
+    .timetable-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 11em;
+      background-color: white;
+      padding: 1em;
+      svg {
+        width: 10%;
+      }
+      p {
+        color: #000 !important;
+        font-weight: 800;
+        text-shadow: 2px 2px 0px $teletext-red;
+      }
+    }
+
+    /* Chrome, Edge, and Safari */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #ffffff;
+      border: none;
+    }
+  }
+}
+
+.tetris-container {
+  width: 55%;
+  height: 80%;
+  position: absolute;
+  left: 11%;
+  top: 20%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  text-align: center;
+  .game-board {
+    margin: auto;
+  }
+  .game-block {
+    margin: 0;
+    padding: 0;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid #ddd;
+  }
+  .piece-i {
+    background-color: $teletext-red;
+  }
+  .piece-j {
+    background-color: $teletext-yellow;
+  }
+  .piece-l {
+    background-color: $teletext-cyan;
+  }
+  .piece-o {
+    background-color: $teletext-blue;
+  }
+  .piece-s {
+    background-color: $teletext-pink;
+  }
+  .piece-t {
+    background-color: white;
+  }
+  .piece-z {
+    background-color: #00ff00;
+  }
+  .piece-preview {
+    background-color: #eee;
   }
 }

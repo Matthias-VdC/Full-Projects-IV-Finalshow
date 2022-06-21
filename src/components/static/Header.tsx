@@ -70,8 +70,10 @@ export default function Header() {
             </Link>
           </Menu>
           <div className="logo-container">
+          <Link to="/">
             <img src={logo} alt="logo" />
-          </div>
+            </Link>
+            </div>
           <nav className="desktop-nav">
             <Link to="info">INFO</Link>
             <Link to="timetable">TIMETABLE</Link>
