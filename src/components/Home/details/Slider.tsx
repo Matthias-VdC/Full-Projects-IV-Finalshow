@@ -21,7 +21,7 @@ export default function Slider(props: any) {
         className="mySwiper2"
       >
         <SwiperSlide>
-          <video id="vid2" src={props.data.pathVideo} autoPlay></video>
+          <video id="vid2" src={props.data.pathVideo} controls></video>
         </SwiperSlide>
         {props.data.images.map((image: any) => {
           return (
