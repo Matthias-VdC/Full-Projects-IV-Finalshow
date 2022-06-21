@@ -63,15 +63,20 @@
             padding-right: 2em;
         }
         width: 100%;
+        transition: all 0.5s;
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        cursor: pointer;
         img {
             @media #{$media-tablet} {
                 width: 40%;
             }
             width: 50%;
         }
+    }
+    .logo-container:hover {
+        transform: scale(1.2);
     }
     .desktop-nav {
         @media #{$media-tablet} {
