@@ -4,6 +4,7 @@ import "../../styles/showroom/_button.scss";
 import { finalWorkService } from "../../services/finalWorkService";
 import Cassette from "./Cassette";
 import Search from "../../assets/showroom/search.png";
+import SearchWhite from "../../assets/showroom/search-white.png";
 
 function Body() {
   const [finalWorks, setFinalWorks] = useState<any>([]);
@@ -171,6 +172,7 @@ function Body() {
             placeholder="Zoek op titel, student, tag..."
           />
           <img src={Search} alt="search icon" id="searchIcon" />
+          <img src={SearchWhite} alt="search icon" id="searchIconWhite" />
 
           <select onChange={handleChangeSelect} className="clusterSelection">
             <option value="Alles" className="clusterOption">

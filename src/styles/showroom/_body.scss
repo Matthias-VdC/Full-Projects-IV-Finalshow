@@ -82,6 +82,28 @@ select {
     margin-top: -2vh;
   }
 
+  @media (prefers-color-scheme: light){
+    #searchIcon {
+      display: inline;
+    }
+    
+    #searchIconWhite{
+      display: none;
+    }
+  }
+
+  @media (prefers-color-scheme: dark){
+    #searchIcon {
+      display: none;
+    }
+    
+    #searchIconWhite{
+      width: 22px;
+    }
+  }
+
+  
+
   input {
     width: 40%;
   }
