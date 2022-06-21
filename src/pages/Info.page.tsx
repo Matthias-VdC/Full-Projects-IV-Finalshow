@@ -1,6 +1,8 @@
 import BackgroundStripes from "../components/BackgroundStripes";
 import imgFrame from "../assets/tv.png";
 import capgemini from "../assets/img/sponsors/capgemini.png"
+import ausy from "../assets/img/sponsors/ausy.png"
+import studiowasabi from "../assets/img/sponsors/studiowasabi.svg"
 import nesFrame from "../assets/nes.webp";
 import campusImg from "../assets/campus.webp";
 import divider from "../assets/img/divider.svg";
@@ -96,22 +98,17 @@ export default function Info() {
         <Link to="admin/showcase" className="disabled-btn">
           SHOWCASE
         </Link>
-        <div className="sponsorsection">
-          <h2 className="info-subtitle">
+        <img src={divider} alt="" className="divider" />
+        <h2 className="info-subtitle">
             Met dank aan onze sponsors
           </h2>
+      
           <div className="sponsorlogocontainer">
-            <img src={capgemini} alt="Capgemini" />
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
+            <a href="https://www.capgemini.com/be-en/" target="_blank" rel="noreferrer"><img src={capgemini} alt="Capgemini"/></a>
+            <a href="https://www.ausy.be/en/" target="_blank" rel="noreferrer"><img src={ausy} alt="Ausy" /></a>
+            <a href="https://www.studiowasabi.be/" target="_blank" rel="noreferrer"><img src={studiowasabi} alt="Studio Wasabi"/></a>
           </div>
-
-
-
-
-
-        </div>
+  
       </div>
     </div>
   );
