@@ -58,35 +58,20 @@ export default function Header() {
             <Link onClick={closeSideBar} to="live">
               LIVE SHOW
             </Link>
-            <Link
-              onClick={closeSideBar}
-              to="admin/showroom"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
-            >
-              SHOWROOM{" "}
+            <Link onClick={closeSideBar} to="showroom">
+              SHOWROOM
             </Link>
           </Menu>
           <div className="logo-container">
-          <Link to="/">
-            <img src={logo} alt="logo" />
+            <Link to="/">
+              <img src={logo} alt="logo" />
             </Link>
-            </div>
+          </div>
           <nav className="desktop-nav">
             <Link to="info">INFO</Link>
             <Link to="timetable">TIMETABLE</Link>
             <Link to="live">LIVE SHOW</Link>
-            <Link
-              to="admin/showroom"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
-            >
-              SHOWROOM{" "}
-            </Link>
+            <Link to="showroom">SHOWROOM </Link>
           </nav>
         </header>
       </>
