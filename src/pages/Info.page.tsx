@@ -16,8 +16,7 @@ export default function Info() {
         <BackgroundStripes></BackgroundStripes>
         <p>
           Gepassioneerd door die steeds veranderende geconnecteerde wereld? Ben
-          jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar
-          wat onze laatstejaars verwezenlijkt hebben dit jaar? Dan ben je hier
+          jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar wat onze studenten Multimedia & Creatieve Technologie verwezenlijkt hebben dit jaar? Dan ben je hier
           op het juiste adres!
         </p>
         <p>
@@ -32,8 +31,7 @@ export default function Info() {
           Livestream
         </h2>
         <p>
-          Op vrijdag 24 juni worden de beste werken van onze laatstejaars
-          studenten gepresenteerd tijdens onze jaarlijkse Final Show: een show
+          Op vrijdag 24 juni worden de beste werken van onze studenten gepresenteerd tijdens onze jaarlijkse Final Show: een show
           boordevol talent, interviews, en nog veel meer! Tijdens deze
           livestream worden ook de winnaars aangekondigd voor elke categorie,
           dit wil je dus zeker niet missen!
