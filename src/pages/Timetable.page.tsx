@@ -5,7 +5,7 @@ export default function Timetable() {
   return (
     <>
       <div className="timetable-container">
-        <h1 className="title">Live Show Timetable</h1>
+        <h1 className="title">FINAL SHOW TIMETABLE</h1>
         <VHS color="pink" variation={1} title="intro" startTime="19:00" />
         <VHS color="white" variation={1} />
         <VHS color="red" variation={4} title="WEB & APP" startTime="19:01" />

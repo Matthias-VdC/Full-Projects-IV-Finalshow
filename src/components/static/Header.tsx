@@ -21,7 +21,7 @@ export default function Header() {
   if (location.pathname != "/") {
     return (
       <>
-        <header>
+        <header id="mainHeader">
           <Menu
             customBurgerIcon={
               <svg
@@ -55,14 +55,7 @@ export default function Header() {
             <Link onClick={closeSideBar} to="timetable">
               TIMETABLE
             </Link>
-            <Link
-              onClick={closeSideBar}
-              to="admin/live"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
-            >
+            <Link onClick={closeSideBar} to="live">
               LIVE SHOW
             </Link>
             <Link
@@ -77,20 +70,14 @@ export default function Header() {
             </Link>
           </Menu>
           <div className="logo-container">
+          <Link to="/">
             <img src={logo} alt="logo" />
-          </div>
+            </Link>
+            </div>
           <nav className="desktop-nav">
             <Link to="info">INFO</Link>
             <Link to="timetable">TIMETABLE</Link>
-            <Link
-              to="admin/live"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
-            >
-              LIVE SHOW
-            </Link>
+            <Link to="live">LIVE SHOW</Link>
             <Link
               to="admin/showroom"
               style={{
