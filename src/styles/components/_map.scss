@@ -4,26 +4,7 @@
     width: 100vw;
 
     &__canvas {
-        background: hsla(58, 77%, 50%, 1);
-
-        background: linear-gradient(
-            90deg,
-            hsla(58, 77%, 50%, 1) 0%,
-            hsla(281, 95%, 52%, 1) 100%
-        );
-
-        background: -moz-linear-gradient(
-            90deg,
-            hsla(58, 77%, 50%, 1) 0%,
-            hsla(281, 95%, 52%, 1) 100%
-        );
-
-        background: -webkit-linear-gradient(
-            90deg,
-            hsla(58, 77%, 50%, 1) 0%,
-            hsla(281, 95%, 52%, 1) 100%
-        );
-
+        background-color: black;
         z-index: 0;
     }
 }

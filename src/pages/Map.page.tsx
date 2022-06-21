@@ -6,20 +6,17 @@ import { Scene } from "../components";
 import { Preview } from "../components/Preview";
 
 export const Map = () => {
-  const [showPreview, setShowPreview] = useState(false);
-  const [preview, setPreview] = useState<React.ReactNode>(<div></div>);
-  return (
-    <div className="map">
-      {showPreview && <Preview>{preview}</Preview>}
-      <Canvas
-        className="map__canvas"
-        camera={{ position: [600, 300, 200], far: 5000 }}
-      >
-        <Suspense fallback={null}>
-          <Scene setPreview={setPreview} setShowPreview={setShowPreview} />
-        </Suspense>
-      </Canvas>
-      <Loader />
-    </div>
-  );
+    return (
+        <div className="map">
+            <Canvas
+                className="map__canvas"
+                shadows
+                camera={{ position: [600, 300, 600], far: 5000 }}>
+                <Suspense fallback={null}>
+                    <Scene />
+                </Suspense>
+            </Canvas>
+            <Loader />
+        </div>
+    );
 };
