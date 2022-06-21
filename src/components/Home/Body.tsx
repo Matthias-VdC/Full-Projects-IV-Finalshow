@@ -4,11 +4,12 @@ import "../../styles/showroom/_button.scss";
 import { finalWorkService } from "../../services/finalWorkService";
 import Cassette from "./Cassette";
 import Search from "../../assets/showroom/search.png";
+import SearchWhite from "../../assets/showroom/search-white.png";
 
 function Body() {
-  const [finalWorks, setFinalWorks] = useState([]);
-  const [selectedWorks, setSelectedWorks] = useState([]);
-  const [cluster, setCluster] = useState([]);
+  const [finalWorks, setFinalWorks] = useState<any>([]);
+  const [selectedWorks, setSelectedWorks] = useState<any>([]);
+  const [cluster, setCluster] = useState<any>([]);
   const [input, setInput] = useState(String);
   const [displayFilter, setDisplayFilter] = useState(String);
 
@@ -24,114 +25,30 @@ function Body() {
   }, []);
 
   const handleChangeSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    // if(selectedWorks.length === finalWorks.length){
-    //     if(event.target.value === "Alles"){
-    //         setCluster(finalWorks)
-    //         setSelectedWorks(finalWorks)
-    //     } else {
-    //         var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
-    //         setCluster(filteredResults)
-    //         setSelectedWorks(filteredResults)
-    //     }
-    // } else {
-
-    //     if(event.target.value === "Alles"){
-    //         setCluster(finalWorks)
-    //         var filteredResults = finalWorks.filter((x:any) => x.title.toLowerCase().includes(input))
-    //         setSelectedWorks(filteredResults)
-    //     } else {
-    //         var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
-    //         setCluster(filteredResults)
-    //         var filteredResults = filteredResults.filter((x:any) => x.title.toLowerCase().includes(input))
-    //         setSelectedWorks(filteredResults)
-    //     }
-    // }
-
-    if (selectedWorks.length === finalWorks.length) {
-      if (event.target.value === "Alles") {
-        setCluster(finalWorks);
-        setSelectedWorks(finalWorks);
-      } else if (event.target.value === "webApp") {
-        var filteredResults = finalWorks.filter(
-          (x: any) => x.cluster === event.target.value || x.cluster === "web"
-        );
-        setCluster(filteredResults);
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "smartTechnologies") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value || x.cluster === "digitalMaking"
-        );
-        setCluster(filteredResults);
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "motion") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value ||
-            x.cluster === "interactiveMotion"
-        );
-        setCluster(filteredResults);
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "extendedReality") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value ||
-            x.cluster === "alternativeReality"
-        );
-        setCluster(filteredResults);
-        setSelectedWorks(filteredResults);
-      }
+    if(selectedWorks.length === finalWorks.length){
+        if(event.target.value === "Alles"){
+            setCluster(finalWorks)
+            setSelectedWorks(finalWorks)
+        } else {
+            var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
+            setCluster(filteredResults)
+            setSelectedWorks(filteredResults)
+        }
     } else {
-      if (event.target.value === "Alles") {
-        setCluster(finalWorks);
-        var filteredResults = finalWorks.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "webApp") {
-        var filteredResults = finalWorks.filter(
-          (x: any) => x.cluster === event.target.value || x.cluster === "web"
-        );
-        setCluster(filteredResults);
-        var filteredResults = filteredResults.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "smartTechnologies") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value || x.cluster === "digitalMaking"
-        );
-        setCluster(filteredResults);
-        var filteredResults = filteredResults.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "motion") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value ||
-            x.cluster === "interactionMotion"
-        );
-        setCluster(filteredResults);
-        var filteredResults = filteredResults.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      } else if (event.target.value === "extendedReality") {
-        var filteredResults = finalWorks.filter(
-          (x: any) =>
-            x.cluster === event.target.value ||
-            x.cluster === "alternativeReality"
-        );
-        setCluster(filteredResults);
-        var filteredResults = filteredResults.filter((x: any) =>
-          x.title.toLowerCase().includes(input)
-        );
-        setSelectedWorks(filteredResults);
-      }
+
+        if(event.target.value === "Alles"){
+            setCluster(finalWorks)
+            var filteredResults = finalWorks.filter((x:any) => x.title.toLowerCase().includes(input))
+            setSelectedWorks(filteredResults)
+        } else {
+            var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
+            setCluster(filteredResults)
+            var filteredResults = filteredResults.filter((x:any) => x.title.toLowerCase().includes(input))
+            setSelectedWorks(filteredResults)
+        }
     }
-  };
+
+  }
 
   const getInput = (inputForm: any) => {
     setInput(inputForm);
@@ -171,6 +88,7 @@ function Body() {
             placeholder="Zoek op titel, student, tag..."
           />
           <img src={Search} alt="search icon" id="searchIcon" />
+          <img src={SearchWhite} alt="search icon" id="searchIconWhite" />
 
           <select onChange={handleChangeSelect} className="clusterSelection">
             <option value="Alles" className="clusterOption">
@@ -191,8 +109,8 @@ function Body() {
           </select>
         </div>
       </div>
-      <div className="bodyContainer">
-        <div id="filterButton">
+      <div className="bodyContainer" key={finalWorks?.id}>
+        <div id="filterMobBtn">
           <button className="btn filterButtonPhone" onClick={showForm}>
             Filter
           </button>
@@ -205,6 +123,7 @@ function Body() {
               placeholder="Zoek op titel, student, tag..."
             />
             <img src={Search} alt="search icon" id="searchIcon" />
+            <img src={SearchWhite} alt="search icon" id="searchIconWhite" />
 
             <select onChange={handleChangeSelect} className="clusterSelection">
               <option value="Alles" className="clusterOption">
@@ -227,8 +146,8 @@ function Body() {
         </div>
 
         <div className="cassettesContainer">
-          {selectedWorks.map((x) => {
-            return <Cassette data={x} key={x["id"]}></Cassette>;
+          {selectedWorks.map((x:any) => {
+            return <Cassette data={x} keyCassette={x["id"]}></Cassette>;
           })}
         </div>
       </div>

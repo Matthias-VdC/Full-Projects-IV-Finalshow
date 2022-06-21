@@ -24,7 +24,7 @@
   
 #vid{
     background-color: transparent;
-    height: 7vh;
+    height: 5vh;
 }
 
 .mySwiper .swiper-slide {
@@ -41,7 +41,7 @@
     display: block;
     width: 97%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 @media (min-width:780px){

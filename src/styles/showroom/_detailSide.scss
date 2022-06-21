@@ -14,7 +14,7 @@ h3, h1, h5, p, span, div, img{
 
 .detailPageContainer{
     background-color: black;
-    color: white;
+    color: white !important;
     height: 100vh;
 }
 
@@ -48,6 +48,7 @@ h3, h1, h5, p, span, div, img{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white !important;
 }
 
 .Web {
@@ -73,6 +74,7 @@ h3, h1, h5, p, span, div, img{
     font-weight: 900;
     display: flex;
     align-items: flex-start;
+    color: white !important;
 }
 
 #projectNameMob{
@@ -80,6 +82,7 @@ h3, h1, h5, p, span, div, img{
     flex-direction: row;
     flex-wrap: wrap;
     padding-left: 5%;
+    color: white !important;
     margin-bottom: 5%;
 }
 
@@ -87,11 +90,13 @@ h3, h1, h5, p, span, div, img{
     font-weight: 700;
     font-size: 10pt;
     margin: 0% 2% 0% 0%;
+    color: white !important;
 }
 .nameProjectMob{
     font-size: 10pt;
     margin: 0% 5% 0% 0%;
     font-weight: 400;
+    color: white !important;
 }
 
 .beschrijvingPlaceholderMob{
@@ -112,6 +117,7 @@ h3, h1, h5, p, span, div, img{
     align-items: flex-start;
     margin: 0%;
     text-align: left;
+    color: white !important;
 }
 
 #personalInfoMob{
@@ -121,19 +127,21 @@ h3, h1, h5, p, span, div, img{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    color: white !important;
 }
 
 #stripeContactMob{
     width: 2px;
     height: 120px;
-    background: white;
+    background: white !important;
     margin-right: 5%;
+    color: white !important;
 }
 
 #imgContactMob{
     width: 70px;
     height: 70px;
-    background: white;
+    background: white !important;
     border-radius: 50%
 }
 
@@ -143,21 +151,26 @@ h3, h1, h5, p, span, div, img{
     flex-direction: row;
     font-size: 400;
     font-size: 12pt;
+    color: white !important;
 }
 
 .placeTextMob{
     margin: 0% 2% 3% 5%;
+    color: white !important;
 }
 
 .invulTextMob {
     margin: 0%;
     font-weight: 300;
     font-size: 10pt;
+    color: white !important;
 }
 
 #shareIconMob{
-    color: white;
-    width: 8%;
+    color: white !important;
+    width: 10%;
+    margin-bottom: 15px;
+    margin-top: -30px;
 }
 
 #shareContainerMob{
@@ -165,14 +178,14 @@ h3, h1, h5, p, span, div, img{
     margin-right: 5%;
     display: flex;
     justify-content: flex-end;
+    color: white !important;
 }
-
-
 
 .socialIcon {
     width: 18px;
     padding: 2px;
     margin: 0 5px 0 10px;
+    color: white !important;
 }
 
 
@@ -192,7 +205,7 @@ h3, h1, h5, p, span, div, img{
     }
     
     .cover {
-        height: 58vh;
+        height: 63.5vh;
         width: 18vw;
         margin-top: 10px;
         background-color: transparent;
@@ -201,10 +214,12 @@ h3, h1, h5, p, span, div, img{
     .onCoverElement{
         background-color: transparent;
         position: absolute;
-        color: white;
+        color: white !important;
         top: 10px;
         left: 8px;
         right: 0;
+        max-height: 57vh;
+        overflow-y: scroll;
     }
 
     .clusterName{
@@ -215,33 +230,36 @@ h3, h1, h5, p, span, div, img{
         display: flex;
         align-items: center;
         justify-content: center;
+        color: white !important;
     }
 
-
-    
     #projectArtist{
         font-size: 19pt;
         margin: -1% 0% 0% 0%;
         font-weight: 900;
         display: flex;
         align-items: flex-start;
+        color: white !important;
     }
     
     #projectName{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        color: white !important;
     }
     
     .projectPlaceHolder, .beschrijvingPlaceholder{
         font-weight: 700;
         font-size: 8pt;
         margin: 0% 2% 0% 0%;
+        color: white !important;
     }
     .nameProject{
         font-size: 8pt;
         margin: 0% 5% 0% 0%;
         font-weight: 400;
+        color: white !important;
     }
     
     .beschrijvingPlaceholder{
@@ -252,6 +270,7 @@ h3, h1, h5, p, span, div, img{
         margin: auto;
         margin-top: 5%;
         margin-bottom: 0%;
+        color: white !important;
     }
     
     .beschrijving{
@@ -262,6 +281,16 @@ h3, h1, h5, p, span, div, img{
         width: 90%;
         margin: auto;
         text-align: left;
+        color: white !important;
+        padding: 10px;
+    }
+
+    .blackT {
+        background-color: rgba(0, 0, 0, 0.145);
+    }
+
+    .blue {
+        background-color: #1c2b55;
     }
     
     #personalInfo{
@@ -270,12 +299,13 @@ h3, h1, h5, p, span, div, img{
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
+        color: white !important;
     }
     
     #stripeContact{
         width: 2px;
         height: 120px;
-        background: white;
+        background: white !important;
     }
     
     .infoFlex{
@@ -285,24 +315,27 @@ h3, h1, h5, p, span, div, img{
         font-size: 400;
         font-size: 9pt;
         margin-bottom: 3px;
+        color: white !important;
     }
     
     .placeText{
         margin: 0% 2% 1% 5%;
+        color: white !important;
     }
     
     .invulText {
         margin: 0%;
         font-weight: 300;
         font-size: 8.5pt;
+        color: white !important;
     }
     
     #shareIcon{
-        position: absolute;
-        color: white;
-        width: 7%;
-        bottom: 1%;
-        right: 5%;
+        color: white !important;
+        width: 11%;
+        margin-bottom: 15px;
+        margin-top: -30px;
+        margin-left: 200px;
     }
     
     #shareContainer{

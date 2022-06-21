@@ -20,6 +20,9 @@ export default function Slider(props: any) {
         modules={[FreeMode, Thumbs]}
         className="mySwiper2"
       >
+        <SwiperSlide>
+          <video id="vid2" src={props.data.pathVideo} controls></video>
+        </SwiperSlide>
         {props.data.images.map((image: any) => {
           return (
             <SwiperSlide>
@@ -27,19 +30,6 @@ export default function Slider(props: any) {
             </SwiperSlide>
           );
         })}
-        <SwiperSlide>
-          <video id="vid2" src={props.data.pathVideo} autoPlay muted></video>
-        </SwiperSlide>
-
-        {/* <SwiperSlide>
-          <img src="http://10.3.50.231/storage/otherImage_Een knap maar simpel werkje.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide> */}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -50,6 +40,9 @@ export default function Slider(props: any) {
         modules={[FreeMode, Thumbs]}
         className="mySwiper"
       >
+        <SwiperSlide>
+          <video id="vid" src={props.data.pathVideo} muted></video>
+        </SwiperSlide>
         {props.data.images.map((image: any) => {
           return (
             <SwiperSlide>
@@ -57,24 +50,7 @@ export default function Slider(props: any) {
             </SwiperSlide>
           );
         })}
-        <SwiperSlide>
-          <video id="vid" src={props.data.pathVideo} muted></video>
-          {/* <video width="320" height="240">
-                <source src={props.data.pathVideo} type="video/mp4"/>
-            </video> */}
-        </SwiperSlide>
-        {/* <SwiperSlide>
-          <img src="http://10.3.50.231/storage/mainImage_Een knap maar simpel werkje.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="http://10.3.50.231/storage/otherImage_Een knap maar simpel werkje.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide> */}
+        
       </Swiper>
     </>
   );

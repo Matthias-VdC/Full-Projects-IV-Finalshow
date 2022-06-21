@@ -2,7 +2,7 @@ import React from "react";
 
 class FinalWorkService {
 
-    private readonly url = 'http://10.3.50.231/finalwork'
+    private readonly url = 'http://finalshowcasebackend.be/finalwork'
 
     public async fetchFinalWorks(){
         const response = await fetch(`${this.url}`);
