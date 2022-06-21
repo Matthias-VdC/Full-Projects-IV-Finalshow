@@ -9,6 +9,10 @@
     content: "";
 }
 
+.reactPlayer {
+    height: 60%;
+}
+
 .video-container iframe {
     margin-top: 5vh;
     width: 100%;
@@ -19,14 +23,17 @@
 @media only screen and (max-width: 1023px) {
     .video-container iframe {
         width: 80%;
-        height: 89.5%;
+        height: 100;
         margin: 6% 0 0 10%;
+    }
+    .reactPlayer {
+        height: 100%;
     }
     @media only screen and(orientation: landscape) {
         .video-container iframe {
             margin: 0vh 0 0 5vw;
             width: 55%;
-            height: 65%;
+            height: 50%;
         }
     }
 }

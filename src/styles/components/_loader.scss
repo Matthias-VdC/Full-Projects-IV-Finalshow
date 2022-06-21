@@ -1,0 +1,60 @@
+.loader {
+    background-image: url('../../assets/darkbg.png');
+    position: absolute;
+    z-index: 10;
+    top: -10vh;
+    height: 110vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.blackloader {
+    position: absolute;
+    z-index: 10;
+    top: -10vh;
+    height: 110vh;
+    width: 100vw;
+    background-color: black;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh
+}
+
+.ball {
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    margin: 0 1vw;
+    animation: 2s bounce ease infinite;
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.red {
+    background-color: $red;
+    animation-delay: .25s;
+}
+
+.yellow {
+    background-color: $yellow;
+    animation-delay: .5s;
+}
+
+.green {
+    background-color: $pink;
+    animation-delay: .75s;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(25px);
+    }
+}
