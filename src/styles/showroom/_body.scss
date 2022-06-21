@@ -48,6 +48,14 @@ select {
   background-color: transparent;
 }
 
+@media (prefers-color-scheme: dark){
+  .clusterSelection{
+    color: white;
+    background-color: $darkmodus;
+  }
+}
+
+
 #searchIcon {
   width: 22px;
 }
