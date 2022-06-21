@@ -7,19 +7,13 @@ title: 80's room diorama
 */
 
 import * as THREE from "three";
-import React, { useEffect, useRef, useState } from "react";
-import { Html, OrbitControlsProps, Plane, useGLTF } from "@react-three/drei";
+import React, { useRef, useState } from "react";
+import { OrbitControlsProps, useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import {
-  Bloom,
-  EffectComposer,
-  Select,
-  Selection,
-  SelectiveBloom,
-} from "@react-three/postprocessing";
+import { Select } from "@react-three/postprocessing";
 import pacman from "../../assets/3d/pacman.jpg";
 import { useFrame, useLoader, useThree } from "react-three-fiber";
-import { Mesh, Object3D, Vector2, Vector3 } from "three";
+import { Mesh, Object3D, Quaternion, Vector2, Vector3 } from "three";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -234,35 +228,42 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   const arcadeRef = useRef<Mesh>(null);
   const myControls = controls as OrbitControlsProps;
 
+  // DEFAULT CAMERA QUATERNION
+  // _w: 0.9105743365364628
+  // _x: -0.15622985705189127
+  // _y: 0.37717223974228586
+  // _z: 0.0647125256385033
+  let defaultCameraQ = new THREE.Quaternion(
+    -0.15622985705189127,
+    0.37717223974228586,
+    0.0647125256385033,
+    0.9105743365364628
+  );
+
+  // ARCADE QUATERNION
+  // _w: 0.675727815688641
+  // _x: -0.008811862297680186
+  // _y: 0.7370358824895382
+  // _z: 0.009611353201922336
+  let arcadeCameraQ = new THREE.Quaternion(
+    -0.008833329207960657,
+    0.7385987045990694,
+    0.009679690691833966,
+    0.6740179741281317
+  );
+
   useFrame((state) => {
     if (arcadeClick) {
-      let test = new THREE.Vector3();
-      arcadeRef.current?.getWorldPosition(test);
-
-      state.camera.lookAt(test);
-
-      state.camera.position.lerp(new THREE.Vector3(50, 250, 300), 0.01);
+      state.camera.quaternion.slerp(arcadeCameraQ, 0.02);
+      state.camera.position.lerp(new THREE.Vector3(50, 250, 300), 0.02);
     } else {
-      state.camera.lookAt(new Vector3(0, 0, 0));
-      state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.01);
+      state.camera.quaternion.slerp(defaultCameraQ, 0.02);
+      state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.02);
     }
     state.camera.updateProjectionMatrix();
 
     return null;
   });
-
-  // useEffect(() => {
-  //   if (arcadeClick) {
-  //     arcadeRef.current?.getWorldPosition(test);
-  //     camera.lookAt(test);
-  //     console.log(myControls);
-  //     myControls.target = new THREE.Vector3(-250, 100, 282);
-  //     camera.position.lerp(new THREE.Vector3(0, -100, 0), 0.01);
-  //     camera.updateProjectionMatrix();
-  //   }
-  //   // console.log(state.camera.children);
-  //   return;
-  // }, [arcadeClick]);
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -270,10 +271,10 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
         <mesh
           ref={arcadeRef}
           onPointerOver={(e) => {
-            document.querySelector("body")!.style.cursor = "pointer";
+            document.querySelector("body")!.style.cursor = "pointer !important";
           }}
           onPointerOut={(e) => {
-            document.querySelector("body")!.style.cursor = "inherit";
+            document.querySelector("body")!.style.cursor = "inherit !important";
           }}
           onClick={(e) => {
             setArcadeClick(!arcadeClick);
