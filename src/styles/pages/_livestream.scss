@@ -25,20 +25,16 @@
         background-repeat: no-repeat;
     }
     @media screen and (orientation: landscape) {
-        .streamingBottom {
-            width: 50vw !important;
-            margin-left: 5vw;
-            position: absolute;
-            justify-content: space-between;
-            padding: 0;
-            top: 105vh;
-        }
         .streaming {
             flex-direction: row;
         }
         .streamingBottom {
+            justify-content: space-between;
+            margin-left: 5vw;
+            background-color: transparent;
+            padding: 0;
             position: absolute;
-            bottom: 5vh;
+            top: 122.5vh;
             width: 55vw;
         }
         .streamingBottom h1 {
