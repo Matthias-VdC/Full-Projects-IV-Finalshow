@@ -1,5 +1,6 @@
 import BackgroundStripes from "../components/BackgroundStripes";
 import imgFrame from "../assets/tv.png";
+import capgemini from "../assets/img/sponsors/capgemini.png"
 import nesFrame from "../assets/nes.webp";
 import campusImg from "../assets/campus.webp";
 import divider from "../assets/img/divider.svg";
@@ -44,7 +45,7 @@ export default function Info() {
           LIVE SHOW
         </Link>
 
-        <img src={divider} alt="" className="divider"/>
+        <img src={divider} alt="" className="divider" />
         <div id="infoDagSection"></div>
         <h2 className="info-subtitle">
           Infodag
@@ -67,7 +68,6 @@ export default function Info() {
 
         <img src={divider} alt="" className="divider" />
         <div id="expoSection"></div>
-
         <h2 className="info-subtitle">
           Expo
         </h2>
@@ -96,6 +96,22 @@ export default function Info() {
         <Link to="admin/showcase" className="disabled-btn">
           SHOWCASE
         </Link>
+        <div className="sponsorsection">
+          <h2 className="info-subtitle">
+            Met dank aan onze sponsors
+          </h2>
+          <div className="sponsorlogocontainer">
+            <img src={capgemini} alt="Capgemini" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+          </div>
+
+
+
+
+
+        </div>
       </div>
     </div>
   );
