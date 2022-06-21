@@ -71,20 +71,20 @@ export default function DetailMob(props: any) {
 
       <div id="personalInfoMob">
         <div id="contactInfoContainerMob">
-          {state.socials.map((social: any) => {
-            return (
-              <div>
-                <div className="infoFlexMob">
-                  <img src={phone} alt="phone icon" className="socialIcon" />
-                  <p className="invulTextMob">{social.tel}</p>
-                </div>
-                <div id="maiMobl" className="infoFlexMob">
+        <div id="maiMobl" className="infoFlexMob">
                   <img src={mail} alt="mail icon" className="socialIcon" />
                   <p className="mailAdresMob invulTextMob">
                     {state.user.map((users: any) => {
                       return users.email;
                     })}
                   </p>
+                </div>
+          {state.socials.map((social: any) => {
+            return (
+              <div>
+                <div className="infoFlexMob">
+                  <img src={phone} alt="phone icon" className="socialIcon" />
+                  <p className="invulTextMob">{social.tel}</p>
                 </div>
                 <div id="linkedInMob" className="infoFlexMob">
                   <img

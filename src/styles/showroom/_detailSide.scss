@@ -168,7 +168,9 @@ h3, h1, h5, p, span, div, img{
 
 #shareIconMob{
     color: white !important;
-    width: 8%;
+    width: 10%;
+    margin-bottom: 15px;
+    margin-top: -30px;
 }
 
 #shareContainerMob{
@@ -218,6 +220,8 @@ h3, h1, h5, p, span, div, img{
         top: 10px;
         left: 8px;
         right: 0;
+        max-height: 57vh;
+        overflow-y: scroll;
     }
 
     .clusterName{
@@ -282,6 +286,15 @@ h3, h1, h5, p, span, div, img{
         margin: auto;
         text-align: left;
         color: white !important;
+        padding: 10px;
+    }
+
+    .black {
+        background-color: rgba(0, 0, 0, 0.145);
+    }
+
+    .blue {
+        background-color: #1c2b55;
     }
     
     #personalInfo{
@@ -322,11 +335,11 @@ h3, h1, h5, p, span, div, img{
     }
     
     #shareIcon{
-        position: absolute;
         color: white !important;
-        width: 7%;
-        bottom: 1%;
-        right: 5%;
+        width: 11%;
+        margin-bottom: 15px;
+        margin-top: -30px;
+        margin-left: 200px;
     }
     
     #shareContainer{

@@ -18,18 +18,24 @@ export default function DetailSide(props: any) {
   const [cover, setCover] = useState(String);
   const [cluster, setCluster] = useState(String);
   const [clusterClass, setClusterClass] = useState(String);
+  const [backgroundClass, setBackgroundClass] = useState(String)
 
   useEffect(() => {
     if (props.cassette.cassetteNumber === 1) {
       setCover(cover_1);
+      setBackgroundClass("beschrijving black")
     } else if (props.cassette.cassetteNumber === 2) {
       setCover(cover_2);
+      setBackgroundClass("beschrijving black")
     } else if (props.cassette.cassetteNumber === 3) {
       setCover(cover_3);
+      setBackgroundClass("beschrijving black")
     } else if (props.cassette.cassetteNumber === 4) {
       setCover(cover_4);
+      setBackgroundClass("beschrijving blue")
     } else if (props.cassette.cassetteNumber === 5) {
       setCover(cover_5);
+      setBackgroundClass("beschrijving black")
     }
 
     if (props.data.cluster === "web" || props.data.cluster === "webApp") {
@@ -84,14 +90,7 @@ export default function DetailSide(props: any) {
 
         <div id="personalInfo">
           <div id="contactInfoContainer">
-            {props.data.socials.map((social: any) => {
-              return (
-                <div>
-                  <div className="infoFlex">
-                    <img src={phone} alt="phone icon" className="socialIcon" />
-                    <p className="invulText">{social.tel}</p>
-                  </div>
-                  <div id="mail" className="infoFlex">
+          <div id="mail" className="infoFlex">
                     <img src={mail} alt="mail icon" className="socialIcon" />
                     <p className="mailAdres invulText">
                       {props.data.user.map((users: any) => {
@@ -99,6 +98,14 @@ export default function DetailSide(props: any) {
                       })}
                     </p>
                   </div>
+            {props.data.socials.map((social: any) => {
+              return (
+                <div>
+                  <div className="infoFlex">
+                    <img src={phone} alt="phone icon" className="socialIcon" />
+                    <p className="invulText">{social.tel}</p>
+                  </div>
+                 
                   <div id="linkedIn" className="infoFlex">
                     <img
                       src={linkedin}
