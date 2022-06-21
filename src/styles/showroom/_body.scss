@@ -1,16 +1,14 @@
 @import "Colors";
 @import "_scrollbar.scss";
 
-// #filterMobBtn {
-//   margin: 10% 0% 20% 33%;
-// }
+#filterMobBtn {
+  margin: 10% 0% 20% 33%;
+}
 
 .cassettesContainer {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  /* background-image: url('../Assets/raster-background-light.png'); */
-  // background-image: url("../../assets/showroom/Background-Raster.svg");
   margin-top: 4vh;
 }
 
@@ -50,18 +48,27 @@ select {
   background-color: transparent;
 }
 
+@media (prefers-color-scheme: dark){
+  .clusterSelection{
+    color: white;
+    background-color: $darkmodus;
+  }
+}
+
+
 #searchIcon {
   width: 22px;
 }
 
 @media (min-width: 780px) {
-  .filterButtonPhone {
+  #filterMobBtn {
     display: none;
   }
   .cassettesContainer {
     margin-left: 20%;
     padding-right: 3%;
     width: 77%;
+    height: 70vh;
   }
 
   #searchFormMobile {
@@ -72,7 +79,7 @@ select {
     display: block;
     width: 91%;
     margin-left: 5.8vw;
-    margin-top: 2vh;
+    margin-top: -2vh;
   }
 
   input {
