@@ -109,7 +109,7 @@ function Body() {
           </select>
         </div>
       </div>
-      <div className="bodyContainer" key={finalWorks?.id}>
+      <div className="bodyContainer">
         <div id="filterMobBtn">
           <button className="btn filterButtonPhone" onClick={showForm}>
             Filter
@@ -146,8 +146,8 @@ function Body() {
         </div>
 
         <div className="cassettesContainer">
-          {selectedWorks.map((x:any) => {
-            return <Cassette data={x} keyCassette={x["id"]}></Cassette>;
+          {selectedWorks.map((x:any, index:any) => {
+            return <Cassette key={index} data={x}></Cassette>;
           })}
         </div>
       </div>
@@ -155,3 +155,6 @@ function Body() {
   );
 }
 export default Body;
+
+// key={finalWorks?.id}
+// keyCassette={x["id"]}

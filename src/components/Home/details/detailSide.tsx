@@ -63,7 +63,7 @@ export default function DetailSide(props: any) {
   }, [props.cassette.cassetteNumber, props.data.cluster]);
 
   return (
-    <div className="detailContainer" key={props.keyCassette}>
+    <div className="detailContainer">
       <img src={cover} alt="cover-cassette" className="cover" />
 
       <div className="onCoverElement">
