@@ -1,6 +1,7 @@
 import React from "react";
 import tv from "../assets/tv.png";
 
+/* This is a React component. */
 export default function Notfound() {
   return (
     <div className="notfound-container">

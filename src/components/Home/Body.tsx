@@ -25,28 +25,28 @@ function Body() {
   }, []);
 
   const handleChangeSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    if(selectedWorks.length === finalWorks.length){
-        if(event.target.value === "Alles"){
-            setCluster(finalWorks)
-            setSelectedWorks(finalWorks)
-        } else {
-            var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
-            setCluster(filteredResults)
-            setSelectedWorks(filteredResults)
-        }
-    } else {
-
-        if(event.target.value === "Alles"){
-            setCluster(finalWorks)
-            var filteredResults = finalWorks.filter((x:any) => x.title.toLowerCase().includes(input))
-            setSelectedWorks(filteredResults)
-        } else {
-            var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
-            setCluster(filteredResults)
-            var filteredResults = filteredResults.filter((x:any) => x.title.toLowerCase().includes(input))
-            setSelectedWorks(filteredResults)
-        }
-    }
+    if(selectedWorks.length === finalWorks.length){ 
+      if(event.target.value === "Alles"){
+          setCluster(finalWorks)
+          setSelectedWorks(finalWorks)
+      } else {
+          var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
+          setCluster(filteredResults)
+          setSelectedWorks(filteredResults)
+      }
+  } else {
+      
+      if(event.target.value === "Alles"){
+          setCluster(finalWorks)
+          var filteredResults = finalWorks.filter((x:any) => x.user[0].name.toLowerCase().includes(input) || x.title.toLowerCase().includes(input))
+          setSelectedWorks(filteredResults)
+      } else {
+          var filteredResults = finalWorks.filter((x: any) => x.cluster === event.target.value)
+          setCluster(filteredResults)
+          var filteredResults = filteredResults.filter((x:any) => x.user[0].name.toLowerCase().includes(input) || x.title.toLowerCase().includes(input))
+          setSelectedWorks(filteredResults)
+      }
+  }
 
   }
 

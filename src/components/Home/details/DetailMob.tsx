@@ -10,6 +10,7 @@ import linkedin from "../../../assets/showroom/linkedin.png";
 import instagram from "../../../assets/showroom/instagram.png";
 import Slider from "./Slider";
 import { useState, useEffect } from "react";
+import { RWebShare } from 'react-web-share';
 
 export default function DetailMob(props: any) {
   const navigate = useNavigate();
@@ -108,7 +109,16 @@ export default function DetailMob(props: any) {
         </div>
       </div>
       <div id="shareContainerMob">
-        <img src={share} alt="share-icon" id="shareIconMob" />
+      <RWebShare
+                    data={{
+                    text:"Bekijk hier mijn final work",
+                    url: `https://finalshow.be/showcase/finalwork/${state.id}`,
+                    title: "Mijn final work",
+                    }}
+                    sites={["facebook", "instagram", "linkedin"]}
+                    >
+                <img  src={share} alt="share-icon" id="shareIconMob"/>
+            </RWebShare>
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import logo from "../assets/img/Final-Show-Logo.svg";
 import ehb from "../assets/img/EhB-logo.png";
 import video from "../assets/videos/countdown.mp4";
-import button from "../assets/img/tvdial.png";
 import Countdown from "react-countdown";
 import { useState } from "react";
 import ReactPlayer from "react-player";
@@ -10,11 +9,11 @@ import { Link } from "react-router-dom";
 import ReactGA from "react-ga";
 import Loader from "./Loader";
 
+/* A React component that is used to display a countdown timer and a video. */
 function Television() {
   const [showVideo, setShowVideo] = useState(true);
   const [loader, setLoader] = useState(true);
 
-  // define renderer for countdown
   const renderer = (props: any) => {
     return (
       <>
@@ -95,9 +94,8 @@ function Television() {
             });
           } }
         >
-          Find out more
+          Meer info
         </Link>
-
       </div></>
     
   );
