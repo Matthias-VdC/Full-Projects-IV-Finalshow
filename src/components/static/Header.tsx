@@ -99,7 +99,7 @@ export default function Header() {
             </NavLink>
           </Menu>
           <div className="logo-container">
-            <NavLink to="/">
+            <NavLink to="/hub">
               <img src={logo} alt="logo" />
             </NavLink>
           </div>
