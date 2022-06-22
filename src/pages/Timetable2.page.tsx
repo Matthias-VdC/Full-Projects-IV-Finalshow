@@ -137,12 +137,13 @@ export default function Timetable2() {
             </div>
           </div>
           <div className="timetable-container">
-            {timetableData.map((item) => {
+            {timetableData.map((item, i) => {
               return (
                 <TimetableItem
                   time={item.time}
                   title={item.title}
                   desc={item.description}
+                  key={i}
                 />
               );
             })}
