@@ -1,13 +1,15 @@
-import { Logo } from "../components/Logo";
-import { Intro } from "../components/Intro";
 import { Television } from "../components/Television";
 
-function Index(){
-    return(
+/**
+ * The Index function returns a div with the class name "homepage" and a Television component
+ * @returns A div with the className of "homepage" and a Television component.
+ */
+function Index() {
+    return (
         <div className="homepage">
             <Television></Television>
         </div>
     );
 }
 
-export {Index}
+export { Index }
