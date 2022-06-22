@@ -225,7 +225,8 @@ h3, h1, h5, p, span, div, img{
     .clusterName{
         margin: 0% 0% 2% 0%;
         font-size: 9pt;
-        width: 8vw;
+        padding: 0.2vh 1vw;
+        width: fit-content;
         height: 2vh;
         display: flex;
         align-items: center;
