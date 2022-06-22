@@ -10,13 +10,19 @@
             touch-action: none;
         }
     }
-    &_arcadeContainer{
-        position: absolute;
-        width: 50px;
-        height: 50px;
+    &_arcadeButton{
+        background-color: $blue;
+        width: 40px;
+        height: 40px;
         border-radius: 100%;
-        display: none;
-        background-color: red;
-        z-index: 999
+        border: 3px solid $background;
+        cursor: pointer;
+        transition: 0.4s all ease-in-out;
+    }
+    &_arcadeButton:hover{
+        transform: scale(1.1);
+    }
+    &_arcadeLink{
+        
     }
 }
