@@ -3,6 +3,13 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Canvas } from "react-three-fiber";
 import { Scene } from "../components";
+import {
+  EffectComposer,
+  Bloom,
+  Scanline,
+  ChromaticAberration,
+} from "@react-three/postprocessing";
+import { Vector2 } from "three";
 
 export const Map = ({ ...props }) => {
   console.log(props);
@@ -30,6 +37,16 @@ export const Map = ({ ...props }) => {
         <Suspense fallback={null}>
           <Scene />
         </Suspense>
+        <EffectComposer>
+          <Bloom
+            luminanceThreshold={0}
+            luminanceSmoothing={0.9}
+            height={500}
+            opacity={3}
+          />
+          <Scanline density={2} />
+          <ChromaticAberration offset={new Vector2(0.001, 0.002)} />
+        </EffectComposer>
       </Canvas>
       <Link to="/showroom">Go To Showroom</Link>
 
