@@ -74,7 +74,7 @@
   box-sizing: border-box;
   .logo-container {
     box-sizing: border-box;
-    padding-left: 2em;
+    padding: 0 2em;
     @media #{$media-tablet} {
       grid-column: 2;
       justify-content: flex-end;
@@ -85,9 +85,16 @@
     align-items: center;
     justify-content: flex-start;
     cursor: pointer;
+
+    a{
+      @media #{$media-tablet} {
+        text-align: right;
+      }
+    }
+
     img {
       @media #{$media-tablet} {
-        width: 40%;
+        width: 60%;
       }
       width: 50%;
       margin-left: 50px;

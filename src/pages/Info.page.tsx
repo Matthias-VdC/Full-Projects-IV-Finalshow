@@ -17,9 +17,9 @@ export default function Info() {
         <BackgroundStripes></BackgroundStripes>
         <p>
           Gepassioneerd door die steeds veranderende geconnecteerde wereld? Ben
-          jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar wat onze studenten Multimedia & Creatieve Technologie verwezenlijkt hebben dit jaar? Dan ben je hier
-
-          op het juiste adres!
+          jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar 
+          wat onze studenten Multimedia & Creatieve Technologie verwezenlijkt hebben
+          dit jaar? Dan ben je hier op het juiste adres!
         </p>
         <p>
           Een live show, een tentoonstelling, en zelfs een infodag: dit staat er
