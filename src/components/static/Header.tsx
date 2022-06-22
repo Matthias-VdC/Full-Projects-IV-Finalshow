@@ -7,6 +7,7 @@ import logo from "../../assets/img/Final-Show-Logo.svg";
 export default function Header() {
   const location = useLocation();
   const [isOpen, setOpen] = useState(false);
+  let headerStyle = {};
 
   const handleIsOpen = () => {
     setOpen(!isOpen);
@@ -16,15 +17,19 @@ export default function Header() {
     setOpen(false);
   };
 
+  location.pathname == "/hub"
+    ? (headerStyle = { backgroundColor: "black", backgroundImage: "none" })
+    : (headerStyle = {});
+
   if (location.pathname != "/") {
     return (
       <>
-        <header id="mainHeader">
+        <header id="mainHeader" style={headerStyle}>
           <Menu
             customBurgerIcon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="#000000"
+                fill={location.pathname == "/hub" ? "#fff" : "#000"}
                 viewBox="0 0 50 50"
                 width="250px"
                 height="250px"
@@ -47,6 +52,15 @@ export default function Header() {
             onOpen={handleIsOpen}
             onClose={handleIsOpen}
           >
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              onClick={closeSideBar}
+              to="hub"
+            >
+              HOME
+            </NavLink>
             <NavLink
               className={({ isActive }) =>
                 isActive ? "lactive-class" : "not-active-class"
@@ -85,11 +99,19 @@ export default function Header() {
             </NavLink>
           </Menu>
           <div className="logo-container">
-            <NavLink to="/">
+            <NavLink to="/hub">
               <img src={logo} alt="logo" />
             </NavLink>
           </div>
           <nav className="desktop-nav">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="hub"
+            >
+              HOME
+            </NavLink>
             <NavLink
               className={({ isActive }) =>
                 isActive ? "lactive-class" : "not-active-class"
