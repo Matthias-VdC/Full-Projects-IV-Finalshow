@@ -28,7 +28,7 @@ export default function Slider(props: any) {
             <SwiperSlide>
               <img
                 src={image.path.replace(
-                  "http://10.3.50.231/storage/",
+                  "http://finalshowcasebackend.be/storage/",
                   "https://finalshow.be/images/"
                 )}
               />
@@ -49,7 +49,7 @@ export default function Slider(props: any) {
           <video
             id="vid"
             src={props.data.pathVideo.replace(
-              "http://10.3.50.231/storage/",
+              "http://finalshowcasebackend.be/storage/",
               "https://finalshow.be/images/"
             )}
             muted
@@ -60,7 +60,7 @@ export default function Slider(props: any) {
             <SwiperSlide>
               <img
                 src={image.path.replace(
-                  "http://10.3.50.231/storage/",
+                  "http://finalshowcasebackend.be/storage/",
                   "https://finalshow.be/images/"
                 )}
               />
