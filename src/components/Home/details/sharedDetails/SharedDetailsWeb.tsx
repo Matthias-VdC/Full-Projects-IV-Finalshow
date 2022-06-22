@@ -60,7 +60,7 @@ export default function SharedDetailWeb(props:any){
         } else if (number === 3) {
             setCassette(side_3)
             setCover(cover_3)
-            setStyle("white")
+            setStyle("white beschrijvingShare bckgShare")
         }  else if (number === 4) {
             setCassette(side_4)
             setCover(cover_4)
@@ -107,7 +107,7 @@ export default function SharedDetailWeb(props:any){
 
                 <div className="rightCoverDetail">
                     <h3 className="projectBeschrijvingShare">PROJECTBESCHRIJVING</h3>
-                    <p className="beschrijvingShare">{props.data.description}</p>
+                    <p className={styling}>{props.data.description}</p>
                     
                     <div id="personalInfo" className="infoPersonalShareContainer">
                         <div id="contactInfoContainer">
