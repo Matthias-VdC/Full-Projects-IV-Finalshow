@@ -54,9 +54,10 @@
         #0073ff 7.5px 7.5px 0px 0px,
         #000000 9px 9px 0px 0px;
     }
-    .more-btn:hover {
-        transform: scale(1.1) translateX(-25%) translateY(-25%);
-    }
+}
+
+.more-btn:hover {
+    transform: scale(1.1) translateX(-45%) translateY(-25%);
 }
 
 .televisionContainer {

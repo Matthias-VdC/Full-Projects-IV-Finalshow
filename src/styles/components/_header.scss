@@ -94,7 +94,6 @@
     }
     .logo-container:hover {
         transform: scale(1.2);
-        transform: translate();
     }
     .desktop-nav {
         @media #{$media-tablet} {
@@ -106,6 +105,7 @@
         padding-right: 2em;
         a {
             margin-left: 3em;
+            transition: all 0.2s ease-in-out;
             width: 15%;
             @media screen and (min-width: 1300px) {
                 width: 10%;
@@ -118,8 +118,8 @@
             font-size: 0.8em;
             padding: 0.8em 1em;
             border: 1.5px solid black;
-            transition: box-shadow 0.2s ease-in-out;
             &:hover {
+                transform: scale(1.1);
                 box-shadow: #ffea00 1.5px 1.5px 0px 0px, #000000 3px 3px 0px 0px, #ff0000 4.5px 4.5px 0px 0px, #000000 6px 6px 0px 0px, #0073ff 7.5px 7.5px 0px 0px, #000000 9px 9px 0px 0px;
             }
         }
