@@ -23,9 +23,9 @@ export default function Slider(props: any) {
         <SwiperSlide>
           <video id="vid2" src={props.data.pathVideo} controls></video>
         </SwiperSlide>
-        {props.data.images.map((image: any) => {
+        {props.data.images.map((image: any, index:any) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <img src={image.path} />
             </SwiperSlide>
           );
@@ -43,9 +43,9 @@ export default function Slider(props: any) {
         <SwiperSlide>
           <video id="vid" src={props.data.pathVideo} muted></video>
         </SwiperSlide>
-        {props.data.images.map((image: any) => {
+        {props.data.images.map((image: any, index:any) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <img src={image.path} />
             </SwiperSlide>
           );
