@@ -48,16 +48,20 @@ export default function Header() {
             onOpen={handleIsOpen}
             onClose={handleIsOpen}
           >
-            <NavLink onClick={closeSideBar} to="info">
+            <NavLink className={({ isActive }) =>
+              (isActive ? "lactive-class" : "not-active-class")} onClick={closeSideBar} to="info">
               INFO
             </NavLink>
-            <NavLink onClick={closeSideBar} to="timetable">
+            <NavLink className={({ isActive }) =>
+              (isActive ? "lactive-class" : "not-active-class")} onClick={closeSideBar} to="timetable">
               TIMETABLE
             </NavLink>
-            <NavLink onClick={closeSideBar} to="live">
+            <NavLink className={({ isActive }) =>
+              (isActive ? "lactive-class" : "not-active-class")} onClick={closeSideBar} to="live">
               LIVE SHOW
             </NavLink>
-            <NavLink
+            <NavLink className={({ isActive }) =>
+              (isActive ? "lactive-class" : "not-active-class")}
               onClick={closeSideBar}
               to="admin/showroom"
               style={{
@@ -74,10 +78,15 @@ export default function Header() {
             </NavLink>
           </div>
           <nav className="desktop-nav">
-            <NavLink to="info">INFO</NavLink>
-            <NavLink to="timetable">TIMETABLE</NavLink>
-            <NavLink to="live">LIVE SHOW</NavLink>
+            <NavLink className={({ isActive }) =>
+              (isActive ? "lactive-class" : "not-active-class")} to="info">INFO</NavLink>
+            <NavLink className={({ isActive }) =>
+              (isActive ? "lactive-class" : "not-active-class")} to="timetable">TIMETABLE</NavLink>
+            <NavLink className={({ isActive }) =>
+              (isActive ? "lactive-class" : "not-active-class")} to="live">LIVE SHOW</NavLink>
             <NavLink
+              className={({ isActive }) =>
+                (isActive ? "lactive-class" : "not-active-class")}
               to="admin/showroom"
               style={{
                 pointerEvents: "none",

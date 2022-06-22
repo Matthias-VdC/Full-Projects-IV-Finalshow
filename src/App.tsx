@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Livestream from "./pages/Livestream.page";
 import Info from "./pages/Info.page";

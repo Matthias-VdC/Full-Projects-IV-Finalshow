@@ -51,9 +51,21 @@
             background-image: none;
         }
     }
+    .lactive-class {
+        background-color: $background !important;
+    }
+    #mainHeader .desktop-nav .lactive-class {
+        color: $dark !important;
+    }
 }
 
 @media (prefers-color-scheme: light) {
+    .lactive-class {
+        background-color: $dark !important;
+    }
+    #mainHeader .desktop-nav .lactive-class {
+        color: $background !important;
+    }
     body {
         background-image: url("../../assets/lightbg.png");
         background-repeat: no-repeat;
