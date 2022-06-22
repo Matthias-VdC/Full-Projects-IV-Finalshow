@@ -3,11 +3,10 @@ import imgFrame from "../assets/tv.png";
 import capgemini from "../assets/img/sponsors/capgemini.png"
 import ausy from "../assets/img/sponsors/ausy.png"
 import studiowasabi from "../assets/img/sponsors/studiowasabi.svg"
-import nesFrame from "../assets/nes.webp";
-import campusImg from "../assets/campus.webp";
 import divider from "../assets/img/divider.svg";
 import { Link } from "react-router-dom";
 
+/* It's a function that returns a JSX element. */
 export default function Info() {
   return (
     <div id="infoSection">
@@ -17,9 +16,9 @@ export default function Info() {
         <BackgroundStripes></BackgroundStripes>
         <p>
           Gepassioneerd door die steeds veranderende geconnecteerde wereld? Ben
-          jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar wat onze studenten Multimedia & Creatieve Technologie verwezenlijkt hebben dit jaar? Dan ben je hier
-
-          op het juiste adres!
+          jij een digitale maker van de toekomst? Of ben je gewoon benieuwd naar 
+          wat onze studenten Multimedia & Creatieve Technologie verwezenlijkt hebben
+          dit jaar? Dan ben je hier op het juiste adres!
         </p>
         <p>
           Een live show, een tentoonstelling, en zelfs een infodag: dit staat er
@@ -98,7 +97,7 @@ export default function Info() {
             Campus Kaai naast het Medialab, Nijverheidskaai 170, 1070 Anderlecht.
           </p>
         </div>
-        <Link to="admin/showcase" className="disabled-btn">
+        <Link to="/showroom" className="multicolor-btn">
           SHOWCASE
         </Link>
         <img src={divider} alt="" className="divider" />

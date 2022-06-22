@@ -1,15 +1,18 @@
-// .timetable-container {
-//   margin: 3em 20%;
+/* Setting the margin of the timetable container to 3em 20% and then setting the margin of the
+timetable container to 1em 10% when the screen size is less than or equal to the media tablet size.
+It is also setting the display of the first h1 to inline-block and setting the margin-bottom of the
+first h1 to 1.5em. */
 
-//   @media #{$media-tablet} {
-//     margin: 1em 10%;
-//   }
-
-//   h1:first-child {
-//     display: inline-block;
-//     margin-bottom: 1.5em;
-//   }
-// }
+.timetable-container {
+  margin: 3em 20%;
+  @media #{$media-tablet} {
+    margin: 1em 10%;
+  }
+  h1:first-child {
+    display: inline-block;
+    margin-bottom: 1.5em;
+  }
+}
 
 @font-face {
   font-family: Mode7;
@@ -61,6 +64,17 @@ $teletext-pink: #ff00ff;
   width: 100%;
   position: relative;
   overflow: hidden;
+
+  #hint-text {
+    display: block;
+    font-weight: 800;
+    padding: 0.2em 1em;
+    background-color: white;
+    margin-bottom: 0.5em;
+    @media screen and (max-width: 1075px) {
+      display: none;
+    }
+  }
 
   @media screen and (max-width: 1075px) {
     position: absolute;
@@ -251,7 +265,7 @@ $teletext-pink: #ff00ff;
     padding: 0;
     width: 1.5em;
     height: 1.5em;
-    border: 1px solid #ddd;
+    border: 1px solid white;
   }
   .piece-i {
     background-color: $teletext-red;
@@ -269,7 +283,7 @@ $teletext-pink: #ff00ff;
     background-color: $teletext-pink;
   }
   .piece-t {
-    background-color: white;
+    background-color: rgb(255, 115, 0);
   }
   .piece-z {
     background-color: #00ff00;

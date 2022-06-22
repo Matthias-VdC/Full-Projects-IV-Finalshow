@@ -98,6 +98,9 @@ export default function Timetable2() {
     <div id="teletext-container">
       {!easterEgg ? (
         <div id="teletext">
+          <p id="hint-text" className="teletext pink-text">
+            Press '8' for a surprise!
+          </p>
           <p
             className="teletext red-text"
             id="back-arrow"
@@ -134,12 +137,13 @@ export default function Timetable2() {
             </div>
           </div>
           <div className="timetable-container">
-            {timetableData.map((item) => {
+            {timetableData.map((item, i) => {
               return (
                 <TimetableItem
                   time={item.time}
                   title={item.title}
                   desc={item.description}
+                  key={i}
                 />
               );
             })}

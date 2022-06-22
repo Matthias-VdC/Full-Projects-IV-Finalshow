@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -21,12 +22,24 @@ export default function Slider(props: any) {
         className="mySwiper2"
       >
         <SwiperSlide>
-          <video id="vid2" src={props.data.pathVideo} controls></video>
+          <video
+            id="vid2"
+            src={props.data.pathVideo.replace(
+              "http://finalshowcasebackend.be/",
+              "https://finalshow.be/images/"
+            )}
+            controls
+          ></video>
         </SwiperSlide>
         {props.data.images.map((image: any, index:any) => {
           return (
-            <SwiperSlide key={index}>
-              <img src={image.path} />
+            <SwiperSlide>
+              <img
+                src={image.path.replace(
+                  "http://finalshowcasebackend.be/storage/",
+                  "https://finalshow.be/images/"
+                )}
+              />
             </SwiperSlide>
           );
         })}
@@ -41,12 +54,24 @@ export default function Slider(props: any) {
         className="mySwiper"
       >
         <SwiperSlide>
-          <video id="vid" src={props.data.pathVideo} muted></video>
+          <video
+            id="vid"
+            src={props.data.pathVideo.replace(
+              "http://finalshowcasebackend.be/",
+              "https://finalshow.be/images/"
+            )}
+            muted
+          ></video>
         </SwiperSlide>
         {props.data.images.map((image: any, index:any) => {
           return (
-            <SwiperSlide key={index}>
-              <img src={image.path} />
+            <SwiperSlide>
+              <img
+                src={image.path.replace(
+                  "http://finalshowcasebackend.be/storage/",
+                  "https://finalshow.be/images/"
+                )}
+              />
             </SwiperSlide>
           );
         })}

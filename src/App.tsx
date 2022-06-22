@@ -1,17 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
 
-import {
-  Route,
-  Routes,
-  BrowserRouter,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import Livestream from "./pages/Livestream.page";
 import Info from "./pages/Info.page";
 import { Index } from "./pages/Index.page";
-import Timetable from "./pages/Timetable.page";
+
 import Timetable2 from "./pages/Timetable2.page";
 import Notfound from "./pages/Notfound.page";
 import Home from "./components/Home/Home";
@@ -62,7 +57,7 @@ function App() {
   }, []);
   return (
     <div className="App" id="app-container">
-      {location.pathname == "/timetable" && width < 1075 ? <></> : <Header />}
+      {location.pathname === "/timetable" && width < 1075 ? <></> : <Header />}
       <div id="page-container">
         <Routes>
           <Route path="/" element={<Index />} />

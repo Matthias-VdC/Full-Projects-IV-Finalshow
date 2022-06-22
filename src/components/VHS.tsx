@@ -1,3 +1,4 @@
+/* eslint-disable no-self-assign */
 import React from "react";
 import red1 from "../assets/img/vhs/red-1.png";
 import red2 from "../assets/img/vhs/red-2.png";
@@ -18,6 +19,7 @@ import orange4 from "../assets/img/vhs/orange-4.png";
 import pink from "../assets/img/vhs/pink.png";
 import white from "../assets/img/vhs/white.png";
 
+/* It's a React component that takes in props and returns a VHS tape. */
 interface IProps {
   color: string;
   variation: number;

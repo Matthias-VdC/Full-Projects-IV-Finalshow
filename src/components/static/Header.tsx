@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+/* eslint-disable eqeqeq */
+import React, { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import logo from "../../assets/img/Final-Show-Logo.svg";
-import hamburgerIcon from "../../assets/img/menu-icon.svg";
 
 export default function Header() {
   const location = useLocation();
-  console.log(location);
-
   const [isOpen, setOpen] = useState(false);
 
   const handleIsOpen = () => {
@@ -49,29 +47,81 @@ export default function Header() {
             onOpen={handleIsOpen}
             onClose={handleIsOpen}
           >
-            <Link onClick={closeSideBar} to="info">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              onClick={closeSideBar}
+              to="info"
+            >
               INFO
-            </Link>
-            <Link onClick={closeSideBar} to="timetable">
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              onClick={closeSideBar}
+              to="timetable"
+            >
               TIMETABLE
-            </Link>
-            <Link onClick={closeSideBar} to="live">
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              onClick={closeSideBar}
+              to="live"
+            >
               LIVE SHOW
-            </Link>
-            <Link onClick={closeSideBar} to="showroom">
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              onClick={closeSideBar}
+              to="showroom"
+            >
               SHOWROOM
-            </Link>
+            </NavLink>
           </Menu>
           <div className="logo-container">
-            <Link to="/">
+            <NavLink to="/">
               <img src={logo} alt="logo" />
-            </Link>
+            </NavLink>
           </div>
           <nav className="desktop-nav">
-            <Link to="info">INFO</Link>
-            <Link to="timetable">TIMETABLE</Link>
-            <Link to="live">LIVE SHOW</Link>
-            <Link to="showroom">SHOWROOM </Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="info"
+            >
+              INFO
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="timetable"
+            >
+              TIMETABLE
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="live"
+            >
+              LIVE SHOW
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="showroom"
+            >
+              SHOWROOM
+            </NavLink>
           </nav>
         </header>
       </>

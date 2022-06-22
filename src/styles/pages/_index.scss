@@ -1,39 +1,38 @@
-.homepage{
+.homepage {
     width: 100vw;
     height: 100vh;
     position: relative;
 }
 
-.homepageBackground{
+.homepageBackground {
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
-
     overflow: hidden;
 }
 
-.upperBackground{
+.upperBackground {
     height: 70vh;
     width: 100vw;
     background: linear-gradient(to bottom, #ff0074 0%, #e000e0 60%, #7700cc 100%);
     position: relative;
 }
 
-.upperBackground::before{
+.upperBackground::before {
     content: '';
     position: absolute;
     width: inherit;
     height: 50vh;
     position: absolute;
     bottom: -50vh;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.3),black);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), black);
     z-index: 1;
 }
 
-.upperBackground::after{
-    content:'';
+.upperBackground::after {
+    content: '';
     background: linear-gradient(to bottom, #ff0074 0%, #e000e0 60%, #7700cc 100%);
     width: inherit;
     height: 50vh;
@@ -43,18 +42,17 @@
     z-index: 1;
 }
 
-.lowerBackground{
+.lowerBackground {
     position: relative;
     height: 50vh;
     width: 100vw;
-    background-image: repeating-linear-gradient(to left, transparent,transparent 20px, white 20px, white 21px, transparent 21px),
-    repeating-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6) 20px, rgba(255,255,255,0.8) 20px, rgba(255,255,255,0.8) 21px, rgba(0,0,0,0.8) 21px);
+    background-image: repeating-linear-gradient(to left, transparent, transparent 20px, white 20px, white 21px, transparent 21px), repeating-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 20px, rgba(255, 255, 255, 0.8) 20px, rgba(255, 255, 255, 0.8) 21px, rgba(0, 0, 0, 0.8) 21px);
     transform-origin: 50% 0%;
     transform: perspective(200px) rotateX(75deg);
 }
 
-.lowerBackground::after{
-    content:'';
+.lowerBackground::after {
+    content: '';
     position: absolute;
     width: 100%;
     height: 50px;
