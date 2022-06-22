@@ -17,6 +17,7 @@ import instagram from '../../../../assets/showroom/instagram.png';
 
 import "../../../../styles/showroom/_sharedDetailWeb.scss";
 import Slider from "../Slider";
+import BackgroundStripesShowcase from "../../../Standard/BackgroundStripesShowcase";
 
 export default function SharedDetailWeb(props:any){
     var [loading, setLoading] = useState(Boolean) 
@@ -52,11 +53,11 @@ export default function SharedDetailWeb(props:any){
         if(number === 1){
             setCassette(side_1)
             setCover(cover_1)
-            setStyle('white')
+            setStyle('white beschrijvingShare')
         } else if (number === 2) {
             setCassette(side_2)
             setCover(cover_2)
-            setStyle("black")
+            setStyle("black beschrijvingShare")
         } else if (number === 3) {
             setCassette(side_3)
             setCover(cover_3)
@@ -64,11 +65,11 @@ export default function SharedDetailWeb(props:any){
         }  else if (number === 4) {
             setCassette(side_4)
             setCover(cover_4)
-            setStyle("white")
+            setStyle("white beschrijvingShare")
         }   else if (number === 5) {
             setCassette(side_5)
             setCover(cover_5)
-            setStyle("white")
+            setStyle("white beschrijvingShare")
         } 
 
 
@@ -77,6 +78,7 @@ export default function SharedDetailWeb(props:any){
 
     return (
         <div className='detailPageContainer detailContainerShare'>
+            <BackgroundStripesShowcase/>
             {loading? 
             <div className="FullCassetteCoverSideDetail">
                 <div className="CassetteStylingDetail">
@@ -138,11 +140,13 @@ export default function SharedDetailWeb(props:any){
                             </div> 
                         </div>
                 </div>
-                {/* <div className="sideDetail">
+                
+                
+                <div className="sideDetail">
                     <div className='cassetteNameDiv'>
                         <h1 className='cassetteName nameShareProject' style={{'color': styling}}>{props.data.title}</h1>
                     </div>
-                </div> */}
+                </div>
 
           
             </div>
