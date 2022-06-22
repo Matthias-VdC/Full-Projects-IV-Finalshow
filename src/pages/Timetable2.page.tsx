@@ -191,8 +191,10 @@ export default function Timetable2() {
             }: inter) => (
               <div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <p className="teletext">Points: {points}</p>
-                  <p className="teletext">Lines Cleared: {linesCleared}</p>
+                  <p className="teletext white-text">Points: {points}</p>
+                  <p className="teletext white-text">
+                    Lines Cleared: {linesCleared}
+                  </p>
                 </div>
                 <Gameboard />
                 {state === "LOST" && (
