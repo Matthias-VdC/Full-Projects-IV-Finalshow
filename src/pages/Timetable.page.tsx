@@ -1,6 +1,7 @@
 import React from "react";
 import VHS from "../components/VHS";
 
+/* A function that returns a component. */
 export default function Timetable() {
   return (
     <>

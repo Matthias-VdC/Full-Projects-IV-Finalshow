@@ -1,8 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { RWebShare } from "react-web-share";
 
 /* A function that returns a div with a share button. */
 function Share() {
-
   return (
     <div className="shareDiv">
       <RWebShare

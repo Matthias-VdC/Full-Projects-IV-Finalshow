@@ -5,7 +5,7 @@
         background-size: cover;
         background-attachment: fixed;
         color: white;
-      }
+    }
     .sharebutton,
     h1,
     h2,
@@ -14,8 +14,7 @@
     #mainHeader .desktop-nav a {
         color: $background !important;
     }
-
-    #mainHeader .desktop-nav a{
+    #mainHeader .desktop-nav a {
         background-color: $dark;
     }
     .bm-icon {
@@ -61,11 +60,10 @@
         background-size: cover;
         background-attachment: fixed;
         color: black;
-      }
-    #mainHeader .desktop-nav a{
+    }
+    #mainHeader .desktop-nav a {
         background-color: $background;
     }
-
     .web-share-fade-in-up,
     .web-share-fade-in-up>button {
         background-color: $background !important;

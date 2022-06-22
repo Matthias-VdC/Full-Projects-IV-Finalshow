@@ -3,11 +3,10 @@ import imgFrame from "../assets/tv.png";
 import capgemini from "../assets/img/sponsors/capgemini.png"
 import ausy from "../assets/img/sponsors/ausy.png"
 import studiowasabi from "../assets/img/sponsors/studiowasabi.svg"
-import nesFrame from "../assets/nes.webp";
-import campusImg from "../assets/campus.webp";
 import divider from "../assets/img/divider.svg";
 import { Link } from "react-router-dom";
 
+/* It's a function that returns a JSX element. */
 export default function Info() {
   return (
     <div id="infoSection">
