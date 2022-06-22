@@ -1,0 +1,69 @@
+.map {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+
+    &__canvas {
+        background-color: black;
+        z-index: 0;
+        @media only screen and (max-width: 1023px) {
+            touch-action: none;
+        }
+    }
+    &_globalButton{
+        background-color: $background;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        cursor: pointer;
+        transition: 0.4s all ease-in-out;
+    }
+    &_globalButton:hover{
+        transform: scale(1.1);
+    }
+    &_globalLink{
+        position: relative;
+        background-color: $background;
+        height: 2em;
+        width: 5em;
+        padding: 0.6em 1em;
+        margin-left: 4em;
+        transition: 0.4s all ease-in-out;
+        margin-top: -60px;
+    }
+
+    &_globalLink p {
+        color: black !important;
+    }
+
+    &_globalLink:hover{
+        cursor: pointer;
+        box-shadow: #ffea00 1.5px 1.5px 0px 0px, #000000 3px 3px 0px 0px, #ff0000 4.5px 4.5px 0px 0px, #000000 6px 6px 0px 0px, #0073ff 7.5px 7.5px 0px 0px, #000000 9px 9px 0px 0px;
+    }
+
+    &_globalLink::after{
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        top: 25%;
+        left: -5px;
+        z-index: -5;
+        transform: rotate(110deg) skew(15deg, 15deg);
+        background-color: $background;
+    }
+
+    &_subText{
+        color: white !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+        &_globalButton{
+        width: 30px;
+        height: 30px;
+        }
+        &_globalLink p {
+            font-size: 0.6em;
+        }
+    }
+}

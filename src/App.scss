@@ -1,0 +1,6 @@
+/* Importing the main.scss file into the index.js file. */
+
+@import "./styles/main.scss";
+#page-container {
+    height: calc(100vh - 15%);
+}

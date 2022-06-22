@@ -1,0 +1,49 @@
+@import "Colors";
+
+#winGenomContainer{
+    display: block;
+    height: 2.5%;
+    cursor: context-menu;
+}
+
+#selectionGenomOrWins {
+    display: flex;
+    margin-left: 7%;
+    z-index: 15;
+    margin-top: 10%;
+}
+
+#selectionGenomOrWins p{
+    margin-right: 2em;
+    font-weight: 700;
+    font-size: 16pt;
+}
+
+.activeSelection {
+    box-shadow: 0 -2px $blue inset,0 -4px $red inset, 0 -6px $yellow inset;
+}
+
+@media (min-width:780px){
+    #winGenomContainer{
+        display: block;
+        height: 2.5%;
+        cursor: context-menu;
+        margin-left: 17vw;
+    }
+    
+    #selectionGenomOrWins {
+        margin-left: 20%;
+        margin-bottom: 3%;
+        margin-top: 2%;
+    }
+    
+    #selectionGenomOrWins p{
+        margin-right: 2em;
+        font-weight: 700;
+        font-size: 25pt;
+    }
+    
+    .activeSelection {
+        box-shadow: 0 -2px $blue inset,0 -4px $red inset, 0 -6px $yellow inset;
+    }
+}

@@ -1,0 +1,64 @@
+/* The above code is creating a circle with a gradient background. The circle is then split in half
+with a gradient background. The text is then placed on the right side of the circle. */
+
+.intro {
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.introBackground {
+    box-shadow: 0 0 2px red;
+    background: linear-gradient(red, yellow);
+    border-radius: 100%;
+    transform: translate(-50%, 50%);
+    /* move the circle left 50% of it's own width and up 50% of it's own height */
+    position: absolute;
+    bottom: 0;
+    /* this vertically centers the circle */
+    left: 50%;
+    width: 50vw;
+    height: 50vw;
+    min-width: 600px;
+    min-height: 600px;
+}
+
+.introBackground:after {
+    content: '';
+    background: linear-gradient(red, yellow);
+    border-radius: 100%;
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    min-width: 600px;
+    min-height: 600px;
+    transform: scaleY(-1);
+    z-index: 100;
+}
+
+.introText {
+    position: absolute;
+    /* just positions the text on the right of the cirecle */
+    left: 50%;
+    bottom: 65%;
+    transform: translate(-50%, 0);
+    width: 50%;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    text-shadow: 5px 5px #916dc1, 7px 7px #4dc5e7;
+    font-size: 5vw;
+}
+
+@media screen and (max-width: 1190px) {
+    .introText {
+        font-size: 60px;
+    }
+}
