@@ -135,7 +135,7 @@ function Television() {
             });
           }}
         >
-          Meer info
+          Naar website
         </Link>
       </div>
     </>
