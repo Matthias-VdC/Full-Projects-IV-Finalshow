@@ -8,7 +8,11 @@ export const Map = ({ ...props }) => {
   console.log(props);
   const [zoom, setZoom] = useState(1);
   useEffect(() => {
-    if (window.innerWidth < 500) {
+    if (window.innerWidth < 1100 && window.innerWidth > 850) {
+      setZoom(0.6);
+    } else if (window.innerWidth <= 850 && window.innerWidth > 500) {
+      setZoom(0.4);
+    } else if (window.innerWidth <= 500) {
       setZoom(0.2);
     } else {
       setZoom(1);
