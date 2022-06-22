@@ -8,12 +8,18 @@ title: 80's room diorama
 
 import * as THREE from "three";
 import React, { useRef, useState } from "react";
-import { OrbitControlsProps, useGLTF } from "@react-three/drei";
+import {
+  Billboard,
+  Html,
+  OrbitControlsProps,
+  useGLTF,
+} from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { Select } from "@react-three/postprocessing";
 import pacman from "../../assets/3d/pacman.jpg";
 import { useFrame, useLoader, useThree } from "react-three-fiber";
 import { Group, Mesh } from "three";
+import { Link } from "react-router-dom";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -229,6 +235,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   const arcadeRef = useRef<Mesh>(null);
   const tvRef = useRef<Group>(null);
   const myControls = controls as OrbitControlsProps;
+  const [arcadeLink, setArcadeLink] = useState("none");
 
   // Quaternions help: https://stackoverflow.com/questions/30292831/three-js-lookat-how-to-pan-smoothly-between-old-and-new-target-positions , https://threejs.org/docs/#api/en/math/Quaternion
 
@@ -260,10 +267,17 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
     if (arcadeClick) {
       state.camera.quaternion.slerp(arcadeCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.02);
+      if (
+        state.camera.quaternion.x.toFixed(2) === arcadeCameraQ.x.toFixed(2) &&
+        state.camera.quaternion.y.toFixed(2) === arcadeCameraQ.y.toFixed(2) &&
+        state.camera.quaternion.z.toFixed(2) === arcadeCameraQ.z.toFixed(2) &&
+        state.camera.quaternion.w.toFixed(2) === arcadeCameraQ.w.toFixed(2)
+      ) {
+        setArcadeLink("flex");
+      }
     } else if (tvClick) {
       // let newV = new THREE.Vector3(0, 0, 0);
       // tvRef.current!.getWorldPosition(newV);
-
       // state.camera.lookAt(newV);
       // console.log(state.camera.quaternion);
       state.camera.quaternion.slerp(tvCameraQ, 0.02);
@@ -271,6 +285,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
     } else {
       state.camera.quaternion.slerp(defaultCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.02);
+      setArcadeLink("none");
     }
 
     state.camera.updateProjectionMatrix();
@@ -283,20 +298,34 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
       <group position={[27.81, 0, -28.16]} rotation={[-Math.PI / 2, 0, -0.94]}>
         <mesh
           ref={arcadeRef}
-          onPointerOver={(e) => {
-            document.body.style.cursor = "pointer !important";
-          }}
-          onPointerOut={(e) => {
-            document.body.style.cursor = "inherit !important";
-          }}
-          onClick={(e) => {
-            setArcadeClick(!arcadeClick);
-          }}
           rotation={[0, Math.PI / 2.5, Math.PI / 2]}
           position={[-250, -365, 282]}
         >
           <planeBufferGeometry attach="geometry" args={[115, 115]} />
           <meshStandardMaterial attach="material" map={pacmanTexture} />
+          <Billboard
+            onPointerMissed={() => arcadeClick && setArcadeClick(false)}
+            follow={true}
+            position={[-10, 12, 0]}
+          >
+            <Html>
+              <div
+                className="map_arcadeButton"
+                onClick={(e) => {
+                  setArcadeClick(!arcadeClick);
+                }}
+              >
+                <div
+                  className="map_arcadeLink"
+                  style={{ display: arcadeLink }}
+                  onClick={(e) => (window.location.href = "/info")}
+                >
+                  Go to Showroom
+                </div>
+                {/* <Link to="/info">test</Link> */}
+              </div>
+            </Html>
+          </Billboard>
         </mesh>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group
