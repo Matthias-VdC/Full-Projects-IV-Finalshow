@@ -2,14 +2,12 @@ import Loader from "../components/Loader";
 import { useState } from 'react';
 import ReactPlayer from "react-player";
 
+/* This is a React component that is using the ReactPlayer component to play a video. */
 function VideoPlayer() {
     const [loader, setLoader] = useState(true);
     const isLoaded = () => {
         setLoader(false);
     }
-
-
-    /* Returning the video player. */
     return (
         <>
             <div className="video-container">
