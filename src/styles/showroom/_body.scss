@@ -49,6 +49,10 @@ select {
     color: white;
     background-color: $darkmodus;
   }
+
+  input{
+    color: white;
+  }
 }
 
 @media (prefers-color-scheme: light){
@@ -58,6 +62,10 @@ select {
   
   #searchIconWhite{
     display: none;
+  }
+
+  input{
+    color: black;
   }
 }
 
@@ -70,11 +78,6 @@ select {
     width: 22px;
   }
 }
-
-
-// #searchIcon {
-//   width: 22px;
-// }
 
 @media (min-width: 780px) {
   #filterMobBtn {
