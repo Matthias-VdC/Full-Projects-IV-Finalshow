@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../assets/img/Final-Show-Logo.svg";
 import ehb from "../assets/img/EhB-logo.png";
 import video from "../assets/videos/countdown.mp4";
@@ -8,11 +8,15 @@ import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
 import ReactGA from "react-ga";
 import Loader from "./Loader";
+import { finalWorkService } from "../services/finalWorkService";
 
 /* A React component that is used to display a countdown timer and a video. */
 function Television() {
   const [showVideo, setShowVideo] = useState(true);
+  const [showStartVideo, setStartVideo] = useState(true);
   const [loader, setLoader] = useState(true);
+  const [videos, setVideos] = useState<string[]>([video]);
+  const [videoUrl, setVideoUrl] = useState("");
 
   const renderer = (props: any) => {
     return (
@@ -26,25 +30,47 @@ function Television() {
     );
   };
 
+  useEffect(() => {
+    finalWorkService
+      .fetchFinalWorks()
+      .then((response) => {
+        const templateData = response.slice(0, 40);
+        return templateData.map((data: any) => data.pathVideo);
+      })
+      .then((paths: Array<string>) => {
+        let oldVideos = videos.slice(0);
+        let newVideos = [...oldVideos, ...paths];
+        setVideos([...newVideos]);
+      });
+  }, []);
+
   const handleVideoEnd = () => {
+    setStartVideo(false);
     setShowVideo(false);
     queueNextVideo();
   };
 
-  const isLoaded =  () => {
-        setLoader(false);
-    }
+  const isLoaded = () => {
+    setLoader(false);
+  };
 
   const queueNextVideo = () => {
     setTimeout(() => {
+      setVideoUrl(videos[Math.floor(Math.random() * videos.length)]);
       setShowVideo(true);
-    }, 5000);
+    }, Math.floor(Math.random() * 6001) + 6000);
   };
 
   return (
-    <><div className="homeloadercontainer">
-      {loader ? (<div className='blackloader'><Loader /> </div>) : null}
-    </div><div className="countDownPageContainer">
+    <>
+      <div className="homeloadercontainer">
+        {loader ? (
+          <div className="blackloader">
+            <Loader />{" "}
+          </div>
+        ) : null}
+      </div>
+      <div className="countDownPageContainer">
         <div className="homepageLogoContainer">
           <div className="logoContainer">
             <img src={logo} alt="Final Show Logo" />
@@ -54,30 +80,45 @@ function Television() {
           </div>
         </div>
         <div className="televisionContainer">
-          {loader ? (<div className='blackLoader'><Loader /> </div>) : null}
-
           <div id="television">
             <div className="screen">
-
               {showVideo ? (
                 <div className="playerWrapper">
-                  <ReactPlayer
-                    url={video}
-                    width="133%"
-                    height="100%"
-                    playing={true}
-                    onEnded={handleVideoEnd}
-                    onPlay={isLoaded}
-                    muted={true}
-                    controls={false}
-                    className="reactPlayer"
-                  ></ReactPlayer>
+                  {
+                    <ReactPlayer
+                      url={
+                        showStartVideo
+                          ? video
+                          : videoUrl.replace(
+                              "http://finalshowcasebackend.be/",
+                              "https://finalshow.be/images/"
+                            )
+                      }
+                      width="133%"
+                      height="100%"
+                      playing={true}
+                      onProgress={(d) => {
+                        if (d.playedSeconds > 15) {
+                          handleVideoEnd();
+                        }
+                      }}
+                      onEnded={handleVideoEnd}
+                      onReady={isLoaded}
+                      muted={true}
+                      controls={false}
+                      className="reactPlayer"
+                    ></ReactPlayer>
+                  }
                 </div>
               ) : (
-                <Countdown
-                  date={new Date(2022, 5, 24, 19, 0, 0, 0)}
-                  zeroPadTime={2}
-                  renderer={renderer} />
+                <>
+                  <p id="countdownTitle">Multimedia & Creative Technologie</p>
+                  <Countdown
+                    date={new Date(2022, 5, 24, 19, 0, 0, 0)}
+                    zeroPadTime={2}
+                    renderer={renderer}
+                  />
+                </>
               )}
             </div>
             <div className="screenOverlay"></div>
@@ -85,19 +126,19 @@ function Television() {
           </div>
         </div>
         <Link
-          to="info"
+          to="hub"
           className="more-btn"
           onClick={() => {
             ReactGA.event({
               category: "User",
               action: "Clicked find out more",
             });
-          } }
+          }}
         >
           Meer info
         </Link>
-      </div></>
-    
+      </div>
+    </>
   );
 }
 export { Television };

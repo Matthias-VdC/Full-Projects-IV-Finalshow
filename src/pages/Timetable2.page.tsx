@@ -158,7 +158,7 @@ export default function Timetable2() {
                 points="72.72 41.55 67.53 41.55 62.33 41.55 57.14 41.55 57.14 46.75 51.94 46.75 51.94 51.94 57.14 51.94 62.33 51.94 67.53 51.94 72.72 51.94 77.91 51.94 77.91 46.75 77.91 41.55 72.72 41.55"
               />
             </svg>
-            <p className="teletext">Erasmus Hogeschool Brussel</p>
+            <p className="teletext">Erasmushogeschool Brussel</p>
             <p className="teletext">2022</p>
           </div>
         </div>
