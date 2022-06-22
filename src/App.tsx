@@ -20,6 +20,7 @@ import Results from "./components/Resultaten/Results";
 import DetailMob from "./components/Home/details/DetailMob";
 import Genomineerd from "./components/Resultaten/Genomineerd";
 import Winnaar from "./components/Resultaten/Winnaar";
+import SharedDetail from "./components/Home/details/SharedDetail";
 
 const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
@@ -66,6 +67,7 @@ function App() {
           <Route path="live" element={<Livestream />} />
           <Route path="showroom">
             <Route index element={<Home />} />
+            <Route path="finalwork/:id" element={<SharedDetail/>}/>
             <Route path="results" element={<Results />} />
             <Route path="detail" element={<DetailMob />} />
             <Route path="genomineerden" element={<Genomineerd />} />

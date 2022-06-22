@@ -13,6 +13,7 @@ import mail from "../../../assets/showroom/email.png";
 import linkedin from "../../../assets/showroom/linkedin.png";
 import instagram from "../../../assets/showroom/instagram.png";
 import Slider from "./Slider";
+import { RWebShare } from 'react-web-share';
 
 export default function DetailSide(props: any) {
   const [cover, setCover] = useState(String);
@@ -128,9 +129,19 @@ export default function DetailSide(props: any) {
           </div>
         </div>
         <div id="shareContainer">
-          <img src={share} alt="share-icon" id="shareIcon" />
-        </div>
+        <RWebShare
+                    data={{
+                    text:"Bekijk hier mijn final work",
+                    url: `http://finalshow.be/showcase/finalwork/${props.data.id}`,
+                    title: "Mijn final work",
+                    }}
+                    sites={["facebook", "instagram", "linkedin"]}
+                    onClick={() => console.log("shared successfully!")}
+                    >
+                <img  src={share} alt="share-icon" id="shareIcon"/>
+            </RWebShare>
       </div>
     </div>
+   </div>
   );
 }
