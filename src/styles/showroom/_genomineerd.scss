@@ -1,0 +1,47 @@
+@import 'Colors';
+
+.logoImgcluster{
+    width: 20vh;
+    height: auto;
+    display: block;
+}
+.motionImg, .appImg, .realityImg, .smartImg{
+    height: 10vh;
+    margin: 0% 0% 5% 5%;
+}
+
+.motionImg{
+    margin-top: -10%;
+}
+
+.cassette img{
+    height: 63.5vh;
+}
+
+.cassetteName{
+    height: 40vh;
+}
+
+.cassette {
+    height: 64vh;
+}
+
+
+
+@media (min-width: 780px){
+    .allClusters{
+        display: block;
+    }
+    
+    .logoImgcluster{
+        width: 30vh;
+    }
+    .motionImg, .appImg, .realityImg, .smartImg{
+        height: 15vh;
+        margin-left: 20%;
+    }
+    
+    .motionImg{
+        margin-top: -6%;
+    }
+}

@@ -1,11 +1,31 @@
+import Loader from "../components/Loader";
+import { useState } from 'react';
+import ReactPlayer from "react-player";
 
+/* This is a React component that is using the ReactPlayer component to play a video. */
 function VideoPlayer() {
-
-    return  (
-        <div className="video-container">
-        <iframe width="950" height="534" src="https://www.youtube.com/embed/5qap5aO4i9A" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
-        </iframe>      
+    const [loader, setLoader] = useState(true);
+    const isLoaded = () => {
+        setLoader(false);
+    }
+    return (
+        <>
+            <div className="video-container">
+                {loader ? (<div className="loader"><Loader /></div>) : null}
+                <ReactPlayer
+                    url={"https://www.youtube.com/embed/ZwIB1XPI64w"}
+                    width="950"
+                    height="534"
+                    playing={true}
+                    onReady={isLoaded}
+                    pip={true}
+                    stopOnUnmount={false}
+                    muted={false}
+                    controls={true}
+                    className="reactPlayer"
+                ></ReactPlayer>
             </div>
+        </>
     )
 }
 

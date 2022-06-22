@@ -1,3 +1,5 @@
+/* Styling the modal. */
+
 .web-share-fade-in-up {
     margin: 0 auto;
     border-radius: 0 !important;
@@ -5,6 +7,8 @@
 
 .web-share-fade-in-up header {
     text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold !important;
 }
 
 @media screen and (min-width:1024px) {

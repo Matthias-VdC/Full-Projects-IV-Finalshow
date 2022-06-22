@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+/* eslint-disable eqeqeq */
+import React, { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
-import { useSwipeable } from "react-swipeable";
 import logo from "../../assets/img/Final-Show-Logo.svg";
-import hamburgerIcon from "../../assets/img/menu-icon.svg";
 
 export default function Header() {
   const location = useLocation();
-
   const [isOpen, setOpen] = useState(false);
 
   const handleIsOpen = () => {
@@ -21,7 +19,7 @@ export default function Header() {
   if (location.pathname != "/") {
     return (
       <>
-        <header>
+        <header id="mainHeader">
           <Menu
             customBurgerIcon={
               <svg
@@ -49,57 +47,81 @@ export default function Header() {
             onOpen={handleIsOpen}
             onClose={handleIsOpen}
           >
-            <Link onClick={closeSideBar} to="info">
-              INFO
-            </Link>
-            <Link onClick={closeSideBar} to="timetable">
-              TIMETABLE
-            </Link>
-            <Link
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
               onClick={closeSideBar}
-              to="admin/live"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
+              to="info"
+            >
+              INFO
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              onClick={closeSideBar}
+              to="timetable"
+            >
+              TIMETABLE
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              onClick={closeSideBar}
+              to="live"
             >
               LIVE SHOW
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
               onClick={closeSideBar}
-              to="admin/showroom"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
+              to="showroom"
             >
-              SHOWROOM{" "}
-            </Link>
+              SHOWROOM
+            </NavLink>
           </Menu>
           <div className="logo-container">
-            <img src={logo} alt="logo" />
+            <NavLink to="/">
+              <img src={logo} alt="logo" />
+            </NavLink>
           </div>
           <nav className="desktop-nav">
-            <Link to="info">INFO</Link>
-            <Link to="timetable">TIMETABLE</Link>
-            <Link
-              to="admin/live"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="info"
+            >
+              INFO
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="timetable"
+            >
+              TIMETABLE
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="live"
             >
               LIVE SHOW
-            </Link>
-            <Link
-              to="admin/showroom"
-              style={{
-                pointerEvents: "none",
-                backgroundColor: "rgba(12, 12, 12, 0.5)",
-              }}
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="showroom"
             >
-              SHOWROOM{" "}
-            </Link>
+              SHOWROOM
+            </NavLink>
           </nav>
         </header>
       </>
