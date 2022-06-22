@@ -5,8 +5,9 @@
 }
   
 .swiper-slide {
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    margin-left: -0.2vw;
 }
   
 .mySwiper2 {
@@ -61,11 +62,6 @@
     
     .mySwiper {
       height: 8vh;
-    }
-    
-    #vid{
-      height: 5.5vh;
-    
     }
     
   }

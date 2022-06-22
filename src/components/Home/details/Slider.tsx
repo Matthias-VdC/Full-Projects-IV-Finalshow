@@ -31,7 +31,7 @@ export default function Slider(props: any) {
             controls
           ></video>
         </SwiperSlide>
-        {props.data.images.map((image: any) => {
+        {props.data.images.map((image: any, index:any) => {
           return (
             <SwiperSlide>
               <img
@@ -63,7 +63,7 @@ export default function Slider(props: any) {
             muted
           ></video>
         </SwiperSlide>
-        {props.data.images.map((image: any) => {
+        {props.data.images.map((image: any, index:any) => {
           return (
             <SwiperSlide>
               <img

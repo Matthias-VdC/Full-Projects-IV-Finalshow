@@ -56,7 +56,7 @@ export default function DetailMob(props: any) {
 
       <h1 id="projectArtistMob">
         {state.user.map((users: any) => {
-          return users.name;
+          return (users.name);
         })}
       </h1>
       <div id="projectNameMob">
@@ -79,9 +79,9 @@ export default function DetailMob(props: any) {
                     })}
                   </p>
                 </div>
-          {state.socials.map((social: any) => {
+          {state.socials.map((social: any, index:any) => {
             return (
-              <div>
+              <div key={index}>
                 <div className="infoFlexMob">
                   <img src={phone} alt="phone icon" className="socialIcon" />
                   <p className="invulTextMob">{social.tel}</p>
