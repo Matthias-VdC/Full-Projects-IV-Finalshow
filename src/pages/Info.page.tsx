@@ -98,7 +98,7 @@ export default function Info() {
             Campus Kaai naast het Medialab, Nijverheidskaai 170, 1070 Anderlecht.
           </p>
         </div>
-        <Link to="admin/showcase" className="disabled-btn">
+        <Link to="/showroom" className="multicolor-btn">
           SHOWCASE
         </Link>
         <img src={divider} alt="" className="divider" />
