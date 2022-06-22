@@ -34,10 +34,12 @@ function Genomineerd() {
                 alt="name-cluster-logo"
               />
             </div>
-            <div className="cassettesContainer">
-              {finalWorks.map((x) => {
-                return <Cassette data={x} key={x["id"]}></Cassette>;
-              })}
+            <div className="cassettesContainerNominees">
+            {
+              finalWorks.filter((x: any) => x.cluster === "motion").sort((a : any, b: any) => b.score - a.score).slice(0,5).map((x:any) => {
+                  return <Cassette data={x} key={x["id"]} ></Cassette>
+            })
+            }
             </div>
           </div>
           <div className="webAppGenom">
@@ -48,10 +50,12 @@ function Genomineerd() {
                 alt="name-cluster-logo"
               />
             </div>
-            <div className="cassettesContainer">
-              {finalWorks.map((x) => {
-                return <Cassette data={x} key={x["id"]}></Cassette>;
-              })}
+            <div className="cassettesContainerNominees">
+            {
+              finalWorks.filter((x: any) => x.cluster === "webApp").sort((a : any, b: any) => b.score - a.score).slice(0,5).map((x:any) => {
+                  return <Cassette data={x} key={x["id"]} ></Cassette>
+            })
+            }
             </div>
           </div>
           <div className="realityGenom">
@@ -62,10 +66,12 @@ function Genomineerd() {
                 alt="name-cluster-logo"
               />
             </div>
-            <div className="cassettesContainer">
-              {finalWorks.map((x) => {
-                return <Cassette data={x} key={x["id"]}></Cassette>;
-              })}
+            <div className="cassettesContainerNominees">
+            {
+              finalWorks.filter((x: any) => x.cluster === "extendedReality").sort((a : any, b: any) => b.score - a.score).slice(0,5).map((x:any) => {
+                  return <Cassette data={x} key={x["id"]} ></Cassette>
+            })
+            }
             </div>
           </div>
           <div className="smartGenom">
@@ -76,10 +82,12 @@ function Genomineerd() {
                 alt="name-cluster-logo"
               />
             </div>
-            <div className="cassettesContainer">
-              {finalWorks.map((x) => {
-                return <Cassette data={x} key={x["id"]}></Cassette>;
-              })}
+            <div className="cassettesContainerNominees">
+            {
+              finalWorks.filter((x: any) => x.cluster === "smartTechnologies").sort((a : any, b: any) => b.score - a.score).slice(0,5).map((x:any) => {
+                  return <Cassette data={x} key={x["id"]} ></Cassette>
+            })
+            }
             </div>
           </div>
         </div>

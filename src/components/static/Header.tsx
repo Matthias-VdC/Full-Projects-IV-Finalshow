@@ -29,7 +29,7 @@ export default function Header() {
             customBurgerIcon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="#000000"
+                fill={location.pathname == "/hub" ? "#fff" : "#000"}
                 viewBox="0 0 50 50"
                 width="250px"
                 height="250px"
