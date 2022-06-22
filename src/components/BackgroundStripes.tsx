@@ -1,9 +1,14 @@
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /**
  * It returns a div with 5 child a elements
  * @returns A div with 5 a tags inside.
  */
+
+import React from "react";
 export default function BackgroundStripes() {
+
+
   return (
     <div id="stripes-container">
       <a href="#infoTop" id="pink" className="stripe stripe-hover">

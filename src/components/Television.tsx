@@ -94,7 +94,7 @@ function Television() {
             });
           } }
         >
-          Lees meer
+          Meer info
         </Link>
       </div></>
     

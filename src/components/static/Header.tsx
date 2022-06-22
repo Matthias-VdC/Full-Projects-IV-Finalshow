@@ -6,7 +6,6 @@ import logo from "../../assets/img/Final-Show-Logo.svg";
 
 export default function Header() {
   const location = useLocation();
-  console.log(location);
   const [isOpen, setOpen] = useState(false);
 
   const handleIsOpen = () => {
