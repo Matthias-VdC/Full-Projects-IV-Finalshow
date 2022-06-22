@@ -1,0 +1,130 @@
+#backgroundRaster {
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    background-color: black;
+    width: 100vw;
+   height: 100vh;
+}
+
+#crossShared {
+    width: 50px;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+}
+
+#crossShared:hover {
+    cursor: pointer;
+}
+
+#finalLogoSharedVersion {
+    position: fixed;
+    width: 180px;
+    top: -8%;
+}
+
+#ehbLogoSharedVersion{
+    position: fixed;
+    bottom: 5%;
+    width: 150px;
+    margin: -5% auto; 
+    left: 0;
+    right: 0;
+    background-color: black;
+}
+
+
+#cassetteBackgroundShared {
+    background-color: black;
+    width: 95vw;
+    height: 78vh;
+    margin: auto;
+    margin-top: 80px;
+    overflow-y: scroll;
+}
+
+#sharedDetailWeb{
+    display: none;
+}
+
+#sharedDetailMob{
+    display: block;
+    color: white;
+}
+
+@media (min-width:780px){
+    #sharedDetailWeb{
+        display: block;
+        color: white;
+    }
+
+    #sharedDetailMob{
+        display: none;
+    }
+
+    #backgroundRaster {
+    position: inherit;
+    background-color: transparent;
+    width: 70vw;
+    height: 70vh;
+    padding-top: 60px;
+    margin-left: 15vw;
+    }
+
+    #crossShared {
+       top: 24%;
+    }
+
+    #ehbLogoSharedVersion {
+        display: none;
+    }
+
+    #finalLogoSharedVersion {
+        display: none;
+    }
+
+    #cassetteBackgroundShared {
+        margin: -5vh 0vw 0vh 18vw;
+        width: 90%;
+        height: 85%;
+        overflow-y: hidden;
+    }
+
+    .CassetteStylingDetail {
+        display: flex;
+    }
+
+    .CassetteStylingDetailCover{
+        height: 60vh;
+        width: 29vw;
+    }
+
+    .CassetteStylingDetailSide{
+        height: 60vh;
+        width: 5.5vw;
+    }
+
+    .leftCoverDetail {
+        position: fixed;
+        color: white;
+        top: 25%;
+        left: 35%;
+    }
+
+    .rightCoverDetail {
+        position: fixed;
+        color: white;
+        top: 30%;
+        right: 7%;
+        width: 24vw;
+    }
+
+    .sideDetail {
+        position: fixed;
+        color: white;
+        top: 25%;
+        left: 64%;  
+    }
+
+}
