@@ -26,7 +26,12 @@ export default function Slider(props: any) {
         {props.data.images.map((image: any) => {
           return (
             <SwiperSlide>
-              <img src={image.path} />
+              <img
+                src={image.path.replace(
+                  "http://10.3.50.231/storage/",
+                  "https://finalshow.be/images/"
+                )}
+              />
             </SwiperSlide>
           );
         })}
@@ -41,12 +46,24 @@ export default function Slider(props: any) {
         className="mySwiper"
       >
         <SwiperSlide>
-          <video id="vid" src={props.data.pathVideo} muted></video>
+          <video
+            id="vid"
+            src={props.data.pathVideo.replace(
+              "http://10.3.50.231/storage/",
+              "https://finalshow.be/images/"
+            )}
+            muted
+          ></video>
         </SwiperSlide>
         {props.data.images.map((image: any) => {
           return (
             <SwiperSlide>
-              <img src={image.path} />
+              <img
+                src={image.path.replace(
+                  "http://10.3.50.231/storage/",
+                  "https://finalshow.be/images/"
+                )}
+              />
             </SwiperSlide>
           );
         })}
