@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+/* eslint-disable eqeqeq */
+import React, { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import logo from "../../assets/img/Final-Show-Logo.svg";
-import hamburgerIcon from "../../assets/img/menu-icon.svg";
 
 export default function Header() {
   const location = useLocation();
   console.log(location);
-
   const [isOpen, setOpen] = useState(false);
 
   const handleIsOpen = () => {
@@ -49,16 +48,16 @@ export default function Header() {
             onOpen={handleIsOpen}
             onClose={handleIsOpen}
           >
-            <Link onClick={closeSideBar} to="info">
+            <NavLink onClick={closeSideBar} to="info">
               INFO
-            </Link>
-            <Link onClick={closeSideBar} to="timetable">
+            </NavLink>
+            <NavLink onClick={closeSideBar} to="timetable">
               TIMETABLE
-            </Link>
-            <Link onClick={closeSideBar} to="live">
+            </NavLink>
+            <NavLink onClick={closeSideBar} to="live">
               LIVE SHOW
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               onClick={closeSideBar}
               to="admin/showroom"
               style={{
@@ -67,18 +66,18 @@ export default function Header() {
               }}
             >
               SHOWROOM{" "}
-            </Link>
+            </NavLink>
           </Menu>
           <div className="logo-container">
-          <Link to="/">
-            <img src={logo} alt="logo" />
-            </Link>
-            </div>
+            <NavLink to="/">
+              <img src={logo} alt="logo" />
+            </NavLink>
+          </div>
           <nav className="desktop-nav">
-            <Link to="info">INFO</Link>
-            <Link to="timetable">TIMETABLE</Link>
-            <Link to="live">LIVE SHOW</Link>
-            <Link
+            <NavLink to="info">INFO</NavLink>
+            <NavLink to="timetable">TIMETABLE</NavLink>
+            <NavLink to="live">LIVE SHOW</NavLink>
+            <NavLink
               to="admin/showroom"
               style={{
                 pointerEvents: "none",
@@ -86,7 +85,7 @@ export default function Header() {
               }}
             >
               SHOWROOM{" "}
-            </Link>
+            </NavLink>
           </nav>
         </header>
       </>

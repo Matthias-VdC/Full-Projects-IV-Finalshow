@@ -1,3 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/**
+ * It returns a div with 5 child a elements
+ * @returns A div with 5 a tags inside.
+ */
 export default function BackgroundStripes() {
   return (
     <div id="stripes-container">
@@ -6,7 +11,7 @@ export default function BackgroundStripes() {
         <p>Creatieve Technologie</p>
       </a>
       <a id="yellow" className="stripe">
-        
+
       </a>
       <a href="#livestreamTitle" id="orange" className="stripe stripe-hover">
         <p>Livestream</p>
