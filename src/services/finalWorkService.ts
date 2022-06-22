@@ -1,5 +1,3 @@
-import React from "react";
-
 class FinalWorkService {
   private readonly url =
     "https://mighty-earth-63459.herokuapp.com/http://finalshowcasebackend.be/finalwork";

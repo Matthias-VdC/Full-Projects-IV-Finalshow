@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import imgFrame from "../assets/tv.png";
 import TimetableItem from "../components/TimetableItem";
 import Tetris from "react-tetris";
-import BackArrow from "../components/BackArrow";
 import { useNavigate } from "react-router-dom";
 
 type inter = {
@@ -31,7 +30,7 @@ function useKeyPress(targetKey: string): boolean {
     return () => {
       window.removeEventListener("keydown", downHandler);
     };
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  }, [downHandler]); // Empty array ensures that effect is only run on mount and unmount
   return keyPressed;
 }
 
