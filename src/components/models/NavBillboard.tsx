@@ -45,7 +45,7 @@ export const NavBillboard = ({ position = [0, 10, -50], ...props }: Props) => {
           }}
           onClick={(e) => props.onClickItem()}
         >
-          <p>{props.text}</p>
+          <p className="map_subText">{props.text}</p>
         </div>
       </Html>
     </Billboard>

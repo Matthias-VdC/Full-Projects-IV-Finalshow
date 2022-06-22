@@ -53,6 +53,10 @@
         background-color: $background;
     }
 
+    &_subText{
+        color: white !important;
+    }
+
     @media only screen and (max-width: 600px) {
         &_globalButton{
         width: 30px;
