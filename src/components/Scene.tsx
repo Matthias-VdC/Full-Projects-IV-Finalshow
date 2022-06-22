@@ -14,17 +14,17 @@ import { Lights, MovingSpot } from "./models/Lights";
 import { Room802 } from "./models/Room802";
 
 const Box = () => {
-    return (
-        <mesh position={[0, 0, 0]}>
-            <boxBufferGeometry attach={"geometry"} args={[5, 5, 5]} />
-            <meshLambertMaterial attach={"material"} color={"white"} />
-        </mesh>
-    );
+  return (
+    <mesh position={[0, 0, 0]}>
+      <boxBufferGeometry attach={"geometry"} args={[5, 5, 5]} />
+      <meshLambertMaterial attach={"material"} color={"white"} />
+    </mesh>
+  );
 };
 
 export const Scene = () => {
-    const { camera } = useThree();
-    const depthBuffer = useDepthBuffer({ size: 256, frames: 1 });
+  const { camera } = useThree();
+  const depthBuffer = useDepthBuffer({ size: 256, frames: 1 });
 
   return (
     <>
@@ -57,11 +57,6 @@ export const Scene = () => {
         position={[0, -40, 0]}
       />
       <Lights position={[0, -40, 0]} />
-      <Billboard follow={true} position={[152, 40, 10]}>
-        <Html>
-          <h1>I am following</h1>
-        </Html>
-      </Billboard>
       <MovingSpot
         depthBuffer={depthBuffer}
         position={[900, 400, 900]}

@@ -20,6 +20,7 @@ import pacman from "../../assets/3d/pacman.jpg";
 import { useFrame, useLoader, useThree } from "react-three-fiber";
 import { Group, Mesh } from "three";
 import { Link } from "react-router-dom";
+import { history } from "./History";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -232,10 +233,16 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   const mesh = useRef(null);
   const [arcadeClick, setArcadeClick] = useState(false);
   const [tvClick, setTvClick] = useState(false);
+  const [posterClick, setPosterClick] = useState(false);
+  const [phoneClick, setPhoneClick] = useState(false);
   const arcadeRef = useRef<Mesh>(null);
   const tvRef = useRef<Group>(null);
-  const myControls = controls as OrbitControlsProps;
-  const [arcadeLink, setArcadeLink] = useState("none");
+  const posterRef = useRef<Mesh>(null);
+  const phoneRef = useRef<Mesh>(null);
+  const [arcadeLink, setArcadeLink] = useState(true);
+  const [posterLink, setPosterLink] = useState(true);
+  const [phoneLink, setPhoneLink] = useState(true);
+  const [tvLink, setTvLink] = useState(true);
 
   // Quaternions help: https://stackoverflow.com/questions/30292831/three-js-lookat-how-to-pan-smoothly-between-old-and-new-target-positions , https://threejs.org/docs/#api/en/math/Quaternion
 
@@ -263,17 +270,31 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
     -0.01986808561504325
   );
 
+  let posterCameraQ = new THREE.Quaternion(
+    -5.443510150018673e-16,
+    0.5639878946240152,
+    3.7177728563220096e-16,
+    0.8257830554798099
+  );
+
+  let phoneCameraQ = new THREE.Quaternion(
+    -0.0731826939979211,
+    0.5462631533843917,
+    0.04798991920954376,
+    0.8330293081326783
+  );
+
   useFrame((state) => {
     if (arcadeClick) {
       state.camera.quaternion.slerp(arcadeCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.02);
       if (
-        state.camera.quaternion.x.toFixed(2) === arcadeCameraQ.x.toFixed(2) &&
-        state.camera.quaternion.y.toFixed(2) === arcadeCameraQ.y.toFixed(2) &&
-        state.camera.quaternion.z.toFixed(2) === arcadeCameraQ.z.toFixed(2) &&
-        state.camera.quaternion.w.toFixed(2) === arcadeCameraQ.w.toFixed(2)
+        state.camera.quaternion.x.toFixed(1) === arcadeCameraQ.x.toFixed(1) &&
+        state.camera.quaternion.y.toFixed(1) === arcadeCameraQ.y.toFixed(1) &&
+        state.camera.quaternion.z.toFixed(1) === arcadeCameraQ.z.toFixed(1) &&
+        state.camera.quaternion.w.toFixed(1) === arcadeCameraQ.w.toFixed(1)
       ) {
-        setArcadeLink("flex");
+        setArcadeLink(true);
       }
     } else if (tvClick) {
       // let newV = new THREE.Vector3(0, 0, 0);
@@ -282,10 +303,43 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
       // console.log(state.camera.quaternion);
       state.camera.quaternion.slerp(tvCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.02);
+      if (
+        state.camera.quaternion.x.toFixed(1) === tvCameraQ.x.toFixed(1) &&
+        state.camera.quaternion.y.toFixed(1) === tvCameraQ.y.toFixed(1) &&
+        state.camera.quaternion.z.toFixed(1) === tvCameraQ.z.toFixed(1) &&
+        state.camera.quaternion.w.toFixed(1) === tvCameraQ.w.toFixed(1)
+      ) {
+        setTvLink(true);
+      }
+    } else if (posterClick) {
+      state.camera.quaternion.slerp(posterCameraQ, 0.02);
+      state.camera.position.lerp(new THREE.Vector3(150, 300, -50), 0.02);
+      if (
+        state.camera.quaternion.x.toFixed(1) === posterCameraQ.x.toFixed(1) &&
+        state.camera.quaternion.y.toFixed(1) === posterCameraQ.y.toFixed(1) &&
+        state.camera.quaternion.z.toFixed(1) === posterCameraQ.z.toFixed(1) &&
+        state.camera.quaternion.w.toFixed(1) === posterCameraQ.w.toFixed(1)
+      ) {
+        setPosterLink(true);
+      }
+    } else if (phoneClick) {
+      state.camera.quaternion.slerp(phoneCameraQ, 0.02);
+      state.camera.position.lerp(new THREE.Vector3(600, 150, -250), 0.02);
+      if (
+        state.camera.quaternion.x.toFixed(1) === phoneCameraQ.x.toFixed(1) &&
+        state.camera.quaternion.y.toFixed(1) === phoneCameraQ.y.toFixed(1) &&
+        state.camera.quaternion.z.toFixed(1) === phoneCameraQ.z.toFixed(1) &&
+        state.camera.quaternion.w.toFixed(1) === phoneCameraQ.w.toFixed(1)
+      ) {
+        setPhoneLink(true);
+      }
     } else {
       state.camera.quaternion.slerp(defaultCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.02);
-      setArcadeLink("none");
+      setArcadeLink(false);
+      setPosterLink(false);
+      setPhoneLink(false);
+      setTvLink(false);
     }
 
     state.camera.updateProjectionMatrix();
@@ -296,6 +350,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[27.81, 0, -28.16]} rotation={[-Math.PI / 2, 0, -0.94]}>
+        {/* ARCADE (SHOWROOM PAGE) */}
         <mesh
           ref={arcadeRef}
           rotation={[0, Math.PI / 2.5, Math.PI / 2]}
@@ -310,23 +365,131 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
           >
             <Html>
               <div
-                className="map_arcadeButton"
+                className="map_globalButton"
                 onClick={(e) => {
+                  if (arcadeClick) {
+                    history.push("/info");
+                  }
                   setArcadeClick(!arcadeClick);
                 }}
+              ></div>
+              <p
+                style={{
+                  display: arcadeLink ? "none" : "inherit",
+                  marginLeft: -18,
+                  marginTop: 5,
+                  userSelect: "none",
+                }}
               >
-                <div
-                  className="map_arcadeLink"
-                  style={{ display: arcadeLink }}
-                  onClick={(e) => (window.location.href = "/info")}
-                >
-                  Go to Showroom
-                </div>
-                {/* <Link to="/info">test</Link> */}
+                Showroom
+              </p>
+              <div
+                className="map_globalLink"
+                style={{ display: arcadeLink ? "inherit" : "none" }}
+                onClick={(e) => history.push("/info")}
+              >
+                <p>Go to Showroom</p>
               </div>
             </Html>
           </Billboard>
         </mesh>
+
+        {/* POSTERS (INFO PAGE) */}
+        <mesh
+          onClick={(e) => {
+            setPosterClick(!posterClick);
+          }}
+          ref={posterRef}
+          position={[-325, 200, 280]}
+          rotation={[0, Math.PI / 2, 0]}
+        >
+          <planeBufferGeometry attach="geometry" args={[300, 300]} />
+          <meshPhongMaterial attach="material" opacity={0} transparent />
+
+          <Billboard
+            onPointerMissed={() => posterClick && setPosterClick(false)}
+            follow={true}
+            position={[-100, 12, 0]}
+          >
+            <Html>
+              <div
+                className="map_globalButton"
+                onClick={(e) => {
+                  if (posterClick) {
+                    history.push("/info");
+                  }
+                  setPosterClick(!posterClick);
+                }}
+              ></div>
+              <p
+                style={{
+                  display: posterLink ? "none" : "inherit",
+                  marginLeft: 6,
+                  marginTop: 5,
+                  userSelect: "none",
+                }}
+              >
+                Info
+              </p>
+              <div
+                className="map_globalLink"
+                style={{ display: posterLink ? "inherit" : "none" }}
+                onClick={(e) => history.push("/info")}
+              >
+                <p>Go to Info</p>
+              </div>
+            </Html>
+          </Billboard>
+        </mesh>
+
+        {/* PHONE (TIMETABLE PAGE) */}
+        <mesh
+          onClick={(e) => {
+            setPhoneClick(!phoneClick);
+          }}
+          ref={phoneRef}
+          position={[400, 300, 150]}
+          rotation={[Math.PI / 2, 0, 0]}
+        >
+          <planeBufferGeometry attach="geometry" args={[150, 150]} />
+          <meshPhongMaterial attach="material" opacity={0} transparent />
+
+          <Billboard
+            onPointerMissed={() => phoneClick && setPhoneClick(false)}
+            follow={true}
+            position={[0, 10, -50]}
+          >
+            <Html>
+              <div
+                className="map_globalButton"
+                onClick={(e) => {
+                  if (phoneClick) {
+                    history.push("/timetable");
+                  }
+                  setPhoneClick(!phoneClick);
+                }}
+              ></div>
+              <p
+                style={{
+                  display: posterLink ? "none" : "inherit",
+                  marginLeft: -16,
+                  marginTop: 5,
+                  userSelect: "none",
+                }}
+              >
+                Timetable
+              </p>
+              <div
+                className="map_globalLink"
+                style={{ display: phoneLink ? "inherit" : "none" }}
+                onClick={(e) => history.push("/info")}
+              >
+                <p>Go to Timetable</p>
+              </div>
+            </Html>
+          </Billboard>
+        </mesh>
+
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group
             position={[1917.77, 1508.34, 1786.56]}
@@ -470,12 +633,6 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
           </group>
           <group
             ref={tvRef}
-            onPointerOver={(e) => {
-              document.body.style.cursor = "pointer !important";
-            }}
-            onPointerOut={(e) => {
-              document.body.style.cursor = "inherit !important";
-            }}
             onClick={(e) => {
               setTvClick(!tvClick);
             }}
@@ -487,6 +644,40 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
               geometry={nodes.Cube010_TV_set_0.geometry}
               material={materials.TV_set}
             />
+            <Billboard
+              onPointerMissed={() => tvClick && setTvClick(false)}
+              follow={true}
+              position={[0, 0, 1]}
+            >
+              <Html>
+                <div
+                  className="map_globalButton"
+                  onClick={(e) => {
+                    if (tvClick) {
+                      history.push("/live");
+                    }
+                    setTvClick(!tvClick);
+                  }}
+                ></div>
+                <p
+                  style={{
+                    display: tvLink ? "none" : "inherit",
+                    marginLeft: 5,
+                    marginTop: 5,
+                    userSelect: "none",
+                  }}
+                >
+                  Live Show
+                </p>
+                <div
+                  className="map_globalLink"
+                  style={{ display: tvLink ? "inherit" : "none" }}
+                  onClick={(e) => history.push("/live")}
+                >
+                  <p>Go to Live Show</p>
+                </div>
+              </Html>
+            </Billboard>
           </group>
           <group
             position={[147.71, 129.8, 63.8]}
