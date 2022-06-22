@@ -29,10 +29,6 @@
         transform: translate(-20%, -50%);
         transition: all 0.5s ease-in-out;
         @media #{$media-desktop} {
-            right: 3vw;
-            left: unset;
-            transform: translate(-20%, -50%);
-            //   font-size: 0.8em;
             @media(max-height: 800px) {
                 font-size: 0.6em;
             }
@@ -57,7 +53,7 @@
 }
 
 .more-btn:hover {
-    transform: scale(1.1) translateX(-45%) translateY(-25%);
+    transform: scale(1.1) translateX(-20%) translateY(-50%);
 }
 
 .televisionContainer {
