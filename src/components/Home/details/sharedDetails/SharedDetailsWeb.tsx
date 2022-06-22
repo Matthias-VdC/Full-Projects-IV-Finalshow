@@ -105,8 +105,8 @@ export default function SharedDetailWeb(props:any){
                 </div> 
 
 
-                {/* <div className="rightCoverDetail">
-                    <h3>PROJECTBESCHRIJVING</h3>
+                <div className="rightCoverDetail">
+                    <h3 className="projectBeschrijvingShare">PROJECTBESCHRIJVING</h3>
                     <p className="beschrijvingShare">{props.data.description}</p>
                     
                     <div id="personalInfo" className="infoPersonalShareContainer">
@@ -135,12 +135,10 @@ export default function SharedDetailWeb(props:any){
                                         </div>
                                     )
                                 })}
-                            </div>  
-
+                            </div> 
                         </div>
-                
                 </div>
-                <div className="sideDetail">
+                {/* <div className="sideDetail">
                     <div className='cassetteNameDiv'>
                         <h1 className='cassetteName nameShareProject' style={{'color': styling}}>{props.data.title}</h1>
                     </div>

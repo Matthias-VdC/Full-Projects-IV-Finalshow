@@ -23,7 +23,7 @@
     font-size: 10pt;
     max-height: 25vh;
     overflow-y: scroll;
-    color: white ;
+    color: white  !important;
 }
 
 .infoPersonalShareContainer{
@@ -31,12 +31,11 @@
 }
 
 .shareWebText{
-    font-size: 11pt;
-    margin-bottom: 1vh;
+    font-size: 12pt;
 }
 
 .shareIconDetail{
-    width: 17px;
+    width: 18px;
 }
 
 .shareInfoFlex{
@@ -44,9 +43,16 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 1vh;
 }
 
 .nameShareProject{
     font-size: 16pt;
     padding-top: 7vh;
+}
+
+.projectBeschrijvingShare{
+    color: white !important;
+    font-weight: 600;
+    margin-bottom: 2vh;
 }
