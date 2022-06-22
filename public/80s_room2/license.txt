@@ -1,0 +1,11 @@
+Model Information:
+* title:	80's room diorama
+* source:	https://sketchfab.com/3d-models/80s-room-diorama-75078815a8d1414cb1a6252ebdd8778f
+* author:	Esteban Carrera (https://sketchfab.com/estebancarrera)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "80's room diorama" (https://sketchfab.com/3d-models/80s-room-diorama-75078815a8d1414cb1a6252ebdd8778f) by Esteban Carrera (https://sketchfab.com/estebancarrera) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
