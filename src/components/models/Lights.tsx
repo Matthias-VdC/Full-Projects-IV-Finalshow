@@ -17,7 +17,6 @@ export function MovingSpot({
 }) {
     const light = useRef<THREE.SpotLight>(null);
     const viewport = useThree((state) => state.viewport);
-    useHelper(light, SpotLightHelper, "Green");
     useFrame((state) => {
         light.current?.target.position.lerp(
             vec.set(

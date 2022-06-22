@@ -2,6 +2,7 @@ import { Loader } from "@react-three/drei";
 import React, { Suspense, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Canvas } from "react-three-fiber";
+import { Scene } from "../components";
 
 export const Map = ({ ...props }) => {
   console.log(props);
