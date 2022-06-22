@@ -52,6 +52,15 @@ export default function Header() {
                 isActive ? "lactive-class" : "not-active-class"
               }
               onClick={closeSideBar}
+              to="hub"
+            >
+              HOME
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              onClick={closeSideBar}
               to="info"
             >
               INFO
@@ -90,6 +99,14 @@ export default function Header() {
             </NavLink>
           </div>
           <nav className="desktop-nav">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "lactive-class" : "not-active-class"
+              }
+              to="hub"
+            >
+              HOME
+            </NavLink>
             <NavLink
               className={({ isActive }) =>
                 isActive ? "lactive-class" : "not-active-class"
