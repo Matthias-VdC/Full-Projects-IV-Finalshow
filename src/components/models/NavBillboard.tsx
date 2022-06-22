@@ -23,10 +23,6 @@ export const NavBillboard = ({ position = [0, 10, -50], ...props }: Props) => {
                 <div
                     className="map_globalButton"
                     onClick={(e) => {
-                        // if (phoneClick) {
-                        //     history.push("/timetable");
-                        // }
-                        // setPhoneClick(!phoneClick);
                         props.onClickPointer();
                     }}
                 />
