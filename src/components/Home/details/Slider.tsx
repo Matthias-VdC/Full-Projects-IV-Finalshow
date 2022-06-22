@@ -21,7 +21,14 @@ export default function Slider(props: any) {
         className="mySwiper2"
       >
         <SwiperSlide>
-          <video id="vid2" src={props.data.pathVideo} controls></video>
+          <video
+            id="vid2"
+            src={props.data.pathVideo.replace(
+              "http://finalshowcasebackend.be/",
+              "https://finalshow.be/images/"
+            )}
+            controls
+          ></video>
         </SwiperSlide>
         {props.data.images.map((image: any) => {
           return (
@@ -49,7 +56,7 @@ export default function Slider(props: any) {
           <video
             id="vid"
             src={props.data.pathVideo.replace(
-              "http://finalshowcasebackend.be/storage/",
+              "http://finalshowcasebackend.be/",
               "https://finalshow.be/images/"
             )}
             muted
