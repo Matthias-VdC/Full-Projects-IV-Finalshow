@@ -33,6 +33,7 @@ export const NavBillboard = ({ position = [0, 10, -50], ...props }: Props) => {
             marginLeft: -16,
             marginTop: 5,
             userSelect: "none",
+            textAlign: "center",
           }}
         >
           {props.label}

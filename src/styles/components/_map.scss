@@ -52,4 +52,14 @@
         transform: rotate(110deg) skew(15deg, 15deg);
         background-color: $background;
     }
+
+    @media only screen and (max-width: 600px) {
+        &_globalButton{
+        width: 30px;
+        height: 30px;
+        }
+        &_globalLink p {
+            font-size: 0.6em;
+        }
+    }
 }

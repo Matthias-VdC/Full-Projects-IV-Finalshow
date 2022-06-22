@@ -586,7 +586,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
                 setTvClick(!tvClick);
               }}
               onClickMiss={() => tvClick && setTvClick(false)}
-              position={[0, 0, 1]}
+              position={[0, -0.75, 1.5]}
             />
           </group>
           <group
