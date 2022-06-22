@@ -63,10 +63,14 @@ $teletext-pink: #ff00ff;
   overflow: hidden;
 
   #hint-text {
+    display: block;
     font-weight: 800;
     padding: 0.2em 1em;
     background-color: white;
     margin-bottom: 0.5em;
+    @media screen and (max-width: 1075px) {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 1075px) {
