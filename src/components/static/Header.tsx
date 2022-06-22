@@ -7,6 +7,7 @@ import logo from "../../assets/img/Final-Show-Logo.svg";
 export default function Header() {
   const location = useLocation();
   const [isOpen, setOpen] = useState(false);
+  let headerStyle = {};
 
   const handleIsOpen = () => {
     setOpen(!isOpen);
@@ -16,10 +17,14 @@ export default function Header() {
     setOpen(false);
   };
 
+  location.pathname == "/hub"
+    ? (headerStyle = { backgroundColor: "black", backgroundImage: "none" })
+    : (headerStyle = {});
+
   if (location.pathname != "/") {
     return (
       <>
-        <header id="mainHeader">
+        <header id="mainHeader" style={headerStyle}>
           <Menu
             customBurgerIcon={
               <svg
