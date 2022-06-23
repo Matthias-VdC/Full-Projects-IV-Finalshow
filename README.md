@@ -5,7 +5,9 @@ _Djari Ilyes, Mayorga Mera Ricardo, Van De Casteele Matthias, Dossoine Benoît, 
 ## Deployment documentation
 
 Repository link: https://github.com/EHB-MCT/Full-Projects-IV-web-platform.git
+
 Website: https://finalshow.be/
+
 The platform was built using the React library (https://reactjs.org/).
 
 ```
