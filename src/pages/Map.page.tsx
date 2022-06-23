@@ -45,7 +45,7 @@ export const Map = ({ ...props }) => {
           <Scene />
         </Suspense>
         <EffectComposer>
-          <Noise blendFunction={BlendFunction.MULTIPLY} opacity={0.8} />
+          {/* <Noise blendFunction={BlendFunction.MULTIPLY} opacity={0.8} /> */}
           <Bloom
             luminanceThreshold={0}
             luminanceSmoothing={0.9}

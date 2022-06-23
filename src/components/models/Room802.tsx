@@ -281,19 +281,19 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   useFrame((state) => {
     if (arcadeClick) {
       state.camera.quaternion.slerp(arcadeCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.04);
     } else if (tvClick) {
       state.camera.quaternion.slerp(tvCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.04);
     } else if (posterClick) {
       state.camera.quaternion.slerp(posterCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(150, 300, -50), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(150, 300, -50), 0.04);
     } else if (phoneClick) {
       state.camera.quaternion.slerp(phoneCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(600, 150, -250), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(600, 150, -250), 0.04);
     } else {
       state.camera.quaternion.slerp(defaultCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.08);
     }
 
     state.camera.updateProjectionMatrix();
