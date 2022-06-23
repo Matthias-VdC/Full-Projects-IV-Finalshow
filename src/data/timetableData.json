@@ -1,0 +1,52 @@
+[
+  {
+    "time": "19:00",
+    "title": "intro",
+    "description": "Een kort overzicht van de verschillende onderdelen van de live show."
+  },
+  {
+    "time": "19:01",
+    "title": "WEB & APP",
+    "description": "Voorstelling van de categorie WEB & APP."
+  },
+  {
+    "time": "19:06",
+    "title": "SMART TECHNOLOGY",
+    "description": "Voorstelling van de categorie SMART TECHNOLOGY."
+  },
+  {
+    "time": "19:11",
+    "title": "Spel 1: spill your guts",
+    "description": "Een kort spel waarin docenten het tegen elkaar opnemen."
+  },
+  {
+    "time": "19:17",
+    "title": "MOTION",
+    "description": "Voorstelling van de categorie MOTION."
+  },
+  {
+    "time": "19:22",
+    "title": "EXTENDED REALITY",
+    "description": "Voorstelling van de categorie EXTENDED REALITY."
+  },
+  {
+    "time": "19:27",
+    "title": "Spel 2: spill your guts",
+    "description": "Een kort spel waarin docenten het tegen elkaar opnemen."
+  },
+  {
+    "time": "19:32",
+    "title": "UITREIKING HOOFDPRIJS",
+    "description": "Uitreiking van de hoofdprijs"
+  },
+  {
+    "time": "19:35",
+    "title": "UITREIKING YOUNG POTENTIAL",
+    "description": "Uitreiking van de prijs voor young potential."
+  },
+  {
+    "time": "19:38",
+    "title": "Outro",
+    "description": ""
+  }
+]

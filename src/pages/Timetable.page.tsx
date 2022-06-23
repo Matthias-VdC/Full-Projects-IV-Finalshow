@@ -3,6 +3,10 @@ import imgFrame from "../assets/tv.png";
 import TimetableItem from "../components/TimetableItem";
 import Tetris from "react-tetris";
 import { useNavigate } from "react-router-dom";
+import data from "../data/timetableData.json";
+import { render } from "react-dom";
+import Pacman from "react-pacman";
+import Snake from "snake-game-react";
 
 type inter = {
   HeldPiece: any;
@@ -14,88 +18,102 @@ type inter = {
   controller: any;
 };
 
-function useKeyPress(targetKey: string): boolean {
-  // State for keeping track of whether key is pressed
-  const [keyPressed, setKeyPressed] = useState(false);
-  // If pressed key is our target key then set to true
-  function downHandler({ key }: any): void {
-    if (key === targetKey) {
-      setKeyPressed(!keyPressed);
-    }
-  }
-  // Add event listeners
-  useEffect(() => {
-    window.addEventListener("keydown", downHandler);
-    // Remove event listeners on cleanup
-    return () => {
-      window.removeEventListener("keydown", downHandler);
-    };
-  }, [downHandler]); // Empty array ensures that effect is only run on mount and unmount
-  return keyPressed;
-}
-
 export default function Timetable2() {
-  const easterEgg: boolean = useKeyPress("8");
-  const time = new Date();
-  useEffect(() => {}, []);
-  const navigate = useNavigate();
-  const timetableData = [
-    {
-      time: "19:00",
-      title: "intro",
-      description:
-        "Een kort overzicht van de verschillende onderdelen van de live show.",
-    },
-    {
-      time: "19:01",
-      title: "WEB & APP",
-      description: "Voorstelling van de categorie WEB & APP.",
-    },
-    {
-      time: "19:06",
-      title: "SMART TECHNOLOGY",
-      description: "Voorstelling van de categorie SMART TECHNOLOGY.",
-    },
-    {
-      time: "19:11",
-      title: "Spel 1: spill your guts",
-      description: "Een kort spel waarin docenten het tegen elkaar opnemen.",
-    },
-    {
-      time: "19:17",
-      title: "MOTION",
-      description: "Voorstelling van de categorie MOTION.",
-    },
-    {
-      time: "19:22",
-      title: "EXTENDED REALITY",
-      description: "Voorstelling van de categorie EXTENDED REALITY.",
-    },
-    {
-      time: "19:27",
-      title: "Spel 2: spill your guts",
-      description: "Een kort spel waarin docenten het tegen elkaar opnemen.",
-    },
-    {
-      time: "19:32",
-      title: "UITREIKING HOOFDPRIJS",
-      description: "Uitreiking van de hoofdprijs",
-    },
-    {
-      time: "19:35",
-      title: "UITREIKING YOUNG POTENTIAL",
-      description: "Uitreiking van de prijs voor young potential.",
-    },
-    {
-      time: "19:38",
-      title: "Outro",
-      description: "",
-    },
-  ];
+  const [tetris, showTetris] = useState(true);
+  const [pacman, showPacman] = useState(false);
+  const [snake, showSnake] = useState(false);
 
-  return (
-    <div id="teletext-container">
-      {!easterEgg ? (
+  function returnGameOrTimetable() {
+    if (easterEgg) {
+      return (
+        <div className="easter-egg-container">
+          <div className="game-selectors">
+            <p
+              className="teletext red-text"
+              onClick={() => {
+                showTetris(true);
+                showPacman(false);
+                showSnake(false);
+              }}
+            >
+              tetris
+            </p>
+            <p
+              className="teletext red-text"
+              onClick={() => {
+                showTetris(false);
+                showPacman(true);
+                showSnake(false);
+              }}
+            >
+              pacman
+            </p>
+            <p
+              className="teletext red-text"
+              onClick={() => {
+                showTetris(false);
+                showPacman(false);
+                showSnake(true);
+              }}
+            >
+              snake
+            </p>
+          </div>
+          {tetris ? (
+            <Tetris
+              keyboardControls={{
+                // Default values shown here. These will be used if no
+                // `keyboardControls` prop is provided.
+                down: "MOVE_DOWN",
+                left: "MOVE_LEFT",
+                right: "MOVE_RIGHT",
+                space: "HARD_DROP",
+                z: "FLIP_COUNTERCLOCKWISE",
+                x: "FLIP_CLOCKWISE",
+                up: "FLIP_CLOCKWISE",
+                p: "TOGGLE_PAUSE",
+                c: "HOLD",
+                shift: "HOLD",
+              }}
+            >
+              {({
+                HeldPiece,
+                Gameboard,
+                PieceQueue,
+                points,
+                linesCleared,
+                state,
+                controller,
+              }: inter) => (
+                <div>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <p className="teletext white-text">Points: {points}</p>
+                    <p className="teletext white-text">
+                      Lines Cleared: {linesCleared}
+                    </p>
+                  </div>
+                  <Gameboard />
+                  {state === "LOST" && (
+                    <div>
+                      <p className="teletext red-text">Game Over</p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </Tetris>
+          ) : (
+            <></>
+          )}
+          {pacman ? <Pacman /> : <></>}
+          {snake ? (
+            <Snake color1="#00ff00" color2="#0000ff" backgroundColor="#000" />
+          ) : (
+            <></>
+          )}
+        </div>
+      );
+    } else {
+      return (
         <div id="teletext">
           <p id="hint-text" className="teletext pink-text">
             Press '8' for a surprise!
@@ -136,7 +154,7 @@ export default function Timetable2() {
             </div>
           </div>
           <div className="timetable-container">
-            {timetableData.map((item, i) => {
+            {data.map((item, i) => {
               return (
                 <TimetableItem
                   time={item.time}
@@ -162,56 +180,41 @@ export default function Timetable2() {
             <p className="teletext">2022</p>
           </div>
         </div>
-      ) : (
-        <div className="tetris-container">
-          <Tetris
-            keyboardControls={{
-              // Default values shown here. These will be used if no
-              // `keyboardControls` prop is provided.
-              down: "MOVE_DOWN",
-              left: "MOVE_LEFT",
-              right: "MOVE_RIGHT",
-              space: "HARD_DROP",
-              z: "FLIP_COUNTERCLOCKWISE",
-              x: "FLIP_CLOCKWISE",
-              up: "FLIP_CLOCKWISE",
-              p: "TOGGLE_PAUSE",
-              c: "HOLD",
-              shift: "HOLD",
-            }}
-          >
-            {({
-              HeldPiece,
-              Gameboard,
-              PieceQueue,
-              points,
-              linesCleared,
-              state,
-              controller,
-            }: inter) => (
-              <div>
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <p className="teletext white-text">Points: {points}</p>
-                  <p className="teletext white-text">
-                    Lines Cleared: {linesCleared}
-                  </p>
-                </div>
-                <Gameboard />
-                {state === "LOST" && (
-                  <div>
-                    <p className="teletext red-text">Game Over</p>
-                  </div>
-                )}
-              </div>
-            )}
-          </Tetris>
-        </div>
-      )}
+      );
+    }
+  }
+  let easterEgg: boolean = useKeyPress("8");
+  const time = new Date();
+  useEffect(() => {}, []);
+  const navigate = useNavigate();
 
+  return (
+    <div id="teletext-container">
+      <>{returnGameOrTimetable()}</>
       <div className="tv-overlay-container">
         <img src={imgFrame} alt="" />
       </div>
       <div className="black-bg"></div>
     </div>
   );
+}
+
+function useKeyPress(targetKey: string): boolean {
+  // State for keeping track of whether key is pressed
+  const [keyPressed, setKeyPressed] = useState(false);
+  // If pressed key is our target key then set to true
+  function downHandler({ key }: any): void {
+    if (key === targetKey) {
+      setKeyPressed(!keyPressed);
+    }
+  }
+  // Add event listeners
+  useEffect(() => {
+    window.addEventListener("keydown", downHandler);
+    // Remove event listeners on cleanup
+    return () => {
+      window.removeEventListener("keydown", downHandler);
+    };
+  }, [downHandler]); // Empty array ensures that effect is only run on mount and unmount
+  return keyPressed;
 }
