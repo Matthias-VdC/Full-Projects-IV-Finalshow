@@ -90,7 +90,8 @@
         }
         img {
             @media #{$media-tablet} {
-                width: 60%;
+                width: 39%;
+                padding-top: 0.2em;
             }
             width: 50%;
             margin-left: 50px;
