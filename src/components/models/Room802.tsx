@@ -385,6 +385,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
           <planeBufferGeometry attach="geometry" args={[300, 300]} />
           <meshPhongMaterial attach="material" opacity={0} transparent />
           <NavBillboard
+            position={[-100, 0, 0]}
             isClicked={posterClick}
             label={"Info"}
             text={"Go to Info"}

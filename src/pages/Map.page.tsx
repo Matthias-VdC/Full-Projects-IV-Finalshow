@@ -30,7 +30,13 @@ export const Map = ({ ...props }) => {
       <Canvas
         className="map__canvas"
         shadows
-        camera={{ position: [900, 400, 900], far: 5000, fov: 45, zoom: zoom }}
+        camera={{
+          position: [900, 400, 900],
+          far: 5000,
+          fov: 45,
+          zoom: zoom,
+          near: 1,
+        }}
         //@ts-ignore
         mode="concurrent"
       >
