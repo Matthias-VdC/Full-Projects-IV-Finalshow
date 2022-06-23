@@ -3,9 +3,9 @@
 .loader {
     position: absolute;
     z-index: 10;
+    height: 100%;
+    width: 100%;
     top: 0vh;
-    height: 100vh;
-    width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -18,13 +18,16 @@
     height: 100vh;
     width: 100vw;
     background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh
+    height: 80vh;
 }
 
 .ball {
