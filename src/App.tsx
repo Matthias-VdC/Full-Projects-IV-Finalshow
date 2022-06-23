@@ -7,7 +7,7 @@ import Livestream from "./pages/Livestream.page";
 import Info from "./pages/Info.page";
 import { Index } from "./pages/Index.page";
 
-import Timetable2 from "./pages/Timetable2.page";
+import Timetable from "./pages/Timetable.page";
 import Notfound from "./pages/Notfound.page";
 import Home from "./components/Home/Home";
 
@@ -27,28 +27,28 @@ const TRACKING_ID = "UA-229998340-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
 function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-        width,
-        height,
-    };
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
 }
 
 function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(
-        getWindowDimensions()
-    );
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
 
-    useEffect(() => {
-        function handleResize() {
-            setWindowDimensions(getWindowDimensions());
-        }
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
 
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return windowDimensions;
+  return windowDimensions;
 }
 
 function App() {

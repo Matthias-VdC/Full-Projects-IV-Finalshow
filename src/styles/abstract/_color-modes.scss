@@ -1,4 +1,16 @@
 @media (prefers-color-scheme: dark) {
+     ::-webkit-scrollbar {
+        width: 10px;
+    }
+     ::-webkit-scrollbar-track {
+        background: $dark;
+    }
+     ::-webkit-scrollbar-thumb {
+        background: $background;
+    }
+     ::-webkit-scrollbar-thumb:hover {
+        background: $background;
+    }
     .loader {
         background-image: url("../../assets/darkbg.png");
     }
@@ -63,6 +75,18 @@
 }
 
 @media (prefers-color-scheme: light) {
+     ::-webkit-scrollbar {
+        width: 10px;
+    }
+     ::-webkit-scrollbar-track {
+        background: $background;
+    }
+     ::-webkit-scrollbar-thumb {
+        background: $dark;
+    }
+     ::-webkit-scrollbar-thumb:hover {
+        background: $dark;
+    }
     .loader {
         background-image: url("../../assets/lightbg.png");
     }

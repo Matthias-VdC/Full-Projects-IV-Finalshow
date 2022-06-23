@@ -10,6 +10,7 @@ type Props = {
   isClicked: boolean;
   onClickMiss: () => void;
   position?: Vector3;
+  className?: string;
 
   /* PHONE (TIMETABLE PAGE) */
 };
@@ -20,24 +21,33 @@ export const NavBillboard = ({ position = [0, 10, -50], ...props }: Props) => {
       follow={true}
       position={position}
     >
-      <Html>
+      <Html className={props.className}>
         <div
-          className="map_globalButton"
-          onClick={(e) => {
-            props.onClickPointer();
-          }}
-        />
-        <p
           style={{
-            display: props.isClicked ? "none" : "inherit",
-            marginLeft: -16,
-            marginTop: 5,
-            userSelect: "none",
-            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          {props.label}
-        </p>
+          <div
+            className="map_globalButton"
+            onClick={(e) => {
+              props.onClickPointer();
+            }}
+          />
+          <p
+            style={{
+              display: props.isClicked ? "none" : "inherit",
+              margin: "auto",
+              userSelect: "none",
+              textAlign: "center",
+              fontWeight: "800",
+              color: "#fff",
+            }}
+          >
+            {props.label}
+          </p>
+        </div>
         <div
           className="map_globalLink"
           style={{

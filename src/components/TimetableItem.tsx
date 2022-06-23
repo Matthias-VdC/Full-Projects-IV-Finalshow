@@ -16,7 +16,7 @@ export default function TimetableItem(props: IProps) {
         <p className="teletext cyan-text">{props.title}</p>
       </div>
       <div className="timetable-description">
-        <p className="teletext">{props.desc}</p>
+        <p className="teletext white-text">{props.desc}</p>
       </div>
     </>
   );

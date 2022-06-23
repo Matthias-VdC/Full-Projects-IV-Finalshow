@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import ReactGA from "react-ga";
 import Loader from "./Loader";
 import { finalWorkService } from "../services/finalWorkService";
+import WebFont from 'webfontloader';
 
 /* A React component that is used to display a countdown timer and a video. */
 function Television() {
@@ -30,6 +31,13 @@ function Television() {
     );
   };
 
+  useEffect(()=>{
+    WebFont.load({
+      custom:{
+        families: ['SevenSegment'],
+      },
+    })
+  })
   useEffect(() => {
     finalWorkService
       .fetchFinalWorks()
@@ -42,7 +50,7 @@ function Television() {
         let newVideos = [...oldVideos, ...paths];
         setVideos([...newVideos]);
       });
-  }, []);
+  }, [videos]);
 
   const handleVideoEnd = () => {
     setStartVideo(false);
@@ -112,7 +120,7 @@ function Television() {
                 </div>
               ) : (
                 <>
-                  <p id="countdownTitle">Multimedia & Creative Technologie</p>
+                  <p id="countdownTitle">Multimedia & Creatieve Technologie</p>
                   <Countdown
                     date={new Date(2022, 5, 24, 19, 0, 0, 0)}
                     zeroPadTime={2}
