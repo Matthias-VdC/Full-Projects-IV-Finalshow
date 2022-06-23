@@ -99,9 +99,9 @@ export default function DetailSide(props: any) {
                       })}
                     </p>
                   </div>
-            {props.data.socials.map((social: any) => {
+            {props.data.socials.map((social: any, index:any) => {
               return (
-                <div>
+                <div key={index}>
                   <div className="infoFlex">
                     <img src={phone} alt="phone icon" className="socialIcon" />
                     <p className="invulText">{social.tel}</p>
