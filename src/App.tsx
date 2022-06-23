@@ -52,6 +52,7 @@ function useWindowDimensions() {
 }
 
 function App() {
+<<<<<<< HEAD
   const location = useLocation();
   const { height, width } = useWindowDimensions();
   useEffect(() => {
@@ -80,6 +81,40 @@ function App() {
       </div>
     </div>
   );
+=======
+    const location = useLocation();
+    const { height, width } = useWindowDimensions();
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
+    return (
+        <div className="App" id="app-container">
+            {location.pathname === "/timetable" && width < 1075 ? (
+                <></>
+            ) : (
+                <Header />
+            )}
+            <div id="page-container">
+                <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="info" element={<Info />} />
+                    <Route path="timetable" element={<Timetable />} />
+                    <Route path="live" element={<Livestream />} />
+                    <Route path="hub" element={<Map />} />
+                    <Route path="showroom">
+                        <Route index element={<Home />} />
+                        <Route path="finalwork/:id" element={<SharedDetail/>}/>
+                        <Route path="results" element={<Results />} />
+                        <Route path="detail" element={<DetailMob />} />
+                        <Route path="genomineerden" element={<Genomineerd />} />
+                        <Route path="winnaars" element={<Winnaar />} />
+                    </Route>
+                    <Route path="*" element={<Notfound />}></Route>
+                </Routes>
+            </div>
+        </div>
+    );
+>>>>>>> f26392916fed8da3ac9a71dfb31eb1af4c1ba79f
 }
 
 export default App;
