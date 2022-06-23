@@ -50,6 +50,7 @@
   -webkit-transform: translateX(-100%) rotate(90deg);
   padding-left: 30vw;
   padding-bottom: 10vh;
+  overflow-x: hidden;
 
   background-color: transparent;
   display: table-cell;
@@ -108,12 +109,12 @@
   }
 
   .cassetteNameDiv {
-    top: 42%;
+    top: 70%;
     width: 40vw;
   }
   
   .cassetteName {
     padding-left: 44%;
-    height: 40vh;
+    // height: 40vh;
   }
 }
