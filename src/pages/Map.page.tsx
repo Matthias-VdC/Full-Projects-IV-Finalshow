@@ -45,19 +45,17 @@ export const Map = ({ ...props }) => {
           <Scene />
         </Suspense>
         <EffectComposer>
-          <Noise blendFunction={BlendFunction.MULTIPLY} opacity={0.5} />
+          <Noise blendFunction={BlendFunction.MULTIPLY} opacity={0.8} />
           <Bloom
             luminanceThreshold={0}
-            luminanceSmoothing={0.7}
-            height={300}
-            opacity={2}
+            luminanceSmoothing={0.9}
+            height={400}
+            opacity={1.5}
           />
-          <Scanline density={2} opacity={0.3} />
+          <Scanline density={2} opacity={0.4} />
           <ChromaticAberration offset={new Vector2(0.0005, 0.001)} />
         </EffectComposer>
       </Canvas>
-      <Link to="/showroom">Go To Showroom</Link>
-
       <Loader />
     </div>
   );

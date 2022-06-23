@@ -2,13 +2,14 @@ import {
   Billboard,
   Html,
   PresentationControls,
+  SpotLight,
   useDepthBuffer,
   useHelper,
 } from "@react-three/drei";
 import React, { useRef, useState } from "react";
 import { useFrame, useThree } from "react-three-fiber";
 import * as THREE from "three";
-import { MathUtils, Vector3 } from "three";
+import { MathUtils, Object3D, Vector3 } from "three";
 import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper";
 import { Lights, MovingSpot } from "./models/Lights";
 import { Room802 } from "./models/Room802";
@@ -25,6 +26,7 @@ const Box = () => {
 export const Scene = () => {
   const { camera } = useThree();
   const depthBuffer = useDepthBuffer({ size: 256, frames: 1 });
+  const dir1 = new Object3D();
 
   return (
     <>
@@ -57,11 +59,33 @@ export const Scene = () => {
         position={[0, -40, 0]}
       />
       <Lights position={[0, -40, 0]} />
-      <MovingSpot
+      <SpotLight
+        position={[900, 800, 0]}
+        target={dir1}
+        castShadow
+        penumbra={1}
+        distance={2000}
+        angle={0.5}
+        attenuation={5}
+        intensity={5}
+        color={"#ffc294"}
+      />
+      <primitive object={dir1} position={[0, 200, 0]} />
+      <SpotLight
+        position={[0, 400, 900]}
+        castShadow
+        penumbra={1}
+        distance={2000}
+        angle={0.5}
+        attenuation={5}
+        intensity={8}
+        color={"#0000ff"}
+      />
+      {/* <MovingSpot
         depthBuffer={depthBuffer}
         position={[900, 400, 900]}
         color={"white"}
-      />
+      /> */}
     </>
   );
 };
