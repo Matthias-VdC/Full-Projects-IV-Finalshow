@@ -8,18 +8,21 @@ class FinalWorkService {
     return response.json();
   }
 
-  public async fetchFinalWorkById(id: any){
-    const response = await fetch(`${this.url}/finalwork/${id}`)
-    
-    return response.json();
-   
-}
+  public async fetchFinalWorkById(id: any) {
+    const response = await fetch(`${this.url}/finalwork/${id}`);
 
-public async fetchAwards(){
-  const response = await fetch(`${this.url}/price`)
-  
-  return response.json();
-}
+    if (response.ok) {
+      return response.json();
+    } else {
+      return null;
+    }
+  }
+
+  public async fetchAwards() {
+    const response = await fetch(`${this.url}/price`);
+
+    return response.json();
+  }
 }
 
 export const finalWorkService = new FinalWorkService();

@@ -75,6 +75,7 @@ function App() {
             <Route path="genomineerden" element={<Genomineerd />} />
             <Route path="winnaars" element={<Winnaar />} />
           </Route>
+          <Route path="oops" element={<Notfound />}></Route>
           <Route path="*" element={<Notfound />}></Route>
         </Routes>
       </div>
