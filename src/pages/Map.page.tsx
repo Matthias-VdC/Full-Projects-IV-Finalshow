@@ -1,6 +1,5 @@
 import { Loader } from "@react-three/drei";
 import React, { Suspense, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Canvas } from "react-three-fiber";
 import { Scene } from "../components";
 import {
@@ -8,10 +7,8 @@ import {
   Bloom,
   Scanline,
   ChromaticAberration,
-  Noise,
 } from "@react-three/postprocessing";
 import { Vector2 } from "three";
-import { BlendFunction } from "postprocessing";
 
 export const Map = ({ ...props }) => {
   const [zoom, setZoom] = useState(1);
