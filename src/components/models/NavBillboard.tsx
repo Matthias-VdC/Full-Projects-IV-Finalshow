@@ -41,6 +41,7 @@ export const NavBillboard = ({ position = [0, 10, -50], ...props }: Props) => {
               userSelect: "none",
               textAlign: "center",
               fontWeight: "800",
+              color: "#fff",
             }}
           >
             {props.label}

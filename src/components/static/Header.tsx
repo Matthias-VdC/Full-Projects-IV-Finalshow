@@ -99,7 +99,7 @@ export default function Header() {
             </NavLink>
           </Menu>
           <div className="logo-container">
-            <NavLink to="/hub">
+            <NavLink style={{ width: "100%" }} to="/hub">
               <img src={logo} alt="logo" />
             </NavLink>
           </div>

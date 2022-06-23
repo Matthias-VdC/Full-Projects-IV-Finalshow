@@ -7,7 +7,7 @@ import Livestream from "./pages/Livestream.page";
 import Info from "./pages/Info.page";
 import { Index } from "./pages/Index.page";
 
-import Timetable2 from "./pages/Timetable2.page";
+import Timetable from "./pages/Timetable.page";
 import Notfound from "./pages/Notfound.page";
 import Home from "./components/Home/Home";
 
@@ -64,7 +64,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="info" element={<Info />} />
-          <Route path="timetable" element={<Timetable2 />} />
+          <Route path="timetable" element={<Timetable />} />
           <Route path="live" element={<Livestream />} />
           <Route path="hub" element={<Map />} />
           <Route path="showroom">

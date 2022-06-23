@@ -16,7 +16,8 @@ first h1 to 1.5em. */
 
 @font-face {
   font-family: Mode7;
-  src: url("../../fonts/MODE7GX3.TTF"), url("../../fonts/MODE7GX3.EOT"); /* .EOT is for IE */
+  src: url("../../assets/fonts/MODE7GX3.TTF"),
+    url("../../assets/fonts/MODE7GX3.TTF"); /* .EOT is for IE */
 }
 
 $teletext-red: #ff0000;
