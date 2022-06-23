@@ -287,7 +287,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
       state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.04);
     } else if (posterClick) {
       state.camera.quaternion.slerp(posterCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(150, 300, -50), 0.04);
+      state.camera.position.lerp(new THREE.Vector3(150, 350, -50), 0.04);
     } else if (phoneClick) {
       state.camera.quaternion.slerp(phoneCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(600, 150, -250), 0.04);
