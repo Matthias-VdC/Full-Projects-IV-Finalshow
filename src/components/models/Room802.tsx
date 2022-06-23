@@ -284,10 +284,6 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
       state.camera.quaternion.slerp(arcadeCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.02);
     } else if (tvClick) {
-      // let newV = new THREE.Vector3(0, 0, 0);
-      // tvRef.current!.getWorldPosition(newV);
-      // state.camera.lookAt(newV);
-      // console.log(state.camera.quaternion);
       state.camera.quaternion.slerp(tvCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.02);
     } else if (posterClick) {
