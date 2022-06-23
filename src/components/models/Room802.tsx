@@ -7,7 +7,7 @@ title: 80's room diorama
 */
 
 import * as THREE from "three";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { Select } from "@react-three/postprocessing";
@@ -226,7 +226,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/80s_room2/scene.gltf") as GLTFResult;
   const pacmanTexture = useLoader(THREE.TextureLoader, pacman);
   const mesh = useRef(null);
-  const [arcadeClick, setArcadeClick] = useState(false);
+  const [arcadeClick, setArcadeClick] = useState(true);
   const [tvClick, setTvClick] = useState(false);
   const [posterClick, setPosterClick] = useState(false);
   const [phoneClick, setPhoneClick] = useState(false);
@@ -275,15 +275,15 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
     0.8330293081326783
   );
 
+  useEffect(() => {
+    setArcadeClick(false);
+  }, []);
+
   useFrame((state) => {
     if (arcadeClick) {
       state.camera.quaternion.slerp(arcadeCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.02);
     } else if (tvClick) {
-      // let newV = new THREE.Vector3(0, 0, 0);
-      // tvRef.current!.getWorldPosition(newV);
-      // state.camera.lookAt(newV);
-      // console.log(state.camera.quaternion);
       state.camera.quaternion.slerp(tvCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.02);
     } else if (posterClick) {
