@@ -10,6 +10,7 @@ type Props = {
   isClicked: boolean;
   onClickMiss: () => void;
   position?: Vector3;
+  className?: string;
 
   /* PHONE (TIMETABLE PAGE) */
 };
@@ -20,7 +21,7 @@ export const NavBillboard = ({ position = [0, 10, -50], ...props }: Props) => {
       follow={true}
       position={position}
     >
-      <Html>
+      <Html className={props.className}>
         <div
           style={{
             display: "flex",
