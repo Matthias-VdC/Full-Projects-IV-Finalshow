@@ -8,8 +8,10 @@ import {
   Bloom,
   Scanline,
   ChromaticAberration,
+  Noise,
 } from "@react-three/postprocessing";
 import { Vector2 } from "three";
+import { BlendFunction } from "postprocessing";
 
 export const Map = ({ ...props }) => {
   const [zoom, setZoom] = useState(1);
@@ -43,14 +45,15 @@ export const Map = ({ ...props }) => {
           <Scene />
         </Suspense>
         <EffectComposer>
+          <Noise blendFunction={BlendFunction.MULTIPLY} opacity={0.5} />
           <Bloom
             luminanceThreshold={0}
-            luminanceSmoothing={0.9}
-            height={500}
-            opacity={3}
+            luminanceSmoothing={0.7}
+            height={300}
+            opacity={2}
           />
-          <Scanline density={2} />
-          <ChromaticAberration offset={new Vector2(0.001, 0.002)} />
+          <Scanline density={2} opacity={0.3} />
+          <ChromaticAberration offset={new Vector2(0.0005, 0.001)} />
         </EffectComposer>
       </Canvas>
       <Link to="/showroom">Go To Showroom</Link>
