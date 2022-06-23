@@ -68,7 +68,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="info" element={<Info />} />
-                    <Route path="timetable" element={<Timetable2 />} />
+                    <Route path="timetable" element={<Timetable />} />
                     <Route path="live" element={<Livestream />} />
                     <Route path="hub" element={<Map />} />
                     <Route path="showroom">
