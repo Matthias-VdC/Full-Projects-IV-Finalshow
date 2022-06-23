@@ -8,18 +8,12 @@ title: 80's room diorama
 
 import * as THREE from "three";
 import React, { useRef, useState } from "react";
-import {
-  Billboard,
-  Html,
-  OrbitControlsProps,
-  useGLTF,
-} from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { Select } from "@react-three/postprocessing";
 import pacman from "../../assets/3d/pacman.jpg";
 import { useFrame, useLoader, useThree } from "react-three-fiber";
 import { Group, Mesh } from "three";
-import { Link } from "react-router-dom";
 import { history } from "./History";
 import { NavBillboard } from "./NavBillboard";
 
@@ -240,10 +234,6 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   const tvRef = useRef<Group>(null);
   const posterRef = useRef<Mesh>(null);
   const phoneRef = useRef<Mesh>(null);
-  const [arcadeLink, setArcadeLink] = useState(true);
-  const [posterLink, setPosterLink] = useState(true);
-  const [phoneLink, setPhoneLink] = useState(true);
-  const [tvLink, setTvLink] = useState(true);
 
   // Quaternions help: https://stackoverflow.com/questions/30292831/three-js-lookat-how-to-pan-smoothly-between-old-and-new-target-positions , https://threejs.org/docs/#api/en/math/Quaternion
 
@@ -289,14 +279,6 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
     if (arcadeClick) {
       state.camera.quaternion.slerp(arcadeCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.02);
-      if (
-        state.camera.quaternion.x.toFixed(1) === arcadeCameraQ.x.toFixed(1) &&
-        state.camera.quaternion.y.toFixed(1) === arcadeCameraQ.y.toFixed(1) &&
-        state.camera.quaternion.z.toFixed(1) === arcadeCameraQ.z.toFixed(1) &&
-        state.camera.quaternion.w.toFixed(1) === arcadeCameraQ.w.toFixed(1)
-      ) {
-        setArcadeLink(true);
-      }
     } else if (tvClick) {
       // let newV = new THREE.Vector3(0, 0, 0);
       // tvRef.current!.getWorldPosition(newV);
@@ -304,43 +286,15 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
       // console.log(state.camera.quaternion);
       state.camera.quaternion.slerp(tvCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.02);
-      if (
-        state.camera.quaternion.x.toFixed(1) === tvCameraQ.x.toFixed(1) &&
-        state.camera.quaternion.y.toFixed(1) === tvCameraQ.y.toFixed(1) &&
-        state.camera.quaternion.z.toFixed(1) === tvCameraQ.z.toFixed(1) &&
-        state.camera.quaternion.w.toFixed(1) === tvCameraQ.w.toFixed(1)
-      ) {
-        setTvLink(true);
-      }
     } else if (posterClick) {
       state.camera.quaternion.slerp(posterCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(150, 300, -50), 0.02);
-      if (
-        state.camera.quaternion.x.toFixed(1) === posterCameraQ.x.toFixed(1) &&
-        state.camera.quaternion.y.toFixed(1) === posterCameraQ.y.toFixed(1) &&
-        state.camera.quaternion.z.toFixed(1) === posterCameraQ.z.toFixed(1) &&
-        state.camera.quaternion.w.toFixed(1) === posterCameraQ.w.toFixed(1)
-      ) {
-        setPosterLink(true);
-      }
     } else if (phoneClick) {
       state.camera.quaternion.slerp(phoneCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(600, 150, -250), 0.02);
-      if (
-        state.camera.quaternion.x.toFixed(1) === phoneCameraQ.x.toFixed(1) &&
-        state.camera.quaternion.y.toFixed(1) === phoneCameraQ.y.toFixed(1) &&
-        state.camera.quaternion.z.toFixed(1) === phoneCameraQ.z.toFixed(1) &&
-        state.camera.quaternion.w.toFixed(1) === phoneCameraQ.w.toFixed(1)
-      ) {
-        setPhoneLink(true);
-      }
     } else {
       state.camera.quaternion.slerp(defaultCameraQ, 0.02);
       state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.02);
-      setArcadeLink(false);
-      setPosterLink(false);
-      setPhoneLink(false);
-      setTvLink(false);
     }
 
     state.camera.updateProjectionMatrix();
@@ -361,6 +315,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
           <planeBufferGeometry attach="geometry" args={[115, 115]} />
           <meshStandardMaterial attach="material" map={pacmanTexture} />
           <NavBillboard
+            position={[-20, 15, 0]}
             isClicked={arcadeClick}
             label={"Showroom"}
             text={"Go to Showroom"}
@@ -370,6 +325,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
               setArcadeClick(!arcadeClick);
             }}
             onClickMiss={() => arcadeClick && setArcadeClick(false)}
+            className={"map_billboards"}
           />
         </mesh>
 
@@ -395,6 +351,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
               setPosterClick(!posterClick);
             }}
             onClickMiss={() => posterClick && setPosterClick(false)}
+            className={"map_billboards"}
           />
         </mesh>
 
@@ -419,7 +376,11 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
               if (phoneClick) history.push("/timetable");
               setPhoneClick(!phoneClick);
             }}
+            position={[-20, -20, -70]}
             onClickMiss={() => phoneClick && setPhoneClick(false)}
+            className={`map_billboards ${
+              phoneClick ? "map_phoneBillboard" : ""
+            }`}
           />
         </mesh>
 
@@ -587,7 +548,8 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
                 setTvClick(!tvClick);
               }}
               onClickMiss={() => tvClick && setTvClick(false)}
-              position={[0, -0.75, 1.5]}
+              position={[0, -0.75, 1.2]}
+              className={"map_billboards"}
             />
           </group>
           <group
