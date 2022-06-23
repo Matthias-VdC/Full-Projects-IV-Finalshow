@@ -1,4 +1,7 @@
 @media (prefers-color-scheme: dark) {
+    .loader {
+        background-image: url("../../assets/darkbg.png");
+    }
     body {
         background-image: url("../../assets/darkbg.png");
         background-repeat: no-repeat;
@@ -60,6 +63,9 @@
 }
 
 @media (prefers-color-scheme: light) {
+    .loader {
+        background-image: url("../../assets/lightbg.png");
+    }
     .lactive-class {
         background-color: $dark !important;
     }

@@ -1,0 +1,11 @@
+Model Information:
+* title:	80's house EHB
+* source:	https://sketchfab.com/3d-models/80s-house-ehb-34ce2f6d43044140a1f8b4655808e723
+* author:	Cas.de.Bruijn (https://sketchfab.com/Cas.de.Bruijn)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "80's house EHB" (https://sketchfab.com/3d-models/80s-house-ehb-34ce2f6d43044140a1f8b4655808e723) by Cas.de.Bruijn (https://sketchfab.com/Cas.de.Bruijn) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
