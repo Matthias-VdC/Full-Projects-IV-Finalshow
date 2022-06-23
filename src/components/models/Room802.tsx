@@ -7,7 +7,7 @@ title: 80's room diorama
 */
 
 import * as THREE from "three";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { Select } from "@react-three/postprocessing";
@@ -226,7 +226,7 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/80s_room2/scene.gltf") as GLTFResult;
   const pacmanTexture = useLoader(THREE.TextureLoader, pacman);
   const mesh = useRef(null);
-  const [arcadeClick, setArcadeClick] = useState(false);
+  const [arcadeClick, setArcadeClick] = useState(true);
   const [tvClick, setTvClick] = useState(false);
   const [posterClick, setPosterClick] = useState(false);
   const [phoneClick, setPhoneClick] = useState(false);
@@ -274,6 +274,10 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
     0.04798991920954376,
     0.8330293081326783
   );
+
+  useEffect(() => {
+    setArcadeClick(false);
+  }, []);
 
   useFrame((state) => {
     if (arcadeClick) {
