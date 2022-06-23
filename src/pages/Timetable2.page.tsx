@@ -108,7 +108,7 @@ export default function Timetable2() {
             ← go back
           </p>
           <div className="teletext-subtitle">
-            <p className="teletext">
+            <p className="teletext white-text">
               EhB → Anderlecht, BXL → Fri 24 Jun &nbsp;
             </p>
             <p className="yellow-text teletext">
