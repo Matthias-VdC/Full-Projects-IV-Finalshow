@@ -85,7 +85,7 @@ export default function DetailMob(props: any) {
               <div key={index}>
                 <div className="infoFlexMob">
                   <img src={phone} alt="phone icon" className="socialIcon" />
-                  <p className="invulTextMob">{social.tel}</p>
+                  <p className="invulTextMob">+32 {social.tel}</p>
                 </div>
                 <div id="linkedInMob" className="infoFlexMob">
                   <img

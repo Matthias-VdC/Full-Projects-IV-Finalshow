@@ -104,7 +104,7 @@ export default function DetailSide(props: any) {
                 <div key={index}>
                   <div className="infoFlex">
                     <img src={phone} alt="phone icon" className="socialIcon" />
-                    <p className="invulText">{social.tel}</p>
+                    <p className="invulText">+32 {social.tel}</p>
                   </div>
                  
                   <div id="linkedIn" className="infoFlex">
