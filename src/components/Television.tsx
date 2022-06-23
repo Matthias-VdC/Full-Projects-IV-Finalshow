@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import ReactGA from "react-ga";
 import Loader from "./Loader";
 import { finalWorkService } from "../services/finalWorkService";
+import WebFont from 'webfontloader';
 
 /* A React component that is used to display a countdown timer and a video. */
 function Television() {
@@ -30,6 +31,13 @@ function Television() {
     );
   };
 
+  useEffect(()=>{
+    WebFont.load({
+      custom:{
+        families: ['SevenSegment'],
+      },
+    })
+  })
   useEffect(() => {
     finalWorkService
       .fetchFinalWorks()
