@@ -16,7 +16,8 @@ first h1 to 1.5em. */
 
 @font-face {
   font-family: Mode7;
-  src: url("../../fonts/MODE7GX3.TTF"), url("../../fonts/MODE7GX3.EOT"); /* .EOT is for IE */
+  src: url("../../assets/fonts/MODE7GX3.TTF"),
+    url("../../assets/fonts/MODE7GX3.TTF"); /* .EOT is for IE */
 }
 
 $teletext-red: #ff0000;
@@ -246,7 +247,19 @@ $teletext-pink: #ff00ff;
   }
 }
 
-.tetris-container {
+.easter-egg-container {
+  .game-selectors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 1em;
+    p {
+      padding: 0.5em 1em;
+      background-color: white;
+      font-weight: 800;
+      cursor: pointer;
+    }
+  }
   width: 55%;
   height: 80%;
   position: absolute;
@@ -257,6 +270,18 @@ $teletext-pink: #ff00ff;
   flex-direction: column;
   padding: 0 2em;
   text-align: center;
+
+  .snake-container {
+    font-family: Mode7, monospace !important;
+
+    button {
+      font-family: Mode7, monospace !important;
+    }
+  }
+
+  .pacman {
+    margin: auto;
+  }
   .game-board {
     margin: auto;
   }

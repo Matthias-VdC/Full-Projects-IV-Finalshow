@@ -1,4 +1,3 @@
-import BackArrow from "../components/BackArrow";
 import LiveYoutubeChat from "../components/LiveYoutubeChat";
 import Share from "../components/Share";
 import VideoPlayer from "../components/VideoPlayer";
@@ -13,7 +12,6 @@ function Livestream() {
   return (
     <>
           <div className="livebody">
-        <BackArrow></BackArrow>
         <div className="streaming">
           <VideoPlayer></VideoPlayer>
           <div className="streamingBottom">

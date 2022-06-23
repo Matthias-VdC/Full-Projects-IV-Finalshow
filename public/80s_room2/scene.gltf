@@ -7748,16 +7748,16 @@
   ],
   "images": [
     {
-      "uri": "textures/Material.026_diffuse.jpeg"
+      "uri": "textures/startrek.png"
     },
     {
-      "uri": "textures/Material.043_diffuse.jpeg"
+      "uri": "textures/gtamike.png"
     },
     {
-      "uri": "textures/Material.018_diffuse.jpeg"
+      "uri": "textures/topgun.png"
     },
     {
-      "uri": "textures/Material.045_diffuse.jpeg"
+      "uri": "textures/baseball.png"
     }
   ],
   "materials": [
