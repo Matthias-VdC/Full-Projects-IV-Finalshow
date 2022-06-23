@@ -112,7 +112,7 @@ function Television() {
                 </div>
               ) : (
                 <>
-                  <p id="countdownTitle">Multimedia & Creative Technologie</p>
+                  <p id="countdownTitle">Multimedia & Creatieve Technologie</p>
                   <Countdown
                     date={new Date(2022, 5, 24, 19, 0, 0, 0)}
                     zeroPadTime={2}
