@@ -135,7 +135,6 @@ export default function DetailSide(props: any) {
                     url: `http://finalshow.be/showcase/finalwork/${props.data.id}`,
                     title: "Mijn final work",
                     }}
-                    sites={["facebook", "instagram", "linkedin"]}
                     >
                 <img  src={share} alt="share-icon" id="shareIcon"/>
             </RWebShare>
