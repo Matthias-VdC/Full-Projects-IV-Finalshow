@@ -12,7 +12,7 @@ import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { Select } from "@react-three/postprocessing";
 import pacman from "../../assets/3d/pacman.jpg";
-import { useFrame, useLoader, useThree } from "react-three-fiber";
+import { useFrame, useLoader } from "react-three-fiber";
 import { Group, Mesh } from "three";
 import { history } from "./History";
 import { NavBillboard } from "./NavBillboard";
@@ -221,7 +221,6 @@ type GLTFResult = GLTF & {
 };
 
 export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
-  const { camera, controls } = useThree();
   const group = useRef<THREE.Group>(null);
   const { nodes, materials } = useGLTF("/80s_room2/scene.gltf") as GLTFResult;
   const pacmanTexture = useLoader(THREE.TextureLoader, pacman);
@@ -282,19 +281,19 @@ export function Room802({ ...props }: JSX.IntrinsicElements["group"]) {
   useFrame((state) => {
     if (arcadeClick) {
       state.camera.quaternion.slerp(arcadeCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(50, 215, 325), 0.04);
     } else if (tvClick) {
       state.camera.quaternion.slerp(tvCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(130, 40, -225), 0.04);
     } else if (posterClick) {
       state.camera.quaternion.slerp(posterCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(150, 300, -50), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(150, 350, -50), 0.04);
     } else if (phoneClick) {
       state.camera.quaternion.slerp(phoneCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(600, 150, -250), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(600, 150, -250), 0.04);
     } else {
       state.camera.quaternion.slerp(defaultCameraQ, 0.02);
-      state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.02);
+      state.camera.position.lerp(new THREE.Vector3(600, 300, 600), 0.08);
     }
 
     state.camera.updateProjectionMatrix();

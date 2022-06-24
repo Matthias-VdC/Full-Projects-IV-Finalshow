@@ -1,6 +1,5 @@
 import { Loader } from "@react-three/drei";
 import React, { Suspense, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Canvas } from "react-three-fiber";
 import { Scene } from "../components";
 import {
@@ -43,18 +42,17 @@ export const Map = ({ ...props }) => {
           <Scene />
         </Suspense>
         <EffectComposer>
+          {/* <Noise blendFunction={BlendFunction.MULTIPLY} opacity={0.8} /> */}
           <Bloom
             luminanceThreshold={0}
             luminanceSmoothing={0.9}
-            height={500}
-            opacity={3}
+            height={400}
+            opacity={1.5}
           />
-          <Scanline density={2} />
-          <ChromaticAberration offset={new Vector2(0.001, 0.002)} />
+          <Scanline density={2} opacity={0.4} />
+          <ChromaticAberration offset={new Vector2(0.0005, 0.001)} />
         </EffectComposer>
       </Canvas>
-      <Link to="/showroom">Go To Showroom</Link>
-
       <Loader />
     </div>
   );
