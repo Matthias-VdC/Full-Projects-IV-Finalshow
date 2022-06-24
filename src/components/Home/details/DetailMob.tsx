@@ -112,7 +112,7 @@ export default function DetailMob(props: any) {
         <RWebShare
           data={{
             text: "Bekijk hier mijn final work",
-            url: `https://finalshow.be/showcase/finalwork/${state.id}`,
+            url: `https://finalshow.be/showroom/finalwork/${state.id}`,
             title: "Mijn final work",
           }}
           sites={["facebook", "instagram", "linkedin"]}
