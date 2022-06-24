@@ -146,7 +146,7 @@ setInput(inputForm.toLowerCase())
         </div>
 
         <div className="cassettesContainer">
-          {selectedWorks.map((x:any, index:any) => {
+          {selectedWorks.sort(() => Math.random() - 0.5).map((x:any, index:any) => {
             return <Cassette key={index} data={x}></Cassette>;
           })}
         </div>

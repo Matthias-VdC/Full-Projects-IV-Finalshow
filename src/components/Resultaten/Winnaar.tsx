@@ -7,12 +7,25 @@ import "../../styles/showroom/_countdown.scss";
 
 function Winnaar() {
   const [finalWorks, setFinalWorks] = useState([]);
+  const [cluster, setCluster] = useState(String);
 
   useEffect(() => {
     finalWorkService.fetchAwards().then((Response) => {
         setFinalWorks(Response) 
       })
-}, [])
+      finalWorks.map((x:any) => {
+         if (x.price === "webApp") {
+          x.price = "Web & App"
+        } else if (x.price === "motion") {
+          x.price = "Motion"
+        } else if (x.price === "smartTechnologies") {
+          x.price = "Smart Technolgies"
+        } else if (x.price === "extendedReality") {
+          x.price = "Extended Reality"
+        }
+      }) 
+
+}, [finalWorks])
 
 
   const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
@@ -20,8 +33,12 @@ function Winnaar() {
       return (
         <div className="cassettesContainerNominees">
           {finalWorks.map((x: any) => {
-            return <Cassette data={x.final_work_id} key={x["id"]}></Cassette>;
-          })}
+            return (<div className="clusterNameWinn">
+            <h1 className="titleClusterNameWinn">{x.price}</h1>
+            <Cassette data={x.final_work_id} key={x["id"]}></Cassette>
+
+            </div>
+          )})}
         </div>
       );
     } else {
