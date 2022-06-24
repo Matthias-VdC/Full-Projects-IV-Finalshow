@@ -15,11 +15,12 @@ export default function SharedDetail() {
   let params = useParams();
 
   useEffect(() => {
-    finalWorkService.fetchFinalWorkById(params.id).then((Response) => {
-      setFinalWork(Response);
-      if (!finalWork) {
-        setRedirect(true);
-      }
+    finalWorkService.fetchFinalWorkById(params.id).then((data) => {
+      setFinalWork(data);
+      console.log(params.id);
+      // if (!finalWork) {
+      //   setRedirect(true);
+      // }
     });
   }, [params.id]);
 
