@@ -129,17 +129,15 @@ export default function DetailSide(props: any) {
           </div>
         </div>
         <div id="shareContainer">
-          <RWebShare
-            data={{
-              text: "Bekijk hier mijn final work",
-              url: `http://finalshow.be/showroom/finalwork/${props.data.id}`,
-              title: "Mijn final work",
-            }}
-            sites={["facebook", "instagram", "linkedin"]}
-          >
-            <img src={share} alt="share-icon" id="shareIcon" />
-          </RWebShare>
-        </div>
+        <RWebShare
+                    data={{
+                    text:"Bekijk hier mijn final work",
+                    url: `http://finalshow.be/showcase/finalwork/${props.data.id}`,
+                    title: "Mijn final work",
+                    }}
+                    >
+                <img  src={share} alt="share-icon" id="shareIcon"/>
+            </RWebShare>
       </div>
     </div>
   );
