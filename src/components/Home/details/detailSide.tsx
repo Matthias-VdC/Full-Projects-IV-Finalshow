@@ -135,10 +135,12 @@ export default function DetailSide(props: any) {
                     url: `http://finalshow.be/showcase/finalwork/${props.data.id}`,
                     title: "Mijn final work",
                     }}
+                    onClick={() => console.log("shared successfully!")}
                     >
                 <img  src={share} alt="share-icon" id="shareIcon"/>
             </RWebShare>
       </div>
+    </div>
     </div>
   );
 }
