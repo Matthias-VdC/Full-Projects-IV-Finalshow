@@ -17,7 +17,7 @@ export default function SharedDetail() {
   useEffect(() => {
     finalWorkService.fetchFinalWorkById(params.id).then((data) => {
       setFinalWork(data);
-      console.log(params.id);
+      console.log(data);
       // if (!finalWork) {
       //   setRedirect(true);
       // }

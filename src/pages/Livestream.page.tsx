@@ -11,11 +11,11 @@ import VideoPlayer from "../components/VideoPlayer";
 function Livestream() {
   return (
     <>
-          <div className="livebody">
+      <div className="livebody">
         <div className="streaming">
           <VideoPlayer></VideoPlayer>
           <div className="streamingBottom">
-            <h1>Behind the scenes - Final Show 2022</h1>
+            <h1>Final Show 2022 - Watch now!</h1>
             <div className="actionsYoutube">
               <Share></Share>
             </div>
