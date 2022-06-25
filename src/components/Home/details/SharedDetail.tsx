@@ -17,10 +17,6 @@ export default function SharedDetail() {
   useEffect(() => {
     finalWorkService.fetchFinalWorkById(params.id).then((data) => {
       setFinalWork(data);
-      console.log(data);
-      // if (!finalWork) {
-      //   setRedirect(true);
-      // }
     });
   }, [params.id]);
 
